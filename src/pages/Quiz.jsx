@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import QuizCard from "../components/QuizCard";
 import AnswerInput from "../components/AnswerInput";
@@ -8,29 +8,51 @@ import vocabularyData from "../data/vocabulary.json";
 
 import normalizeText from "../utils/normalizeText";
 
-function shuffleArray(array) {
+import filterWords from "../utils/filterWords";
+import shuffleArray from "../utils/shuffleArray";
 
-    return [...array].sort(
-        () => Math.random() - 0.5
-    );
-}
+import MultipleChoice from "../components/MultipleChoice";
+import getRandomOptions from "../utils/getRandomOptions";
 
-function Quiz({ onFinish }) {
+function Quiz({
+    quizSettings,
+    onFinish,
+}) {
 
     const vocabulary = vocabularyData.vocabulary;
 
-    const QUIZ_SIZE = 15;
-
     const quizWords = useMemo(() => {
 
-        return shuffleArray(vocabulary)
-            .slice(0, QUIZ_SIZE);
+        const filteredWords = filterWords(
+            vocabulary,
+            quizSettings,
+        );
 
-    }, [vocabulary]);
+        return shuffleArray(
+            filteredWords,
+        ).slice(
+            0,
+            quizSettings.questionCount,
+        );
+
+    }, [vocabulary, quizSettings]);
+
+    const QUIZ_SIZE = quizWords.length;
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-    const currentWord = quizWords[currentQuestionIndex];
+    const currentWord =
+        quizWords[currentQuestionIndex] ||
+        quizWords[QUIZ_SIZE - 1];
+
+    const multipleChoiceOptions = useMemo(() => {
+
+        return getRandomOptions(
+            currentWord,
+            vocabulary,
+        );
+
+    }, [currentWord, vocabulary]);
 
     const [userAnswer, setUserAnswer] = useState("");
 
@@ -44,7 +66,11 @@ function Quiz({ onFinish }) {
 
     const [wrongAnswers, setWrongAnswers] = useState(0);
 
+    const [selectedOption, setSelectedOption] = useState(null);
+
     const handleNextWord = () => {
+
+        setSelectedOption(null);
 
         setCurrentQuestionIndex(
             prev => prev + 1
@@ -68,12 +94,8 @@ function Quiz({ onFinish }) {
         const normalizedAnswer =
             normalizeText(userAnswer);
 
-        const validAnswers =
-            currentWord.meaning
-                .split("/")
-                .map(answer =>
-                    normalizeText(answer)
-                );
+        const validAnswers = currentWord.acceptedAnswers
+            .map(answer => normalizeText(answer));
 
         if (normalizedAnswer === "") {
 
@@ -97,7 +119,7 @@ function Quiz({ onFinish }) {
         } else {
 
             setFeedback(
-                `❌ Correct answer: ${currentWord.meaning}`
+                `❌ Correct answer: ${currentWord.displayMeaning}`
             );
 
             setWrongAnswers(
@@ -110,7 +132,47 @@ function Quiz({ onFinish }) {
         setAnswerSubmitted(true);
     };
 
-    if (currentQuestionIndex >= QUIZ_SIZE) {
+    const handleSelectOption = (selectedOption) => {
+
+        if (answerSubmitted) {
+            return;
+        }
+
+        setSelectedOption(selectedOption);
+
+        if (
+            selectedOption === currentWord.displayMeaning
+        ) {
+
+            setFeedback("✅ Correct!");
+
+            setCorrectAnswers(
+                prev => prev + 1
+            );
+
+        } else {
+
+            setFeedback(
+                `❌ Correct answer: ${currentWord.displayMeaning}`
+            );
+
+            setWrongAnswers(
+                prev => prev + 1
+            );
+
+        }
+
+        setShowAnswer(true);
+
+        setAnswerSubmitted(true);
+
+    };
+
+    useEffect(() => {
+
+        if (currentQuestionIndex < QUIZ_SIZE) {
+            return;
+        }
 
         const accuracyPercentage = Math.round(
             (correctAnswers / QUIZ_SIZE) * 100
@@ -132,7 +194,65 @@ function Quiz({ onFinish }) {
             finalMessage,
         });
 
-        return null;
+    }, [
+        currentQuestionIndex,
+        QUIZ_SIZE,
+        correctAnswers,
+        wrongAnswers,
+        onFinish,
+    ]);
+
+    if (QUIZ_SIZE === 0) {
+
+        return (
+
+            <main
+                className="
+        min-h-screen
+        flex
+        items-center
+        justify-center
+        px-6
+      "
+            >
+
+                <div
+                    className="
+          max-w-xl
+          w-full
+          backdrop-blur-lg
+          bg-white/10
+          border
+          border-white/20
+          rounded-3xl
+          p-10
+          text-center
+          shadow-2xl
+        "
+                >
+
+                    <h1
+                        className="
+            text-4xl
+            font-bold
+            text-red-400
+            mb-4
+          "
+                    >
+                        No Words Found 😢
+                    </h1>
+
+                    <p className="text-slate-300 mb-8">
+                        Try changing the category,
+                        difficulty, or word type.
+                    </p>
+
+                </div>
+
+            </main>
+
+        );
+
     }
 
     return (
@@ -161,14 +281,27 @@ function Quiz({ onFinish }) {
             <QuizCard
                 wordData={currentWord}
                 showAnswer={showAnswer}
+                quizMode={quizSettings.mode}
             />
 
-            <AnswerInput
-                userAnswer={userAnswer}
-                setUserAnswer={setUserAnswer}
-                handleCheckAnswer={handleCheckAnswer}
-                answerSubmitted={answerSubmitted}
-            />
+            {
+                quizSettings.mode === "write" ? (
+                    <AnswerInput
+                        userAnswer={userAnswer}
+                        setUserAnswer={setUserAnswer}
+                        handleCheckAnswer={handleCheckAnswer}
+                        answerSubmitted={answerSubmitted}
+                    />
+                ) : (
+                    <MultipleChoice
+                        options={multipleChoiceOptions}
+                        handleSelectOption={handleSelectOption}
+                        answerSubmitted={answerSubmitted}
+                        selectedOption={selectedOption}
+                        correctAnswer={currentWord.displayMeaning}
+                    />
+                )
+            }
 
             <div className="w-full max-w-2xl flex gap-4">
 
@@ -180,7 +313,7 @@ function Quiz({ onFinish }) {
                                 onClick={() => {
 
                                     setFeedback(
-                                        `❌ Correct answer: ${currentWord.meaning}`
+                                        `❌ Correct answer: ${currentWord.displayMeaning}`
                                     );
 
                                     setWrongAnswers(
@@ -207,23 +340,29 @@ function Quiz({ onFinish }) {
                                 I Don't Know
                             </button>
 
-                            <button
-                                onClick={handleCheckAnswer}
-                                className="
-                  flex-1
-                  bg-emerald-500
-                  hover:bg-emerald-400
-                  transition-all
-                  duration-300
-                  py-4
-                  rounded-2xl
-                  text-white
-                  font-bold
-                  shadow-lg
-                "
-                            >
-                                Check Answer
-                            </button>
+                            {
+                                quizSettings.mode === "write" && (
+
+                                    <button
+                                        onClick={handleCheckAnswer}
+                                        className="
+              flex-1
+              bg-emerald-500
+              hover:bg-emerald-400
+              transition-all
+              duration-300
+              py-4
+              rounded-2xl
+              text-white
+              font-bold
+              shadow-lg
+            "
+                                    >
+                                        Check Answer
+                                    </button>
+
+                                )
+                            }
 
                         </>
 
@@ -254,7 +393,8 @@ function Quiz({ onFinish }) {
             </div>
 
             {
-                feedback && (
+                feedback &&
+                quizSettings.mode === "write" && (
 
                     <div
                         className={`

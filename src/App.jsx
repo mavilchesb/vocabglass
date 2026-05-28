@@ -10,23 +10,30 @@ function App() {
 
   const [resultsData, setResultsData] = useState(null);
 
-  return (
+  const [quizSettings, setQuizSettings] = useState({
+    mode: "write",
+    category: "mixed",
+    difficulty: "mixed",
+    wordType: "mixed",
+    questionCount: 15,
+  });
 
+  return (
     <>
       {
         screen === "home" && (
-
           <Home
+            quizSettings={quizSettings}
+            setQuizSettings={setQuizSettings}
             onStart={() => setScreen("quiz")}
           />
-
         )
       }
 
       {
         screen === "quiz" && (
-
           <Quiz
+            quizSettings={quizSettings}
             onFinish={(data) => {
 
               setResultsData(data);
@@ -34,13 +41,11 @@ function App() {
               setScreen("results");
             }}
           />
-
         )
       }
 
       {
         screen === "results" && (
-
           <Results
             correctAnswers={resultsData.correctAnswers}
             wrongAnswers={resultsData.wrongAnswers}
@@ -53,11 +58,9 @@ function App() {
               setScreen("home");
             }}
           />
-
         )
       }
     </>
-
   );
 }
 

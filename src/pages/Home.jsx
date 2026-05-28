@@ -1,4 +1,10 @@
-function Home({ onStart }) {
+import QuizSettings from "../components/QuizSettings";
+
+function Home({
+    quizSettings,
+    setQuizSettings,
+    onStart,
+}) {
 
     return (
 
@@ -6,30 +12,21 @@ function Home({ onStart }) {
             className="
         min-h-screen
         flex
+        flex-col
         items-center
         justify-center
         px-6
+        gap-8
       "
         >
 
-            <div
-                className="
-          w-full
-          max-w-2xl
-          backdrop-blur-lg
-          bg-white/10
-          border border-white/20
-          rounded-3xl
-          p-10
-          shadow-2xl
-        "
-            >
+            <div className="text-center">
 
                 <h1
                     className="
             text-6xl
-            font-bold
-            text-sky-400
+            font-black
+            text-white
             mb-4
           "
                 >
@@ -40,34 +37,41 @@ function Home({ onStart }) {
                     className="
             text-slate-300
             text-xl
-            mb-10
+            max-w-xl
           "
                 >
-                    Learn smarter, not harder.
+                    Learn vocabulary through immersive
+                    contextual quizzes.
                 </p>
-
-                <button
-                    onClick={onStart}
-                    className="
-            w-full
-            bg-sky-500
-            hover:bg-sky-400
-            transition-all
-            duration-300
-            py-4
-            rounded-2xl
-            text-white
-            font-bold
-            shadow-xl
-            text-lg
-          "
-                >
-                    Start Quiz
-                </button>
 
             </div>
 
+            <QuizSettings
+                quizSettings={quizSettings}
+                setQuizSettings={setQuizSettings}
+            />
+
+            <button
+                onClick={onStart}
+                className="
+          bg-sky-500
+          hover:bg-sky-400
+          transition-all
+          duration-300
+          px-10
+          py-4
+          rounded-2xl
+          text-white
+          font-bold
+          shadow-2xl
+          text-xl
+        "
+            >
+                Start Quiz 🚀
+            </button>
+
         </main>
+
     );
 }
 
