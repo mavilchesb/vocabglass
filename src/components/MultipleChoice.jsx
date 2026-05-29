@@ -1,4 +1,4 @@
-import capitalizeText from "../utils/capitalizeText";
+import capitalizeText from '../utils/capitalizeText';
 
 function MultipleChoice({
     options,
@@ -7,77 +7,28 @@ function MultipleChoice({
     selectedOption,
     correctAnswer,
 }) {
-
     return (
-
-        <div
-            className="
-        w-full
-        max-w-2xl
-        grid
-        grid-cols-1
-        gap-4
-      "
-        >
-
-            {
-                options.map((option) => (
-
-                    <button
-                        key={capitalizeText(option)}
-                        onClick={() =>
-                            handleSelectOption(option)
-                        }
-                        disabled={answerSubmitted}
-                        className={`
-    border
-    backdrop-blur-lg
-    transition-all
-    duration-300
-    rounded-2xl
-    py-4
-    px-6
-    font-semibold
-    text-left
-    shadow-lg
-
-    ${answerSubmitted
-                                ? option === correctAnswer
-                                    ? `
-                    bg-emerald-500/30
-                    border-emerald-400
-                    text-emerald-200
-                  `
-                                    : option === selectedOption
-                                        ? `
-                        bg-red-500/30
-                        border-red-400
-                        text-red-200
-                      `
-                                        : `
-                        bg-white/10
-                        border-white/20
-                        text-slate-300
-                      `
-                                : `
-                bg-white/10
-                hover:bg-white/20
-                border-white/20
-                text-white
-              `
-                            }
-`}
-                    >
-                        {capitalizeText(option)}
-                    </button>
-
-                ))
-            }
-
+        <div className='grid w-full max-w-2xl grid-cols-1 gap-4'>
+            {options.map((option) => (
+                <button
+                    key={option}
+                    onClick={() => handleSelectOption(option)}
+                    disabled={answerSubmitted}
+                    className={`relative rounded-2xl border bg-clip-padding px-6 py-5 text-left font-medium shadow-[0_8px_24px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-200 ${
+                        answerSubmitted && option === correctAnswer
+                            ? `border-cyan-300/[0.25] bg-cyan-400/[0.08] text-cyan-50`
+                            : answerSubmitted &&
+                                option === selectedOption &&
+                                option !== correctAnswer
+                              ? `border-rose-300/[0.25] bg-rose-400/[0.08] text-rose-50`
+                              : `border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/20 hover:bg-white/[0.05]`
+                    } `}
+                >
+                    {capitalizeText(option)}
+                </button>
+            ))}
         </div>
-
     );
-
 }
 
 export default MultipleChoice;

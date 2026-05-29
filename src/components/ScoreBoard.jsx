@@ -1,73 +1,55 @@
-function ScoreBoard({ correctAnswers, wrongAnswers }) {
-  const totalAnswers = correctAnswers + wrongAnswers;
+function ScoreBoard({
+    correctAnswers,
+    wrongAnswers,
+    currentQuestionIndex,
+    totalQuestions,
+}) {
+    const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
 
-  const accuracy =
-    totalAnswers === 0 ? 0 : Math.round((correctAnswers / totalAnswers) * 100);
+    return (
+        <div className='w-full max-w-5xl rounded-3xl border border-white/[0.08] bg-white/[0.03] px-8 py-6 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-2xl'>
+            <div className='mb-5 flex items-center justify-between gap-6'>
+                <div>
+                    <p className='mb-1 text-xs tracking-[0.25em] text-slate-500 uppercase'>
+                        VocabGlass
+                    </p>
 
-  return (
-    <div
-      className="
-        w-full
-        max-w-2xl
-        backdrop-blur-lg
-        bg-white/10
-        border border-white/20
-        rounded-3xl
-        p-6
-      "
-    >
-      <div
-        className="
-          flex
-          justify-between
-          items-center
-          mb-4
-        "
-      >
-        <div>
-          <p className="text-slate-400 text-sm">Correct</p>
+                    <h2 className='text-2xl font-bold text-white'>
+                        Vocabulary Quiz
+                    </h2>
+                </div>
 
-          <h2 className="text-3xl font-bold text-emerald-400">
-            {correctAnswers}
-          </h2>
+                <div className='flex items-center gap-3'>
+                    <div className='rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-300'>
+                        ✅ {correctAnswers}
+                    </div>
+
+                    <div className='rounded-2xl border border-red-400/20 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-300'>
+                        ❌ {wrongAnswers}
+                    </div>
+                </div>
+            </div>
+
+            <div className='mb-3'>
+                <div className='mb-2 flex items-center justify-between'>
+                    <p className='text-sm text-slate-400'>Progress</p>
+
+                    <p className='text-sm text-slate-400'>
+                        Question {currentQuestionIndex + 1} / {totalQuestions}
+                    </p>
+                </div>
+
+                <div className='h-3 w-full overflow-hidden rounded-full bg-white/[0.04]'>
+                    <div
+                        className='h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-500'
+                        style={{
+                            width: `${progressPercentage}%`,
+                        }}
+                    />
+                </div>
+            </div>
         </div>
-
-        <div>
-          <p className="text-slate-400 text-sm">Wrong</p>
-
-          <h2 className="text-3xl font-bold text-red-400">{wrongAnswers}</h2>
-        </div>
-
-        <div>
-          <p className="text-slate-400 text-sm">Accuracy</p>
-
-          <h2 className="text-3xl font-bold text-sky-400">{accuracy}%</h2>
-        </div>
-      </div>
-
-      <div
-        className="
-          w-full
-          h-4
-          bg-slate-800
-          rounded-full
-          overflow-hidden
-        "
-      >
-        <div
-          className="
-            h-full
-            bg-sky-400
-            transition-all
-            duration-500
-          "
-          style={{
-            width: `${accuracy}%`,
-          }}
-        />
-      </div>
-    </div>
-  );
+    );
 }
 
 export default ScoreBoard;
