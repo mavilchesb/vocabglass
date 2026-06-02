@@ -8,7 +8,7 @@ function MultipleChoice({
     correctAnswer,
 }) {
     return (
-        <div className='grid w-full max-w-2xl grid-cols-1 gap-4'>
+        <div className='grid w-full max-w-2xl grid-cols-2 gap-4 max-md:grid-cols-1'>
             {options.map((option) => (
                 <button
                     key={option}

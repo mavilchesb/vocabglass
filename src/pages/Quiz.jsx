@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 
 import QuizCard from '../components/QuizCard';
 import AnswerInput from '../components/AnswerInput';
-import ScoreBoard from '../components/ScoreBoard';
 
 import vocabularyData from '../data/vocabulary.json';
 
@@ -14,10 +13,11 @@ import shuffleArray from '../utils/shuffleArray';
 import MultipleChoice from '../components/MultipleChoice';
 import getRandomOptions from '../utils/getRandomOptions';
 
-function Quiz({ quizSettings, onFinish }) {
+function Quiz({ quizSettings, onFinish, onExit }) {
     const vocabulary = vocabularyData.vocabulary;
 
     const quizWords = useMemo(() => {
+        console.log(quizSettings);
         const filteredWords = filterWords(vocabulary, quizSettings);
 
         return shuffleArray(filteredWords).slice(0, quizSettings.questionCount);
@@ -31,6 +31,10 @@ function Quiz({ quizSettings, onFinish }) {
         quizWords[currentQuestionIndex] || quizWords[QUIZ_SIZE - 1];
 
     const multipleChoiceOptions = useMemo(() => {
+        if (!currentWord) {
+            return [];
+        }
+
         return getRandomOptions(currentWord, vocabulary);
     }, [currentWord, vocabulary]);
 
@@ -48,8 +52,26 @@ function Quiz({ quizSettings, onFinish }) {
 
     const [selectedOption, setSelectedOption] = useState('');
 
+    const [currentStreak, setCurrentStreak] = useState(0);
+
+    const [bestStreak, setBestStreak] = useState(0);
+
+    const increaseStreak = () => {
+        const newStreak = currentStreak + 1;
+
+        setCurrentStreak(newStreak);
+
+        if (newStreak > bestStreak) {
+            setBestStreak(newStreak);
+        }
+    };
+
+    const resetStreak = () => {
+        setCurrentStreak(0);
+    };
+
     const handleNextWord = () => {
-        setSelectedOption(null);
+        setSelectedOption('');
 
         setCurrentQuestionIndex((prev) => prev + 1);
 
@@ -83,10 +105,14 @@ function Quiz({ quizSettings, onFinish }) {
             setFeedback('✅ Correct!');
 
             setCorrectAnswers((prev) => prev + 1);
+
+            increaseStreak();
         } else {
             setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
 
             setWrongAnswers((prev) => prev + 1);
+
+            resetStreak();
         }
 
         setShowAnswer(true);
@@ -105,10 +131,14 @@ function Quiz({ quizSettings, onFinish }) {
             setFeedback('✅ Correct!');
 
             setCorrectAnswers((prev) => prev + 1);
+
+            increaseStreak();
         } else {
             setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
 
             setWrongAnswers((prev) => prev + 1);
+
+            resetStreak();
         }
 
         setShowAnswer(true);
@@ -117,6 +147,10 @@ function Quiz({ quizSettings, onFinish }) {
     };
 
     useEffect(() => {
+        if (QUIZ_SIZE === 0) {
+            return;
+        }
+
         if (currentQuestionIndex < QUIZ_SIZE) {
             return;
         }
@@ -139,6 +173,7 @@ function Quiz({ quizSettings, onFinish }) {
             wrongAnswers,
             accuracyPercentage,
             finalMessage,
+            bestStreak,
         });
     }, [
         currentQuestionIndex,
@@ -146,6 +181,7 @@ function Quiz({ quizSettings, onFinish }) {
         correctAnswers,
         wrongAnswers,
         onFinish,
+        bestStreak,
     ]);
 
     if (QUIZ_SIZE === 0) {
@@ -167,21 +203,68 @@ function Quiz({ quizSettings, onFinish }) {
     return (
         <main className='flex min-h-screen flex-col items-center px-6 py-10'>
             <div className='flex w-full max-w-5xl flex-col gap-8'>
-                <ScoreBoard
-                    correctAnswers={correctAnswers}
-                    wrongAnswers={wrongAnswers}
-                    currentQuestionIndex={currentQuestionIndex}
-                    totalQuestions={QUIZ_SIZE}
-                />
+                <header className='rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl'>
+                    <div className='grid items-center gap-6 lg:grid-cols-[1fr_2fr_1fr]'>
+                        {/* LEFT */}
 
-                <p className='text-sm tracking-[0.2em] text-slate-500 uppercase'>
-                    Question {currentQuestionIndex + 1} / {QUIZ_SIZE}
-                </p>
+                        <button
+                            onClick={onExit}
+                            className='justify-self-start text-left transition-opacity hover:opacity-80'
+                        >
+                            <h1 className='text-3xl font-black tracking-[-0.04em] text-white'>
+                                Vocab
+                                <span className='bg-gradient-to-b from-cyan-200 via-cyan-300 to-cyan-500 bg-clip-text text-transparent'>
+                                    Glass
+                                </span>
+                            </h1>
+                        </button>
 
-                <div
-                    key={currentQuestionIndex}
-                    className='flex w-full flex-col items-center gap-6'
-                >
+                        {/* CENTER */}
+
+                        <div className='flex flex-col gap-3'>
+                            <div className='flex items-center justify-between text-sm'>
+                                <span className='mb-2 text-sm tracking-[0.2em] text-slate-500 uppercase'>
+                                    Question {currentQuestionIndex + 1} of{' '}
+                                    {QUIZ_SIZE}
+                                </span>
+
+                                <span className='mb-2 text-sm tracking-[0.2em] text-slate-500 uppercase'>
+                                    {Math.round(
+                                        (currentQuestionIndex / QUIZ_SIZE) *
+                                            100,
+                                    )}
+                                    %
+                                </span>
+                            </div>
+
+                            <div className='h-2 overflow-hidden rounded-full bg-white/[0.06]'>
+                                <div
+                                    className='h-full rounded-full bg-gradient-to-r from-cyan-300/60 to-cyan-400/30 transition-all duration-500'
+                                    style={{
+                                        width: `${
+                                            (currentQuestionIndex / QUIZ_SIZE) *
+                                            100
+                                        }%`,
+                                    }}
+                                />
+                            </div>
+                        </div>
+
+                        {/* RIGHT */}
+
+                        <div className='justify-self-end'>
+                            <div className='flex items-center gap-2'>
+                                <span className='text-lg'>🔥</span>
+
+                                <span className='text-xl font-semibold text-white'>
+                                    {currentStreak}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div className='flex w-full flex-col items-center gap-6'>
                     <QuizCard
                         wordData={currentWord}
                         showAnswer={showAnswer}
@@ -194,6 +277,7 @@ function Quiz({ quizSettings, onFinish }) {
                             setUserAnswer={setUserAnswer}
                             handleCheckAnswer={handleCheckAnswer}
                             answerSubmitted={answerSubmitted}
+                            feedback={feedback}
                         />
                     ) : (
                         <MultipleChoice
@@ -207,7 +291,7 @@ function Quiz({ quizSettings, onFinish }) {
                 </div>
 
                 <div className='flex w-full max-w-2xl gap-4 self-center'>
-                    {!answerSubmitted ? (
+                    {!answerSubmitted && (
                         <>
                             <button
                                 onClick={() => {
@@ -217,11 +301,13 @@ function Quiz({ quizSettings, onFinish }) {
 
                                     setWrongAnswers((prev) => prev + 1);
 
+                                    resetStreak();
+
                                     setShowAnswer(true);
 
                                     setAnswerSubmitted(true);
                                 }}
-                                className='flex-1 rounded-2xl border border-white/[0.08] bg-white/[0.03] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-200 hover:bg-white/[0.06]'
+                                className='flex-1 rounded-2xl border border-white/[0.08] bg-white/[0.03] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.06]'
                             >
                                 I Don't Know
                             </button>
@@ -229,55 +315,23 @@ function Quiz({ quizSettings, onFinish }) {
                             {quizSettings.mode === 'write' && (
                                 <button
                                     onClick={handleCheckAnswer}
-                                    className='flex-1 rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-200 hover:bg-white/[0.08]'
+                                    className='flex-1 rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.08]'
                                 >
                                     Check Answer
                                 </button>
                             )}
                         </>
-                    ) : (
+                    )}
+
+                    {answerSubmitted && (
                         <button
                             onClick={handleNextWord}
-                            className='w-full rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-200 hover:bg-white/[0.08]'
+                            className='w-full rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.08]'
                         >
                             Next Word →
                         </button>
                     )}
                 </div>
-
-                {feedback && quizSettings.mode === 'write' && (
-                    <div
-                        className={`w-full max-w-2xl self-center rounded-2xl border p-5 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl ${
-                            feedback.includes('✅')
-                                ? `border-emerald-400/20 bg-emerald-500/[0.08]`
-                                : `border-red-400/20 bg-red-500/[0.08]`
-                        } `}
-                    >
-                        <div className='flex items-center gap-4'>
-                            <div
-                                className={`text-2xl ${
-                                    feedback.includes('✅')
-                                        ? 'text-emerald-300'
-                                        : 'text-red-300'
-                                } `}
-                            >
-                                {feedback.includes('✅') ? '✔' : '✖'}
-                            </div>
-
-                            <div>
-                                <p className='font-semibold text-white'>
-                                    {feedback.includes('✅')
-                                        ? 'Correct Answer'
-                                        : 'Incorrect Answer'}
-                                </p>
-
-                                <p className='mt-1 text-slate-400'>
-                                    {feedback}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         </main>
     );

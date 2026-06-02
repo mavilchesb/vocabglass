@@ -1,39 +1,20 @@
+import vocabularyData from '../data/vocabulary.json';
+
 export const QUIZ_MODES = [
     {
-        value: "write",
-        label: "Write Answer",
+        value: 'multiple',
+        label: 'Multiple Choice',
     },
     {
-        value: "multiple",
-        label: "Multiple Choice",
+        value: 'write',
+        label: 'Write Answer',
     },
 ];
 
-export const QUESTION_COUNTS = [
-    10,
-    15,
-    20,
-];
+export const QUESTION_COUNTS = [10, 15, 20, 25, 30];
 
-export const DIFFICULTIES = [
-    "easy",
-    "medium",
-    "hard",
-    "mixed",
-];
-
-export const WORD_TYPES = [
-    "noun",
-    "verb",
-    "adjective",
-    "phrasal-verb",
-    "mixed",
-];
+export const DIFFICULTIES = ['easy', 'medium', 'hard'];
 
 export const CATEGORIES = [
-    "technology",
-    "business",
-    "phrasal-verbs",
-    "daily-life",
-    "mixed",
-];
+    ...new Set(vocabularyData.vocabulary.map((word) => word.category)),
+].sort();

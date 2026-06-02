@@ -1,36 +1,19 @@
-import shuffleArray from "./shuffleArray";
+import shuffleArray from './shuffleArray';
 
-function getRandomOptions(
-    currentWord,
-    vocabulary,
-) {
-
+function getRandomOptions(currentWord, vocabulary) {
     const wrongOptions = vocabulary
-        .filter(
-            word =>
-                word.id !== currentWord.id
-        )
-        .filter(
-            word =>
-                word.displayMeaning !==
-                currentWord.displayMeaning
-        );
+        .filter((word) => word.id !== currentWord.id)
+        .filter((word) => word.displayMeaning !== currentWord.displayMeaning);
 
-    const shuffledWrongOptions =
-        shuffleArray(wrongOptions);
+    const shuffledWrongOptions = shuffleArray(wrongOptions);
 
-    const selectedWrongOptions =
-        shuffledWrongOptions
-            .slice(0, 3)
-            .map(word => word.displayMeaning);
+    const selectedWrongOptions = shuffledWrongOptions
+        .slice(0, 3)
+        .map((word) => word.displayMeaning);
 
-    const options = [
-        currentWord.displayMeaning,
-        ...selectedWrongOptions,
-    ];
+    const options = [currentWord.displayMeaning, ...selectedWrongOptions];
 
     return shuffleArray(options);
-
 }
 
 export default getRandomOptions;

@@ -1,24 +1,26 @@
 @import 'tailwindcss';
 
+:root {
+    color-scheme: dark;
+}
+
 body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
     background:
         radial-gradient(
-            circle at top left,
-            rgba(0, 255, 255, 0.08),
-            transparent 35%
+            circle at 15% 15%,
+            rgba(34, 211, 238, 0.12),
+            transparent 28%
         ),
         radial-gradient(
-            circle at bottom right,
-            rgba(139, 92, 246, 0.1),
-            transparent 35%
+            circle at 85% 80%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%
         ),
-        #030712;
-
-    min-height: 100vh;
-
-    color: white;
-
-    overflow-x: hidden;
+        linear-gradient(180deg, #030712 0%, #050816 40%, #020617 100%);
+    background-attachment: fixed;
 }
 
 #root {
@@ -30,58 +32,35 @@ body {
 body::before,
 body::after {
     content: '';
-
     position: fixed;
-
-    width: 420px;
-    height: 420px;
-
     border-radius: 9999px;
-
-    filter: blur(120px);
-
-    opacity: 0.18;
-
-    z-index: -1;
-
     pointer-events: none;
+    z-index: -1;
+    filter: blur(140px);
+    width: 500px;
+    height: 500px;
 }
 
 body::before {
-    top: -120px;
-    left: -120px;
-
-    background: #06b6d4;
+    width: 500px;
+    height: 500px;
+    top: -180px;
+    left: -180px;
+    background: rgba(34, 211, 238, 0.22);
+    filter: blur(140px);
+    opacity: 0.22;
 }
 
 body::after {
-    bottom: -120px;
-    right: -120px;
-
-    background: #8b5cf6;
-}
-
-body {
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(56, 189, 248, 0.1),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at bottom right,
-            rgba(139, 92, 246, 0.08),
-            transparent 35%
-        ),
-        #050816;
-
-    background-attachment: fixed;
-
-    min-height: 100vh;
-
-    color: white;
+    width: 550px;
+    height: 550px;
+    bottom: -220px;
+    right: -220px;
+    background: rgba(139, 92, 246, 0.18);
+    filter: blur(160px);
+    opacity: 0.22;
 }
 
 ::selection {
-    background: rgba(56, 189, 248, 0.25);
+    background: rgba(34, 211, 238, 0.25);
 }

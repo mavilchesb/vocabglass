@@ -3,104 +3,75 @@ function Results({
     wrongAnswers,
     accuracyPercentage,
     finalMessage,
+    bestStreak,
     onRestart,
 }) {
-
     return (
+        <main className='flex min-h-screen items-center justify-center px-6'>
+            <div className='w-full max-w-4xl rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.30)] backdrop-blur-2xl'>
+                <p className='text-xs tracking-[0.35em] text-cyan-300/70 uppercase'>
+                    Quiz Complete
+                </p>
 
-        <main
-            className="
-        min-h-screen
-        flex
-        items-center
-        justify-center
-        px-6
-      "
-        >
-
-            <div
-                className="
-          w-full
-          max-w-2xl
-          backdrop-blur-lg
-          bg-white/10
-          border border-white/20
-          rounded-3xl
-          p-10
-          shadow-2xl
-          text-center
-        "
-            >
-
-                <h1 className="text-5xl font-bold text-sky-400 mb-6">
-                    Quiz Finished 🎉
+                <h1 className='mt-6 text-8xl font-black tracking-tight text-white'>
+                    {accuracyPercentage}%
                 </h1>
 
-                <p className="text-slate-300 text-xl mb-10">
+                <h2 className='mt-6 text-3xl font-bold text-white'>
+                    {accuracyPercentage >= 90
+                        ? 'Outstanding 🔥'
+                        : accuracyPercentage >= 75
+                          ? 'Great Job 👏'
+                          : accuracyPercentage >= 50
+                            ? 'Nice Work 💪'
+                            : 'Keep Practicing 🚀'}
+                </h2>
+
+                <p className='mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-400'>
                     {finalMessage}
                 </p>
 
-                <div className="grid grid-cols-3 gap-6 mb-10">
+                <div className='mt-12 rounded-3xl px-10 py-8'>
+                    <div className='grid grid-cols-3 gap-8'>
+                        <div>
+                            <p className='text-4xl font-bold text-white'>
+                                🔥 {bestStreak}
+                            </p>
 
-                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-2xl p-6">
+                            <p className='mt-2 text-xs tracking-[0.2em] text-slate-500 uppercase'>
+                                Best Streak
+                            </p>
+                        </div>
 
-                        <p className="text-slate-300 mb-2">
-                            Correct
-                        </p>
+                        <div>
+                            <p className='text-4xl font-bold text-white'>
+                                ✅ {correctAnswers}
+                            </p>
 
-                        <h2 className="text-4xl font-bold text-emerald-400">
-                            {correctAnswers}
-                        </h2>
+                            <p className='mt-2 text-xs tracking-[0.2em] text-slate-500 uppercase'>
+                                Correct
+                            </p>
+                        </div>
 
+                        <div>
+                            <p className='text-4xl font-bold text-white'>
+                                ❌ {wrongAnswers}
+                            </p>
+
+                            <p className='mt-2 text-xs tracking-[0.2em] text-slate-500 uppercase'>
+                                Wrong
+                            </p>
+                        </div>
                     </div>
-
-                    <div className="bg-red-500/20 border border-red-400/30 rounded-2xl p-6">
-
-                        <p className="text-slate-300 mb-2">
-                            Wrong
-                        </p>
-
-                        <h2 className="text-4xl font-bold text-red-400">
-                            {wrongAnswers}
-                        </h2>
-
-                    </div>
-
-                    <div className="bg-sky-500/20 border border-sky-400/30 rounded-2xl p-6">
-
-                        <p className="text-slate-300 mb-2">
-                            Accuracy
-                        </p>
-
-                        <h2 className="text-4xl font-bold text-sky-400">
-                            {accuracyPercentage}%
-                        </h2>
-
-                    </div>
-
                 </div>
 
                 <button
                     onClick={onRestart}
-                    className="
-            bg-sky-500
-            hover:bg-sky-400
-            transition-all
-            duration-300
-            px-8
-            py-4
-            rounded-2xl
-            text-white
-            font-bold
-            shadow-xl
-            text-lg
-          "
+                    className='mt-12 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:bg-cyan-400/20'
                 >
-                    Restart Quiz
+                    Play Again →
                 </button>
-
             </div>
-
         </main>
     );
 }
