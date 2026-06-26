@@ -12,6 +12,7 @@ function DatasetAudit({ onBack }) {
     );
 
     const [filter, setFilter] = useState('all');
+    const [categoryFilter, setCategoryFilter] = useState('all');
     const [search, setSearch] = useState('');
 
     const issues = useMemo(() => {
@@ -21,16 +22,14 @@ function DatasetAudit({ onBack }) {
     const filteredIssues = useMemo(() => {
         let result = issues;
 
-        if (filter === 'critical') {
-            result = result.filter((issue) => issue.severity === 'critical');
+        if (filter !== 'all') {
+            result = result.filter((issue) => issue.severity === filter);
         }
 
-        if (filter === 'warning') {
-            result = result.filter((issue) => issue.severity === 'warning');
-        }
-
-        if (filter === 'info') {
-            result = result.filter((issue) => issue.severity === 'info');
+        if (categoryFilter !== 'all') {
+            result = result.filter(
+                (issue) => issue.category === categoryFilter,
+            );
         }
 
         if (search.trim()) {
@@ -40,7 +39,7 @@ function DatasetAudit({ onBack }) {
         }
 
         return result;
-    }, [issues, filter, search]);
+    }, [issues, filter, categoryFilter, search]);
 
     const healthScore = Math.max(
         0,
@@ -55,10 +54,10 @@ function DatasetAudit({ onBack }) {
     return (
         <main className='flex min-h-screen items-center justify-center px-6 py-10'>
             <div className='w-full max-w-6xl'>
-                <div className='mb-8 flex items-center justify-between'>
+                <div className='relative mb-8 flex items-center justify-center'>
                     <button
                         onClick={onBack}
-                        className='text-sm tracking-[0.15em] text-slate-500 uppercase hover:text-white'
+                        className='absolute left-0 text-sm tracking-[0.15em] text-slate-500 uppercase transition-colors hover:text-white'
                     >
                         ← Back
                     </button>
@@ -97,32 +96,39 @@ function DatasetAudit({ onBack }) {
                 </div>
 
                 <div className='mb-8 rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-xl'>
-                    <h2 className='mb-6 text-2xl font-bold text-white'>
-                        📊 Dataset Insights
+                    <h2 className='relative mb-6 flex items-center justify-center text-2xl font-bold text-white'>
+                        ⚙️ Dataset Insights
                     </h2>
 
-                    <div className='mt-8 grid grid-cols-1 gap-8 border-t border-white/[0.08] pt-8 md:grid-cols-2'>
-                        <div>
-                            <p className='mb-2 text-lg text-cyan-300'>
-                                Longest Example
-                            </p>
-                            <p className='text-slate-300'>
-                                {insights.longestExample}
-                            </p>
-                        </div>
-                        <div>
-                            <p className='mb-2 text-lg text-cyan-300'>
-                                Shortest Example
-                            </p>
-                            <p className='text-slate-300'>
-                                {insights.shortestExample}
-                            </p>
+                    <div className='border-t border-white/[0.08] pt-5'>
+                        <h3 className='mb-6 text-lg font-medium text-cyan-300'>
+                            📝 Examples Summary
+                        </h3>
+
+                        <div className='flex flex-wrap items-center gap-3'>
+                            <div className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 backdrop-blur-xl'>
+                                <p className='text-slate-300'>
+                                    <span className='mr-1.5 font-semibold text-white'>
+                                        Shortest:
+                                    </span>
+                                    {insights.shortestExample}
+                                </p>
+                            </div>
+
+                            <div className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 backdrop-blur-xl'>
+                                <p className='text-slate-300'>
+                                    <span className='mr-1.5 font-semibold text-white'>
+                                        Longest:
+                                    </span>
+                                    {insights.longestExample}
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-lg text-cyan-300'>
-                            Coverage Analysis
+                    <div className='mt-6 border-t border-white/[0.08] pt-5'>
+                        <h3 className='mb-6 text-lg font-medium text-cyan-300'>
+                            📊 Coverage Analysis
                         </h3>
 
                         <div className='space-y-3 lg:grid lg:grid-cols-4 lg:gap-4 lg:space-y-0'>
@@ -148,7 +154,7 @@ function DatasetAudit({ onBack }) {
                                                 ? 'border-red-500/20 bg-red-500/[0.06]'
                                                 : statusColor === 'yellow'
                                                   ? 'border-yellow-500/20 bg-yellow-500/[0.06]'
-                                                  : 'border-green-500/20 bg-green-500/[0.04]'
+                                                  : 'border-green-600/20 bg-green-600/[0.04]'
                                         }`}
                                     >
                                         <div className='mb-4 flex items-center justify-between'>
@@ -184,11 +190,11 @@ function DatasetAudit({ onBack }) {
                                                         100,
                                                     );
 
-                                                    let barColor = 'bg-red-500';
+                                                    let barColor = 'bg-red-800';
 
                                                     if (percentage >= 80) {
                                                         barColor =
-                                                            'bg-green-500';
+                                                            'bg-green-600';
                                                     } else if (
                                                         percentage >= 45
                                                     ) {
@@ -229,25 +235,28 @@ function DatasetAudit({ onBack }) {
                         </div>
                     </div>
 
-                    <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-lg text-cyan-300'>
+                    <div className='mt-7 border-t border-white/[0.08] pt-5'>
+                        <h3 className='mb-6 text-lg font-medium text-cyan-300'>
                             🔤 Word Type Coverage
                         </h3>
 
                         <div className='space-y-3 lg:grid lg:grid-cols-4 lg:gap-4 lg:space-y-0'>
                             {insights.wordTypeCoverageAnalysis.map((item) => {
-                                let barColor = 'bg-red-500';
+                                let barColor = 'bg-red-800';
 
                                 if (item.percentage >= 80) {
-                                    barColor = 'bg-green-500';
+                                    barColor = 'bg-green-600';
                                 } else if (item.percentage >= 45) {
                                     barColor = 'bg-yellow-400';
                                 }
 
                                 return (
-                                    <div key={item.type} className='space-y-1'>
+                                    <div
+                                        key={item.type}
+                                        className='space-y-2 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5'
+                                    >
                                         <div className='flex justify-between text-sm'>
-                                            <span className='text-slate-300 capitalize'>
+                                            <span className='font-semibold text-white capitalize'>
                                                 {item.type}
                                             </span>
                                             <span className='text-white'>
@@ -268,12 +277,12 @@ function DatasetAudit({ onBack }) {
                         </div>
                     </div>
 
-                    <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-lg text-cyan-300'>
+                    <div className='mt-7 border-t border-white/[0.08] pt-5'>
+                        <h3 className='mb-6 text-lg font-medium text-cyan-300'>
                             📚 Pedagogical Insights
                         </h3>
 
-                        <div className='space-y-3 lg:grid lg:grid-cols-3 lg:gap-4 lg:space-y-0'>
+                        <div className='flex flex-wrap gap-3 space-y-3'>
                             {insights.pedagogicalInsights.map(
                                 (insight, index) => (
                                     <div
@@ -295,8 +304,8 @@ function DatasetAudit({ onBack }) {
                         </div>
                     </div>
 
-                    <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-lg text-cyan-300'>
+                    <div className='mt-7 border-t border-white/[0.08] pt-5'>
+                        <h3 className='mb-6 text-lg font-medium text-cyan-300'>
                             🎭 False Friends
                         </h3>
 
@@ -335,121 +344,186 @@ function DatasetAudit({ onBack }) {
                     </div>
                 </div>
 
-                <div className='mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
-                    <div className='flex gap-3'>
-                        {['all', 'critical', 'warning', 'info'].map((f) => (
+                <div className='mb-8 flex flex-col gap-4'>
+                    <div className='flex flex-wrap items-center gap-3'>
+                        <span className='text-xs tracking-[0.15em] text-slate-500 uppercase'>
+                            Severity
+                        </span>
+                        {[
+                            {
+                                key: 'all',
+                                label: 'All',
+                                active: 'bg-cyan-400/20 text-cyan-300',
+                            },
+                            {
+                                key: 'critical',
+                                label: 'Critical',
+                                active: 'bg-red-500/20 text-red-300',
+                            },
+                            {
+                                key: 'warning',
+                                label: 'Warning',
+                                active: 'bg-yellow-500/20 text-yellow-300',
+                            },
+                            {
+                                key: 'info',
+                                label: 'Info',
+                                active: 'bg-cyan-500/20 text-cyan-300',
+                            },
+                        ].map(({ key, label, active }) => (
                             <button
-                                key={f}
-                                onClick={() => setFilter(f)}
-                                className={`rounded-xl px-4 py-2 capitalize ${
-                                    filter === f
-                                        ? f === 'critical'
-                                            ? 'bg-red-500/20 text-red-300'
-                                            : f === 'warning'
-                                              ? 'bg-yellow-500/20 text-yellow-300'
-                                              : f === 'info'
-                                                ? 'bg-cyan-500/20 text-cyan-300'
-                                                : 'bg-cyan-400/20 text-cyan-300'
-                                        : 'bg-white/[0.03] text-slate-400'
-                                }`}
+                                key={key}
+                                onClick={() => setFilter(key)}
+                                className={`rounded-xl px-4 py-2 ${filter === key ? active : 'bg-white/[0.03] text-slate-400'}`}
                             >
-                                {f}
+                                {label}
                             </button>
                         ))}
                     </div>
 
-                    <input
-                        type='text'
-                        placeholder='Search word...'
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className='rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-white outline-none'
-                    />
-                </div>
-
-                <p className='mb-6 text-sm text-slate-500'>
-                    Showing {filteredIssues.length} issue(s)
-                </p>
-
-                <section className='rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-xl'>
-                    <h2 className='mb-6 text-xl font-bold text-white'>
-                        Issues Found
-                    </h2>
-
-                    {audit.errors.length === 0 &&
-                        audit.warnings.length === 0 && (
-                            <p className='text-emerald-400'>
-                                ✅ No issues found.
-                            </p>
-                        )}
-
-                    <div className='space-y-3'>
-                        {filteredIssues.map((issue, index) => (
-                            <div
-                                key={index}
-                                className={`rounded-2xl border p-5 ${
-                                    issue.severity === 'critical'
-                                        ? 'border-red-400/20 bg-red-500/[0.06]'
-                                        : issue.severity === 'warning'
-                                          ? 'border-yellow-400/20 bg-yellow-500/[0.06]'
-                                          : 'border-cyan-400/20 bg-cyan-500/[0.06]'
+                    <div className='flex flex-wrap items-center gap-3'>
+                        <span className='text-xs tracking-[0.15em] text-slate-500 uppercase'>
+                            Category
+                        </span>
+                        {[
+                            'all',
+                            'academic',
+                            'everyday-english',
+                            'business',
+                            'technology',
+                            'travel',
+                            'slang',
+                            'animal',
+                        ].map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setCategoryFilter(cat)}
+                                className={`rounded-xl px-4 py-2 capitalize ${
+                                    categoryFilter === cat
+                                        ? 'bg-violet-500/20 text-violet-300'
+                                        : 'bg-white/[0.03] text-slate-400'
                                 }`}
                             >
-                                <h3
-                                    className={`mb-4 text-lg font-bold ${
-                                        issue.severity === 'critical'
-                                            ? 'text-red-300'
-                                            : issue.severity === 'warning'
-                                              ? 'text-yellow-300'
-                                              : 'text-cyan-300'
-                                    }`}
-                                >
-                                    {issue.severity === 'critical'
-                                        ? '❌'
-                                        : issue.severity === 'warning'
-                                          ? '⚠'
-                                          : 'ℹ'}{' '}
-                                    {issue.word}
-                                </h3>
-
-                                <div className='grid gap-3 md:grid-cols-2'>
-                                    <div>
-                                        <p className='text-xs text-slate-500 uppercase'>
-                                            Field
-                                        </p>
-                                        <p className='text-white'>
-                                            {issue.field}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className='text-xs text-slate-500 uppercase'>
-                                            Current
-                                        </p>
-                                        <p className='text-white'>
-                                            {issue.currentValue}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className='text-xs text-slate-500 uppercase'>
-                                            Suggested
-                                        </p>
-                                        <p className='text-cyan-300'>
-                                            {issue.suggestedValue}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className='text-xs text-slate-500 uppercase'>
-                                            Reason
-                                        </p>
-                                        <p className='text-slate-300'>
-                                            {issue.reason}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                                {cat}
+                            </button>
                         ))}
                     </div>
-                </section>
+
+                    <div className='flex items-center justify-between'>
+                        <p className='text-sm text-slate-500'>
+                            Showing {filteredIssues.length} issue(s)
+                        </p>
+                        <input
+                            type='text'
+                            placeholder='Search word...'
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className='rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-white outline-none'
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <h2 className='mb-6 pl-1 text-xl font-bold text-white'>
+                        Issues Found
+                    </h2>
+                    {issues.length === 0 ? (
+                        <div className='rounded-[22px] border border-emerald-500/20 bg-emerald-500/[0.06] p-6'>
+                            <p className='text-emerald-300'>
+                                ✅ Dataset is clean. No issues detected.
+                            </p>
+                        </div>
+                    ) : filteredIssues.length === 0 ? (
+                        <div className='rounded-[22px] border border-white/[0.08] bg-white/[0.03] p-6'>
+                            <p className='text-slate-400'>
+                                No issues match the current filters.
+                            </p>
+                        </div>
+                    ) : (
+                        <div className='grid grid-cols-1 gap-4 xl:grid-cols-2'>
+                            {filteredIssues.map((issue, index) => (
+                                <div
+                                    key={index}
+                                    className={`rounded-[22px] border p-6 backdrop-blur-xl transition-all ${
+                                        issue.severity === 'critical'
+                                            ? 'border-red-400/20 bg-red-500/[0.04]'
+                                            : issue.severity === 'warning'
+                                              ? 'border-yellow-400/20 bg-yellow-500/[0.04]'
+                                              : 'border-cyan-400/20 bg-cyan-500/[0.04]'
+                                    }`}
+                                >
+                                    <div className='mb-5 flex items-center justify-between border-b border-white/[0.06] pb-3'>
+                                        <h3
+                                            className={`flex items-center text-lg font-bold ${
+                                                issue.severity === 'critical'
+                                                    ? 'text-red-300'
+                                                    : issue.severity ===
+                                                        'warning'
+                                                      ? 'text-yellow-300'
+                                                      : 'text-cyan-300'
+                                            }`}
+                                        >
+                                            <span className='mr-2'>
+                                                {issue.severity === 'critical'
+                                                    ? '❌'
+                                                    : issue.severity ===
+                                                        'warning'
+                                                      ? '⚠️'
+                                                      : 'ℹ️'}
+                                            </span>
+                                            {issue.word}
+                                        </h3>
+                                        <span className='rounded border border-white/[0.04] bg-white/[0.02] px-2 py-0.5 font-mono text-xs text-slate-500'>
+                                            ID #{issue.id}
+                                        </span>
+                                    </div>
+
+                                    <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+                                        <div className='space-y-4'>
+                                            <div>
+                                                <span className='mb-1 block text-[10px] font-bold tracking-[0.15em] text-slate-500 uppercase'>
+                                                    Field
+                                                </span>
+                                                <p className='text-sm font-medium text-slate-300'>
+                                                    {issue.field}
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span className='mb-1 block text-[10px] font-bold tracking-[0.15em] text-slate-500 uppercase'>
+                                                    Suggested Fix
+                                                </span>
+                                                <p className='text-sm font-semibold text-cyan-300'>
+                                                    {issue.suggestedValue}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className='space-y-4 md:border-l md:border-white/[0.08] md:pl-6'>
+                                            <div>
+                                                <span className='mb-1 block text-[10px] font-bold tracking-[0.15em] text-slate-500 uppercase'>
+                                                    Current Value
+                                                </span>
+
+                                                <p className='text-sm font-semibold text-white'>
+                                                    {issue.currentValue}
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span className='mb-1 block text-[10px] font-bold tracking-[0.15em] text-slate-500 uppercase'>
+                                                    Reason
+                                                </span>
+
+                                                <p className='text-sm leading-relaxed text-slate-400 italic'>
+                                                    "{issue.reason}"
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
         </main>
     );
@@ -457,7 +531,7 @@ function DatasetAudit({ onBack }) {
 
 function Card({ title, value, color }) {
     return (
-        <div className='rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 backdrop-blur-xl'>
+        <div className='flex flex-col items-center rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 text-center backdrop-blur-xl'>
             <p className='text-xs tracking-[0.2em] text-slate-500 uppercase'>
                 {title}
             </p>

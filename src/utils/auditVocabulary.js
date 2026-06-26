@@ -266,6 +266,74 @@ const DIFFICULTY_DICTIONARY = {
     ],
 };
 
+const SEMANTIC_ANTONYMS = [
+    ['save', 'spend'],
+    ['win', 'lose'],
+    ['succeed', 'fail'],
+    ['start', 'stop'],
+    ['open', 'close'],
+    ['remember', 'forget'],
+    ['love', 'hate'],
+    ['buy', 'sell'],
+    ['give', 'take'],
+    ['increase', 'decrease'],
+    ['improve', 'worsen'],
+    ['accept', 'reject'],
+    ['arrive', 'leave'],
+    ['agree', 'disagree'],
+    ['add', 'remove'],
+    ['create', 'destroy'],
+    ['happy', 'sad'],
+    ['rich', 'poor'],
+    ['strong', 'weak'],
+    ['clean', 'dirty'],
+    ['safe', 'dangerous'],
+    ['fast', 'slow'],
+    ['early', 'late'],
+    ['hard', 'easy'],
+    ['include', 'exclude'],
+    ['praise', 'criticize'],
+    ['push', 'pull'],
+    ['raise', 'lower'],
+    ['trust', 'doubt'],
+    ['allow', 'forbid'],
+];
+
+const WORDTYPE_DICTIONARY = {
+    // Adverbs incorrectly marked as noun
+    also: 'adverb',
+    anyway: 'adverb',
+    anymore: 'adverb',
+    else: 'adverb',
+    briefly: 'adverb',
+
+    // Prepositions incorrectly marked as noun
+    among: 'preposition',
+    after: 'preposition',
+    before: 'preposition',
+    against: 'preposition',
+
+    // Adjectives incorrectly marked as noun
+    angriest: 'adjective',
+    bald: 'adjective',
+    brave: 'adjective',
+    entire: 'adjective',
+    both: 'adjective',
+
+    // Verbs incorrectly marked as noun
+    cannot: 'verb',
+    could: 'verb',
+    delete: 'verb',
+    ensure: 'verb',
+    draw: 'verb',
+    blow: 'verb',
+    drop: 'verb',
+    creep: 'verb',
+
+    // Nouns incorrectly marked as other types
+    dragonfly: 'noun',
+};
+
 export default function auditVocabulary(vocabulary) {
     const errors = [];
     const warnings = [];
@@ -275,6 +343,10 @@ export default function auditVocabulary(vocabulary) {
     const seenWords = new Map();
 
     vocabulary.forEach((item) => {
+        const prevErrors = errors.length;
+        const prevWarnings = warnings.length;
+        const prevInfos = infos.length;
+
         // Duplicate ID
         if (seenIds.has(item.id)) {
             errors.push({
@@ -422,7 +494,7 @@ export default function auditVocabulary(vocabulary) {
                 suggestedValue: 'Add example sentence',
                 reason: 'Word has no example.',
             });
-        } else if (wordCount <= 2) {
+        } else if (wordCount <= 4) {
             warnings.push({
                 severity: 'warning',
                 word: item.word,
@@ -533,6 +605,67 @@ export default function auditVocabulary(vocabulary) {
                 reason: 'Advanced word marked as easy.',
             });
         }
+
+        // Semantic Consistency
+        const meaningText = item.displayMeaning?.toLowerCase() || '';
+        const exampleLower = item.example?.toLowerCase() || '';
+
+        SEMANTIC_ANTONYMS.forEach(([wordA, wordB]) => {
+            const meaningHasA = meaningText.includes(wordA);
+            const meaningHasB = meaningText.includes(wordB);
+            const exampleHasA = exampleLower.includes(wordA);
+            const exampleHasB = exampleLower.includes(wordB);
+
+            if (meaningHasA && exampleHasB) {
+                warnings.push({
+                    severity: 'warning',
+                    word: item.word,
+                    field: 'example',
+                    currentValue: item.example,
+                    suggestedValue: 'Review manually',
+                    reason: `Semantic conflict: meaning contains "${wordA}" but example contains "${wordB}".`,
+                });
+            }
+
+            if (meaningHasB && exampleHasA) {
+                warnings.push({
+                    severity: 'warning',
+                    word: item.word,
+                    field: 'example',
+                    currentValue: item.example,
+                    suggestedValue: 'Review manually',
+                    reason: `Semantic conflict: meaning contains "${wordB}" but example contains "${wordA}".`,
+                });
+            }
+        });
+
+        // WordType Dictionary Validation
+        const expectedType = WORDTYPE_DICTIONARY[normalizedWord];
+
+        if (expectedType && item.wordType !== expectedType) {
+            warnings.push({
+                severity: 'warning',
+                word: item.word,
+                field: 'wordType',
+                currentValue: item.wordType,
+                suggestedValue: expectedType,
+                reason: `"${item.word}" should be ${expectedType}, not ${item.wordType}.`,
+            });
+        }
+
+        // Tag all new issues with word id and category
+        errors.slice(prevErrors).forEach((e) => {
+            e.id = item.id;
+            e.category = item.category;
+        });
+        warnings.slice(prevWarnings).forEach((w) => {
+            w.id = item.id;
+            w.category = item.category;
+        });
+        infos.slice(prevInfos).forEach((i) => {
+            i.id = item.id;
+            i.category = item.category;
+        });
     });
 
     return {
