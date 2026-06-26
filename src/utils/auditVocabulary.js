@@ -332,6 +332,76 @@ const WORDTYPE_DICTIONARY = {
 
     // Nouns incorrectly marked as other types
     dragonfly: 'noun',
+    firefly: 'noun',
+    jellyfish: 'noun',
+
+    // Adverbs incorrectly marked as noun
+    even: 'adverb',
+    instead: 'adverb',
+
+    // Adjectives incorrectly marked as noun or adverb
+    glad: 'adjective',
+    holy: 'adjective',
+    homeless: 'adjective',
+    insane: 'adjective',
+
+    // Verbs incorrectly marked as noun
+    felt: 'verb',
+    fit: 'verb',
+    hurt: 'verb',
+
+    // Prepositions incorrectly marked as noun
+    into: 'preposition',
+
+    // Expressions incorrectly marked as noun
+    aint: 'expression',
+    gotta: 'expression',
+
+    // Verbs incorrectly marked as noun
+    leave: 'verb',
+    make: 'verb',
+    match: 'verb',
+    outsource: 'verb',
+    postpone: 'verb',
+    provide: 'verb',
+    release: 'verb',
+    save: 'verb',
+    show: 'verb',
+    spent: 'verb',
+    stand: 'verb',
+    streamline: 'verb',
+    submit: 'verb',
+    summon: 'verb',
+    surround: 'verb',
+    throw: 'verb',
+    told: 'verb',
+    wonder: 'verb',
+
+    // Adjectives incorrectly marked as noun
+    loud: 'adjective',
+    overwhelming: 'adjective',
+    redundant: 'adjective',
+    remaining: 'adjective',
+    risky: 'adjective',
+    rude: 'adjective',
+    safe: 'adjective',
+    salty: 'adjective',
+    same: 'adjective',
+    straightforward: 'adjective',
+    subsequent: 'adjective',
+    such: 'adjective',
+    wealthy: 'adjective',
+    'well-known': 'adjective',
+
+    // Adverbs incorrectly marked as noun
+    regardless: 'adverb',
+    still: 'adverb',
+
+    // Prepositions incorrectly marked as noun
+    towards: 'preposition',
+
+    // Verb incorrectly marked as adjective
+    want: 'verb',
 };
 
 export default function auditVocabulary(vocabulary) {
