@@ -1,16 +1,17 @@
+import { useMemo, useState } from 'react';
 import vocabularyData from '../data/vocabulary.json';
 import auditVocabulary from '../utils/auditVocabulary';
-import { useMemo, useState } from 'react';
 import getDatasetInsights from '../utils/getDatasetInsights';
-import { useEffect } from 'react';
 
 function DatasetAudit({ onBack }) {
-    const audit = auditVocabulary(vocabularyData.vocabulary);
+    const audit = useMemo(() => auditVocabulary(vocabularyData.vocabulary), []);
 
-    const insights = getDatasetInsights(vocabularyData.vocabulary);
+    const insights = useMemo(
+        () => getDatasetInsights(vocabularyData.vocabulary),
+        [],
+    );
 
     const [filter, setFilter] = useState('all');
-
     const [search, setSearch] = useState('');
 
     const issues = useMemo(() => {
@@ -40,10 +41,6 @@ function DatasetAudit({ onBack }) {
 
         return result;
     }, [issues, filter, search]);
-
-    useEffect(() => {
-        console.log(filteredIssues);
-    }, [filteredIssues]);
 
     const healthScore = Math.max(
         0,
@@ -77,25 +74,21 @@ function DatasetAudit({ onBack }) {
                         value={`${healthScore}%`}
                         color='text-cyan-300'
                     />
-
                     <Card
                         title='Words'
                         value={audit.totalWords}
                         color='text-white'
                     />
-
                     <Card
                         title='Errors'
                         value={audit.errors.length}
                         color='text-red-400'
                     />
-
                     <Card
                         title='Warnings'
                         value={audit.warnings.length}
                         color='text-yellow-400'
                     />
-
                     <Card
                         title='Infos'
                         value={audit.infos?.length || 0}
@@ -108,79 +101,17 @@ function DatasetAudit({ onBack }) {
                         📊 Dataset Insights
                     </h2>
 
-                    <div className='grid gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4'>
-                        <div>
-                            <h3 className='mb-3 text-cyan-300'>Categories</h3>
-
-                            {Object.entries(insights.categoryCount).map(
-                                ([name, count]) => (
-                                    <p key={name} className='text-slate-300'>
-                                        <span className='font-medium text-white'>
-                                            {name}:
-                                        </span>{' '}
-                                        {count}
-                                    </p>
-                                ),
-                            )}
-                        </div>
-
-                        <div>
-                            <h3 className='mb-3 text-cyan-300'>Difficulty</h3>
-
-                            {Object.entries(insights.difficultyCount).map(
-                                ([name, count]) => (
-                                    <p key={name} className='text-slate-300'>
-                                        <span className='font-medium text-white'>
-                                            {name}:
-                                        </span>{' '}
-                                        {count}
-                                    </p>
-                                ),
-                            )}
-                        </div>
-
-                        <div className='mt-4'>
-                            <h4 className='mb-2 text-cyan-300'>
-                                CEFR Distribution
-                            </h4>
-
-                            <div className='space-y-1 text-sm'>
-                                <p>Easy: {insights.easyPercentage}%</p>
-
-                                <p>Medium: {insights.mediumPercentage}%</p>
-
-                                <p>Hard: {insights.hardPercentage}%</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 className='mb-3 text-cyan-300'>Word Types</h3>
-
-                            {Object.entries(insights.wordTypeCount).map(
-                                ([name, count]) => (
-                                    <p key={name} className='text-slate-300'>
-                                        <span className='font-medium text-white'>
-                                            {name}:
-                                        </span>{' '}
-                                        {count}
-                                    </p>
-                                ),
-                            )}
-                        </div>
-                    </div>
-
                     <div className='mt-8 grid grid-cols-1 gap-8 border-t border-white/[0.08] pt-8 md:grid-cols-2'>
                         <div>
-                            <p className='mb-2 text-cyan-300'>
+                            <p className='mb-2 text-lg text-cyan-300'>
                                 Longest Example
                             </p>
                             <p className='text-slate-300'>
                                 {insights.longestExample}
                             </p>
                         </div>
-
                         <div>
-                            <p className='mb-2 text-cyan-300'>
+                            <p className='mb-2 text-lg text-cyan-300'>
                                 Shortest Example
                             </p>
                             <p className='text-slate-300'>
@@ -190,11 +121,11 @@ function DatasetAudit({ onBack }) {
                     </div>
 
                     <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-cyan-300'>
+                        <h3 className='mb-6 text-lg text-cyan-300'>
                             Coverage Analysis
                         </h3>
 
-                        <div className='space-y-3 lg:grid lg:grid-cols-3 lg:gap-4 lg:space-y-0'>
+                        <div className='space-y-3 lg:grid lg:grid-cols-4 lg:gap-4 lg:space-y-0'>
                             {insights.coverageAnalysis.map((item) => {
                                 const difficultyStats =
                                     insights.categoryDifficultyMatrix[
@@ -217,15 +148,14 @@ function DatasetAudit({ onBack }) {
                                                 ? 'border-red-500/20 bg-red-500/[0.06]'
                                                 : statusColor === 'yellow'
                                                   ? 'border-yellow-500/20 bg-yellow-500/[0.06]'
-                                                  : 'border-emerald-500/20 bg-emerald-500/[0.04]'
+                                                  : 'border-green-500/20 bg-green-500/[0.04]'
                                         }`}
                                     >
                                         <div className='mb-4 flex items-center justify-between'>
                                             <h4 className='font-semibold text-white capitalize'>
                                                 {item.category}
                                             </h4>
-
-                                            <p className='font-semibold text-slate-400 text-white'>
+                                            <p className='font-semibold text-slate-400'>
                                                 {item.count} words
                                             </p>
                                         </div>
@@ -258,7 +188,7 @@ function DatasetAudit({ onBack }) {
 
                                                     if (percentage >= 80) {
                                                         barColor =
-                                                            'bg-emerald-500';
+                                                            'bg-green-500';
                                                     } else if (
                                                         percentage >= 45
                                                     ) {
@@ -275,13 +205,11 @@ function DatasetAudit({ onBack }) {
                                                                 <span className='text-slate-300'>
                                                                     {label}
                                                                 </span>
-
                                                                 <span className='text-white'>
                                                                     {value} /{' '}
                                                                     {target}
                                                                 </span>
                                                             </div>
-
                                                             <div className='h-2 overflow-hidden rounded-full bg-white/10'>
                                                                 <div
                                                                     className={`h-full rounded-full transition-all ${barColor}`}
@@ -302,7 +230,46 @@ function DatasetAudit({ onBack }) {
                     </div>
 
                     <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-cyan-300'>
+                        <h3 className='mb-6 text-lg text-cyan-300'>
+                            🔤 Word Type Coverage
+                        </h3>
+
+                        <div className='space-y-3 lg:grid lg:grid-cols-4 lg:gap-4 lg:space-y-0'>
+                            {insights.wordTypeCoverageAnalysis.map((item) => {
+                                let barColor = 'bg-red-500';
+
+                                if (item.percentage >= 80) {
+                                    barColor = 'bg-green-500';
+                                } else if (item.percentage >= 45) {
+                                    barColor = 'bg-yellow-400';
+                                }
+
+                                return (
+                                    <div key={item.type} className='space-y-1'>
+                                        <div className='flex justify-between text-sm'>
+                                            <span className='text-slate-300 capitalize'>
+                                                {item.type}
+                                            </span>
+                                            <span className='text-white'>
+                                                {item.count} / {item.target}
+                                            </span>
+                                        </div>
+                                        <div className='h-2 overflow-hidden rounded-full bg-white/10'>
+                                            <div
+                                                className={`h-full rounded-full transition-all ${barColor}`}
+                                                style={{
+                                                    width: `${item.percentage}%`,
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    <div className='mt-8 border-t border-white/[0.08] pt-8'>
+                        <h3 className='mb-6 text-lg text-cyan-300'>
                             📚 Pedagogical Insights
                         </h3>
 
@@ -329,7 +296,9 @@ function DatasetAudit({ onBack }) {
                     </div>
 
                     <div className='mt-8 border-t border-white/[0.08] pt-8'>
-                        <h3 className='mb-6 text-cyan-300'>🎭 False Friends</h3>
+                        <h3 className='mb-6 text-lg text-cyan-300'>
+                            🎭 False Friends
+                        </h3>
 
                         <div className='space-y-3'>
                             {insights.falseFriendsFound.length === 0 ? (
@@ -349,12 +318,10 @@ function DatasetAudit({ onBack }) {
                                                 <p className='font-semibold text-red-300'>
                                                     {item.word}
                                                 </p>
-
                                                 <p className='mt-2 text-sm text-slate-300'>
                                                     Expected:{' '}
                                                     {item.expectedMeaning}
                                                 </p>
-
                                                 <p className='text-sm text-slate-400'>
                                                     Dataset:{' '}
                                                     {item.currentMeaning}
@@ -370,49 +337,25 @@ function DatasetAudit({ onBack }) {
 
                 <div className='mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
                     <div className='flex gap-3'>
-                        <button
-                            onClick={() => setFilter('all')}
-                            className={`rounded-xl px-4 py-2 ${
-                                filter === 'all'
-                                    ? 'bg-cyan-400/20 text-cyan-300'
-                                    : 'bg-white/[0.03] text-slate-400'
-                            }`}
-                        >
-                            All
-                        </button>
-
-                        <button
-                            onClick={() => setFilter('critical')}
-                            className={`rounded-xl px-4 py-2 ${
-                                filter === 'critical'
-                                    ? 'bg-red-500/20 text-red-300'
-                                    : 'bg-white/[0.03] text-slate-400'
-                            }`}
-                        >
-                            Critical
-                        </button>
-
-                        <button
-                            onClick={() => setFilter('warning')}
-                            className={`rounded-xl px-4 py-2 ${
-                                filter === 'warning'
-                                    ? 'bg-yellow-500/20 text-yellow-300'
-                                    : 'bg-white/[0.03] text-slate-400'
-                            }`}
-                        >
-                            Warnings
-                        </button>
-
-                        <button
-                            onClick={() => setFilter('info')}
-                            className={`rounded-xl px-4 py-2 ${
-                                filter === 'info'
-                                    ? 'bg-cyan-500/20 text-cyan-300'
-                                    : 'bg-white/[0.03] text-slate-400'
-                            }`}
-                        >
-                            Info
-                        </button>
+                        {['all', 'critical', 'warning', 'info'].map((f) => (
+                            <button
+                                key={f}
+                                onClick={() => setFilter(f)}
+                                className={`rounded-xl px-4 py-2 capitalize ${
+                                    filter === f
+                                        ? f === 'critical'
+                                            ? 'bg-red-500/20 text-red-300'
+                                            : f === 'warning'
+                                              ? 'bg-yellow-500/20 text-yellow-300'
+                                              : f === 'info'
+                                                ? 'bg-cyan-500/20 text-cyan-300'
+                                                : 'bg-cyan-400/20 text-cyan-300'
+                                        : 'bg-white/[0.03] text-slate-400'
+                                }`}
+                            >
+                                {f}
+                            </button>
+                        ))}
                     </div>
 
                     <input
@@ -474,37 +417,30 @@ function DatasetAudit({ onBack }) {
                                         <p className='text-xs text-slate-500 uppercase'>
                                             Field
                                         </p>
-
                                         <p className='text-white'>
                                             {issue.field}
                                         </p>
                                     </div>
-
                                     <div>
                                         <p className='text-xs text-slate-500 uppercase'>
                                             Current
                                         </p>
-
                                         <p className='text-white'>
                                             {issue.currentValue}
                                         </p>
                                     </div>
-
                                     <div>
                                         <p className='text-xs text-slate-500 uppercase'>
                                             Suggested
                                         </p>
-
                                         <p className='text-cyan-300'>
                                             {issue.suggestedValue}
                                         </p>
                                     </div>
-
                                     <div>
                                         <p className='text-xs text-slate-500 uppercase'>
                                             Reason
                                         </p>
-
                                         <p className='text-slate-300'>
                                             {issue.reason}
                                         </p>
@@ -525,7 +461,6 @@ function Card({ title, value, color }) {
             <p className='text-xs tracking-[0.2em] text-slate-500 uppercase'>
                 {title}
             </p>
-
             <p className={`mt-3 text-4xl font-black ${color}`}>{value}</p>
         </div>
     );

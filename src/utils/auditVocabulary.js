@@ -1,159 +1,299 @@
+const VALID_CATEGORIES = [
+    'academic',
+    'everyday-english',
+    'animal',
+    'business',
+    'technology',
+    'travel',
+    'slang',
+];
+
+const VALID_WORD_TYPES = [
+    'noun',
+    'verb',
+    'adjective',
+    'adverb',
+    'phrasal-verb',
+    'expression',
+    'preposition',
+];
+
+const VALID_DIFFICULTIES = ['easy', 'medium', 'hard'];
+
+const CATEGORY_KEYWORDS = {
+    technology: [
+        'software',
+        'computer',
+        'server',
+        'database',
+        'algorithm',
+        'application',
+        'app',
+        'internet',
+        'system',
+        'digital',
+    ],
+    business: [
+        'company',
+        'client',
+        'contract',
+        'meeting',
+        'employee',
+        'manager',
+        'revenue',
+        'sales',
+        'project',
+        'office',
+    ],
+    travel: [
+        'airport',
+        'flight',
+        'hotel',
+        'passport',
+        'tourist',
+        'trip',
+        'journey',
+        'vacation',
+        'ticket',
+        'luggage',
+    ],
+    animal: [
+        'dog',
+        'cat',
+        'bird',
+        'lion',
+        'tiger',
+        'animal',
+        'pet',
+        'wildlife',
+    ],
+};
+
+const CATEGORY_WORDS = {
+    technology: [
+        'server',
+        'software',
+        'hardware',
+        'algorithm',
+        'database',
+        'app',
+        'application',
+        'network',
+        'programming',
+        'developer',
+    ],
+    business: [
+        'revenue',
+        'contract',
+        'stakeholder',
+        'client',
+        'meeting',
+        'budget',
+        'invoice',
+        'manager',
+        'employee',
+        'startup',
+    ],
+    travel: [
+        'airport',
+        'passport',
+        'luggage',
+        'flight',
+        'tourist',
+        'destination',
+        'hotel',
+        'itinerary',
+        'journey',
+        'vacation',
+    ],
+    animal: [
+        'dog',
+        'cat',
+        'lion',
+        'tiger',
+        'elephant',
+        'bear',
+        'wolf',
+        'rabbit',
+        'bird',
+        'fish',
+    ],
+};
+
+const REGISTER_DICTIONARY = {
+    // Informal — incompatible con academic y business
+    gonna: 'informal',
+    wanna: 'informal',
+    gotta: 'informal',
+    kinda: 'informal',
+    sorta: 'informal',
+    nope: 'informal',
+    yep: 'informal',
+    yeah: 'informal',
+    chill: 'informal',
+    dude: 'informal',
+    stuff: 'informal',
+    awesome: 'informal',
+    bucks: 'informal',
+    crash: 'informal',
+    freak: 'informal',
+    brag: 'informal',
+    dump: 'informal',
+    snob: 'informal',
+    lousy: 'informal',
+    nuts: 'informal',
+
+    // Slang — incompatible con academic y business
+    lit: 'slang',
+    slay: 'slang',
+    vibe: 'slang',
+    flex: 'slang',
+    ghosting: 'slang',
+    ghost: 'slang',
+    lowkey: 'slang',
+    highkey: 'slang',
+    salty: 'slang',
+    savage: 'slang',
+    extra: 'slang',
+    basic: 'slang',
+    sus: 'slang',
+    cap: 'slang',
+    woke: 'slang',
+    hyped: 'slang',
+    stan: 'slang',
+    finsta: 'slang',
+    tea: 'slang',
+    shade: 'slang',
+
+    // Formal — incompatible con slang
+    commence: 'formal',
+    endeavour: 'formal',
+    endeavor: 'formal',
+    henceforth: 'formal',
+    whereby: 'formal',
+    thereof: 'formal',
+    notwithstanding: 'formal',
+    hitherto: 'formal',
+    forthwith: 'formal',
+    albeit: 'formal',
+    peruse: 'formal',
+    ascertain: 'formal',
+    cognizant: 'formal',
+    expedite: 'formal',
+    pursuant: 'formal',
+    remuneration: 'formal',
+    acquiesce: 'formal',
+    substantiate: 'formal',
+};
+
+const REGISTER_CONFLICTS = {
+    informal: ['academic', 'business'],
+    slang: ['academic', 'business'],
+    formal: ['slang'],
+};
+
+const DIFFICULTY_DICTIONARY = {
+    // Palabras que nunca deberían ser hard
+    easy: [
+        'book',
+        'cat',
+        'dog',
+        'run',
+        'eat',
+        'big',
+        'small',
+        'good',
+        'bad',
+        'day',
+        'night',
+        'house',
+        'car',
+        'food',
+        'water',
+        'time',
+        'year',
+        'work',
+        'play',
+        'help',
+        'open',
+        'close',
+        'start',
+        'stop',
+        'come',
+        'go',
+        'see',
+        'say',
+        'get',
+        'make',
+        'know',
+        'think',
+        'take',
+        'give',
+    ],
+
+    // Palabras que nunca deberían ser easy
+    hard: [
+        'ephemeral',
+        'ubiquitous',
+        'esoteric',
+        'perfidious',
+        'loquacious',
+        'sycophant',
+        'obfuscate',
+        'recalcitrant',
+        'perspicacious',
+        'mellifluous',
+        'pusillanimous',
+        'magnanimous',
+        'equivocate',
+        'superfluous',
+        'nefarious',
+        'truculent',
+        'obstreperous',
+        'garrulous',
+        'laconic',
+        'insidious',
+        'pernicious',
+        'mendacious',
+        'querulous',
+        'sanguine',
+        'mercurial',
+        'vicarious',
+        'egregious',
+        'acrimonious',
+        'perfunctory',
+        'tendentious',
+    ],
+};
+
 export default function auditVocabulary(vocabulary) {
     const errors = [];
     const warnings = [];
     const infos = [];
 
-    const VALID_CATEGORIES = [
-        'academic',
-        'everyday-english',
-        'animal',
-        'business',
-        'technology',
-        'travel',
-        'slang',
-    ];
-
-    const VALID_WORD_TYPES = [
-        'noun',
-        'verb',
-        'adjective',
-        'adverb',
-        'phrasal-verb',
-        'expression',
-        'preposition',
-    ];
-
-    const VALID_DIFFICULTIES = ['easy', 'medium', 'hard'];
-
-    const CATEGORY_KEYWORDS = {
-        technology: [
-            'software',
-            'computer',
-            'server',
-            'database',
-            'algorithm',
-            'application',
-            'app',
-            'internet',
-            'system',
-            'digital',
-        ],
-
-        business: [
-            'company',
-            'client',
-            'contract',
-            'meeting',
-            'employee',
-            'manager',
-            'revenue',
-            'sales',
-            'project',
-            'office',
-        ],
-
-        travel: [
-            'airport',
-            'flight',
-            'hotel',
-            'passport',
-            'tourist',
-            'trip',
-            'journey',
-            'vacation',
-            'ticket',
-            'luggage',
-        ],
-
-        animal: [
-            'dog',
-            'cat',
-            'bird',
-            'lion',
-            'tiger',
-            'animal',
-            'pet',
-            'wildlife',
-        ],
-    };
-
-    const CATEGORY_WORDS = {
-        technology: [
-            'server',
-            'software',
-            'hardware',
-            'algorithm',
-            'database',
-            'app',
-            'application',
-            'network',
-            'programming',
-            'developer',
-        ],
-
-        business: [
-            'revenue',
-            'contract',
-            'stakeholder',
-            'client',
-            'meeting',
-            'budget',
-            'invoice',
-            'manager',
-            'employee',
-            'startup',
-        ],
-
-        travel: [
-            'airport',
-            'passport',
-            'luggage',
-            'flight',
-            'tourist',
-            'destination',
-            'hotel',
-            'itinerary',
-            'journey',
-            'vacation',
-        ],
-
-        animal: [
-            'dog',
-            'cat',
-            'lion',
-            'tiger',
-            'elephant',
-            'bear',
-            'wolf',
-            'rabbit',
-            'bird',
-            'fish',
-        ],
-    };
-
-    const ids = new Set();
-    const words = new Map();
+    const seenIds = new Set();
+    const seenWords = new Map();
 
     vocabulary.forEach((item) => {
         // Duplicate ID
-        if (ids.has(item.id)) {
+        if (seenIds.has(item.id)) {
             errors.push({
                 severity: 'critical',
                 word: item.word,
-                field: 'category',
-                currentValue: item.category || '(empty)',
-                suggestedValue: 'everyday-english',
-                reason: 'Category is required.',
+                field: 'id',
+                currentValue: item.id,
+                suggestedValue: 'Assign a unique ID',
+                reason: 'Duplicate ID detected in dataset.',
             });
         }
 
-        ids.add(item.id);
+        seenIds.add(item.id);
 
         // Duplicate word
         const normalizedWord = item.word?.trim().toLowerCase();
 
-        if (words.has(normalizedWord)) {
-            const existingMeaning = words.get(normalizedWord);
+        if (seenWords.has(normalizedWord)) {
+            const existingMeaning = seenWords.get(normalizedWord);
 
             if (existingMeaning === item.displayMeaning) {
                 warnings.push({
@@ -175,7 +315,7 @@ export default function auditVocabulary(vocabulary) {
                 });
             }
         } else {
-            words.set(normalizedWord, item.displayMeaning);
+            seenWords.set(normalizedWord, item.displayMeaning);
         }
 
         // Category
@@ -223,19 +363,15 @@ export default function auditVocabulary(vocabulary) {
             });
         }
 
-        // Example
-        if (!item.example?.trim()) {
-            errors.push({
-                word: item.word,
-                issue: 'Missing example',
-            });
-        }
-
         // Meaning
         if (!item.displayMeaning?.trim()) {
             errors.push({
+                severity: 'critical',
                 word: item.word,
-                issue: 'Missing meaning',
+                field: 'displayMeaning',
+                currentValue: '(empty)',
+                suggestedValue: 'Add a meaning',
+                reason: 'Word has no meaning.',
             });
         }
 
@@ -259,22 +395,22 @@ export default function auditVocabulary(vocabulary) {
             item.exampleHighlight.forEach((highlight) => {
                 if (
                     !item.example
-                        .toLowerCase()
+                        ?.toLowerCase()
                         .includes(highlight.toLowerCase())
                 ) {
                     warnings.push({
                         severity: 'warning',
                         word: item.word,
-                        field: 'word',
-                        currentValue: item.word,
-                        suggestedValue: 'Remove duplicate entry',
-                        reason: 'Duplicate word detected in dataset.',
+                        field: 'exampleHighlight',
+                        currentValue: highlight,
+                        suggestedValue: 'Review manually',
+                        reason: 'Highlight not found in example sentence.',
                     });
                 }
             });
         }
 
-        // Example Quality Validation
+        // Example quality
         const wordCount = item.example?.trim().split(/\s+/).length || 0;
 
         if (!item.example?.trim()) {
@@ -286,9 +422,7 @@ export default function auditVocabulary(vocabulary) {
                 suggestedValue: 'Add example sentence',
                 reason: 'Word has no example.',
             });
-        }
-
-        if (wordCount > 0 && wordCount <= 2) {
+        } else if (wordCount <= 2) {
             warnings.push({
                 severity: 'warning',
                 word: item.word,
@@ -297,9 +431,7 @@ export default function auditVocabulary(vocabulary) {
                 suggestedValue: '3+ words',
                 reason: 'Example is too short.',
             });
-        }
-
-        if (wordCount > 15) {
+        } else if (wordCount > 15) {
             warnings.push({
                 severity: 'warning',
                 word: item.word,
@@ -310,7 +442,7 @@ export default function auditVocabulary(vocabulary) {
             });
         }
 
-        // Category-Example Consistency Check
+        // Category-Example consistency
         const exampleText = item.example?.toLowerCase() || '';
 
         Object.entries(CATEGORY_KEYWORDS).forEach(
@@ -332,22 +464,75 @@ export default function auditVocabulary(vocabulary) {
             },
         );
 
-        // Category-Word Consistency Check
-        Object.entries(CATEGORY_WORDS).forEach(([expectedCategory, words]) => {
-            if (
-                words.includes(item.word?.trim().toLowerCase()) &&
-                item.category !== expectedCategory
-            ) {
+        // Category-Word consistency
+        Object.entries(CATEGORY_WORDS).forEach(
+            ([expectedCategory, categoryWords]) => {
+                if (
+                    categoryWords.includes(item.word?.trim().toLowerCase()) &&
+                    item.category !== expectedCategory
+                ) {
+                    warnings.push({
+                        severity: 'warning',
+                        word: item.word,
+                        field: 'category',
+                        currentValue: item.category,
+                        suggestedValue: expectedCategory,
+                        reason: 'Word strongly suggests another category.',
+                    });
+                }
+            },
+        );
+
+        // Register Detection
+        const wordRegister = REGISTER_DICTIONARY[normalizedWord];
+
+        if (wordRegister) {
+            const conflictingCategories =
+                REGISTER_CONFLICTS[wordRegister] || [];
+
+            if (conflictingCategories.includes(item.category)) {
                 warnings.push({
                     severity: 'warning',
                     word: item.word,
                     field: 'category',
                     currentValue: item.category,
-                    suggestedValue: expectedCategory,
-                    reason: 'Word strongly suggests another category.',
+                    suggestedValue:
+                        wordRegister === 'formal'
+                            ? 'academic or business'
+                            : 'slang or everyday-english',
+                    reason: `Word has ${wordRegister} register, inconsistent with "${item.category}" category.`,
                 });
             }
-        });
+        }
+
+        // Difficulty Consistency
+        if (
+            DIFFICULTY_DICTIONARY.easy.includes(normalizedWord) &&
+            item.difficulty === 'hard'
+        ) {
+            warnings.push({
+                severity: 'warning',
+                word: item.word,
+                field: 'difficulty',
+                currentValue: 'hard',
+                suggestedValue: 'easy',
+                reason: 'Very common word marked as hard.',
+            });
+        }
+
+        if (
+            DIFFICULTY_DICTIONARY.hard.includes(normalizedWord) &&
+            item.difficulty === 'easy'
+        ) {
+            warnings.push({
+                severity: 'warning',
+                word: item.word,
+                field: 'difficulty',
+                currentValue: 'easy',
+                suggestedValue: 'hard',
+                reason: 'Advanced word marked as easy.',
+            });
+        }
     });
 
     return {
