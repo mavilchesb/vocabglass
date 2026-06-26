@@ -21,7 +21,7 @@ function MultipleChoice({
                                 option === selectedOption &&
                                 option !== correctAnswer
                               ? `border-rose-300/[0.25] bg-rose-400/[0.08] text-rose-50`
-                              : `border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/20 hover:bg-white/[0.05]`
+                              : `border-white/[0.08] bg-white/[0.03] hover:-translate-y-1 hover:border-white/[0.15] hover:bg-white/[0.05]`
                     } `}
                 >
                     {capitalizeText(option)}

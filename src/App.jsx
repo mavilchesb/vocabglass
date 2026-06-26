@@ -5,6 +5,8 @@ import Quiz from './pages/Quiz';
 import Results from './pages/Results';
 import { CATEGORIES } from './constants/quizOptions';
 
+import DatasetAudit from './pages/DatasetAudit';
+
 function App() {
     const [screen, setScreen] = useState('home');
 
@@ -24,6 +26,7 @@ function App() {
                     quizSettings={quizSettings}
                     setQuizSettings={setQuizSettings}
                     onStart={() => setScreen('quiz')}
+                    onAudit={() => setScreen('audit')}
                 />
             )}
 
@@ -48,10 +51,17 @@ function App() {
                     bestStreak={resultsData.bestStreak}
                     onRestart={() => {
                         setResultsData(null);
-
+                        setScreen('home');
+                    }}
+                    onHome={() => {
+                        setResultsData(null);
                         setScreen('home');
                     }}
                 />
+            )}
+
+            {screen === 'audit' && (
+                <DatasetAudit onBack={() => setScreen('home')} />
             )}
         </>
     );

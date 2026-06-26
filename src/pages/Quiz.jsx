@@ -13,6 +13,8 @@ import shuffleArray from '../utils/shuffleArray';
 import MultipleChoice from '../components/MultipleChoice';
 import getRandomOptions from '../utils/getRandomOptions';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 function Quiz({ quizSettings, onFinish, onExit }) {
     const vocabulary = vocabularyData.vocabulary;
 
@@ -56,6 +58,10 @@ function Quiz({ quizSettings, onFinish, onExit }) {
 
     const [bestStreak, setBestStreak] = useState(0);
 
+    const [showStreakPopup, setShowStreakPopup] = useState(false);
+
+    const [streakMessage, setStreakMessage] = useState('');
+
     const increaseStreak = () => {
         const newStreak = currentStreak + 1;
 
@@ -64,10 +70,32 @@ function Quiz({ quizSettings, onFinish, onExit }) {
         if (newStreak > bestStreak) {
             setBestStreak(newStreak);
         }
+
+        triggerStreakPopup(newStreak);
     };
 
     const resetStreak = () => {
         setCurrentStreak(0);
+    };
+
+    const triggerStreakPopup = (streak) => {
+        if (streak === 5) {
+            setStreakMessage('STREAK x5');
+        } else if (streak === 10) {
+            setStreakMessage('STREAK x10');
+        } else if (streak === 15) {
+            setStreakMessage('STREAK x15');
+        } else if (streak === 20) {
+            setStreakMessage('UNSTOPPABLE');
+        } else {
+            return;
+        }
+
+        setShowStreakPopup(true);
+
+        setTimeout(() => {
+            setShowStreakPopup(false);
+        }, 2200);
     };
 
     const handleNextWord = () => {
@@ -202,6 +230,48 @@ function Quiz({ quizSettings, onFinish, onExit }) {
 
     return (
         <main className='flex min-h-screen flex-col items-center px-6 py-10'>
+            <AnimatePresence>
+                {showStreakPopup && (
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            y: -30,
+                            scale: 0.85,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            scale: [1, 1.08, 1],
+                        }}
+                        exit={{
+                            opacity: 0,
+                            y: -20,
+                            scale: 0.95,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                        }}
+                        className='fixed top-24 left-1/2 z-50 -translate-x-1/2'
+                    >
+                        <div className='relative'>
+                            <div className='absolute inset-0 rounded-[28px] bg-cyan-400/15 blur-3xl' />
+
+                            <div className='relative rounded-[28px] border border-cyan-400/15 bg-white/[0.04] px-10 py-7 shadow-[0_20px_80px_rgba(0,211,243,0.15)] backdrop-blur-2xl'>
+                                <p className='mb-2 text-center text-5xl'>🔥</p>
+
+                                <p className='text-center text-xs tracking-[0.35em] text-cyan-300 uppercase'>
+                                    On Fire
+                                </p>
+
+                                <p className='mt-2 text-center text-3xl font-black text-white'>
+                                    {streakMessage}
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <div className='flex w-full max-w-5xl flex-col gap-8'>
                 <header className='rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl'>
                     <div className='grid items-center gap-6 lg:grid-cols-[1fr_2fr_1fr]'>
@@ -324,12 +394,23 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                     )}
 
                     {answerSubmitted && (
-                        <button
+                        <motion.button
+                            initial={{
+                                opacity: 0,
+                                scale: 0.98,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                            }}
+                            transition={{
+                                duration: 0.2,
+                            }}
                             onClick={handleNextWord}
                             className='w-full rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.08]'
                         >
                             Next Word →
-                        </button>
+                        </motion.button>
                     )}
                 </div>
             </div>
