@@ -52,7 +52,6 @@ function App() {
                     correctAnswers={resultsData.correctAnswers}
                     wrongAnswers={resultsData.wrongAnswers}
                     accuracyPercentage={resultsData.accuracyPercentage}
-                    finalMessage={resultsData.finalMessage}
                     bestStreak={resultsData.bestStreak}
                     onRestart={handleGoHome}
                     onHome={handleGoHome}

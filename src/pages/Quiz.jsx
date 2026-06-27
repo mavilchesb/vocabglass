@@ -194,20 +194,10 @@ function Quiz({ quizSettings, onFinish, onExit }) {
             (correctAnswers / QUIZ_SIZE) * 100,
         );
 
-        const finalMessage =
-            accuracyPercentage >= 90
-                ? '🔥 Outstanding work! Your English skills are getting really strong.'
-                : accuracyPercentage >= 75
-                  ? "👏 Great job! You're progressing very well. Keep going!"
-                  : accuracyPercentage >= 50
-                    ? '💪 Nice effort! Practice consistently and your accuracy will improve quickly.'
-                    : "🚀 Every expert starts somewhere. Keep practicing — you're building real progress.";
-
         onFinish({
             correctAnswers,
             wrongAnswers,
             accuracyPercentage,
-            finalMessage,
             bestStreak,
         });
     }, [
