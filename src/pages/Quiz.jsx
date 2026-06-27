@@ -19,7 +19,6 @@ function Quiz({ quizSettings, onFinish, onExit }) {
     const vocabulary = vocabularyData.vocabulary;
 
     const quizWords = useMemo(() => {
-        console.log(quizSettings);
         const filteredWords = filterWords(vocabulary, quizSettings);
 
         return shuffleArray(filteredWords).slice(0, quizSettings.questionCount);
@@ -171,6 +170,14 @@ function Quiz({ quizSettings, onFinish, onExit }) {
 
         setShowAnswer(true);
 
+        setAnswerSubmitted(true);
+    };
+
+    const handleSkip = () => {
+        setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
+        setWrongAnswers((prev) => prev + 1);
+        resetStreak();
+        setShowAnswer(true);
         setAnswerSubmitted(true);
     };
 
@@ -364,19 +371,7 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                     {!answerSubmitted && (
                         <>
                             <button
-                                onClick={() => {
-                                    setFeedback(
-                                        `❌ Correct answer: ${currentWord.displayMeaning}`,
-                                    );
-
-                                    setWrongAnswers((prev) => prev + 1);
-
-                                    resetStreak();
-
-                                    setShowAnswer(true);
-
-                                    setAnswerSubmitted(true);
-                                }}
+                                onClick={handleSkip}
                                 className='flex-1 rounded-2xl border border-white/[0.08] bg-white/[0.03] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.06]'
                             >
                                 I Don't Know

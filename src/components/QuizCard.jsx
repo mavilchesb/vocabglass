@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import capitalizeText from '../utils/capitalizeText';
+import { useMemo } from 'react';
 
 function QuizCard({ wordData, showAnswer, quizMode }) {
-    const renderHighlightedExample = () => {
+    const highlightedExample = useMemo(() => {
         let highlightedText = wordData.example;
 
         wordData.exampleHighlight.forEach((highlight) => {
@@ -21,7 +22,7 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
         });
 
         return highlightedText;
-    };
+    }, [wordData.example, wordData.exampleHighlight]);
 
     return (
         <motion.div
@@ -54,9 +55,7 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
             <div className='mb-10 text-center'>
                 <p
                     className='text-lg leading-relaxed text-slate-400'
-                    dangerouslySetInnerHTML={{
-                        __html: renderHighlightedExample(),
-                    }}
+                    dangerouslySetInnerHTML={{ __html: highlightedExample }}
                 />
             </div>
 

@@ -10,12 +10,7 @@ function QuizSettings({ quizSettings, setQuizSettings }) {
         });
     };
 
-    const labelStyle = `
-        text-xs
-        uppercase
-        tracking-[0.18em]
-        text-cyan-300/70
-    `;
+    const labelStyle = 'text-xs uppercase tracking-[0.18em] text-cyan-300/70';
 
     const sortedCategories = CATEGORIES.filter(
         (category) => category !== 'mixed',
