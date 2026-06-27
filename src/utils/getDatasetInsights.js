@@ -207,6 +207,26 @@ function getDatasetInsights(vocabulary) {
         })
         .sort((a, b) => a.percentage - b.percentage);
 
+    const openingMap = {};
+
+    vocabulary.forEach((item) => {
+        if (!item.example?.trim()) return;
+
+        const opening = item.example
+            .trim()
+            .toLowerCase()
+            .split(/\s+/)
+            .slice(0, 3)
+            .join(' ');
+
+        openingMap[opening] = (openingMap[opening] || 0) + 1;
+    });
+
+    const exampleVariety = Object.entries(openingMap)
+        .filter(([, count]) => count >= 5)
+        .map(([opening, count]) => ({ opening, count }))
+        .sort((a, b) => b.count - a.count);
+
     return {
         categoryCount,
         difficultyCount,
@@ -221,6 +241,7 @@ function getDatasetInsights(vocabulary) {
         hardPercentage,
         falseFriendsFound,
         wordTypeCoverageAnalysis,
+        exampleVariety,
     };
 }
 

@@ -709,6 +709,38 @@ export default function auditVocabulary(vocabulary) {
             }
         });
 
+        // Long meaning / accepted answers
+        const meaningWordCount =
+            item.displayMeaning?.trim().split(/\s+/).length || 0;
+
+        if (meaningWordCount > 4) {
+            warnings.push({
+                severity: 'warning',
+                word: item.word,
+                field: 'displayMeaning',
+                currentValue: item.displayMeaning,
+                suggestedValue: 'Shorten to 4 words or less',
+                reason: `Meaning is ${meaningWordCount} words long. Too long for a typing quiz.`,
+            });
+        }
+
+        if (Array.isArray(item.acceptedAnswers)) {
+            item.acceptedAnswers.forEach((answer) => {
+                const answerWordCount = answer.trim().split(/\s+/).length;
+
+                if (answerWordCount > 4) {
+                    warnings.push({
+                        severity: 'warning',
+                        word: item.word,
+                        field: 'acceptedAnswers',
+                        currentValue: answer,
+                        suggestedValue: 'Shorten to 4 words or less',
+                        reason: `Answer "${answer}" is ${answerWordCount} words long. Too long for a typing quiz.`,
+                    });
+                }
+            });
+        }
+
         // WordType Dictionary Validation
         const expectedType = WORDTYPE_DICTIONARY[normalizedWord];
 
@@ -736,6 +768,21 @@ export default function auditVocabulary(vocabulary) {
             i.id = item.id;
             i.category = item.category;
         });
+
+        // Split phrasal verb highlight
+        if (
+            Array.isArray(item.exampleHighlight) &&
+            item.exampleHighlight.length > 1
+        ) {
+            warnings.push({
+                severity: 'warning',
+                word: item.word,
+                field: 'exampleHighlight',
+                currentValue: item.exampleHighlight.join(', '),
+                suggestedValue: `"${item.exampleHighlight.join(' ')}"`,
+                reason: 'Highlight is split into multiple strings. Rewrite the example so the phrasal verb appears together.',
+            });
+        }
     });
 
     return {

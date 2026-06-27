@@ -97,7 +97,6 @@ function DatasetAudit({ onBack }) {
                         value={audit.warnings.length}
                         color='text-yellow-400'
                     />
-                    {/* Envolvemos la quinta tarjeta para que ocupe las 2 columnas en móvil y no deje un hueco vacío */}
                     <div className='col-span-2 sm:col-span-1'>
                         <Card
                             title='Infos'
@@ -301,38 +300,81 @@ function DatasetAudit({ onBack }) {
                     </CollapsibleSection>
 
                     <CollapsibleSection title='🎭 False Friends'>
-                        <div className='space-y-3'>
-                            {insights.falseFriendsFound.length === 0 ? (
-                                <div className='rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4'>
-                                    <p className='text-emerald-300'>
-                                        ✓ No false friend issues detected.
-                                    </p>
+                        {insights.falseFriendsFound.length === 0 ? (
+                            <div className='w-fit rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4'>
+                                <p className='text-emerald-300'>
+                                    ✓ No false friend issues detected.
+                                </p>
+                            </div>
+                        ) : (
+                            <div className='flex flex-wrap gap-3'>
+                                {insights.falseFriendsFound.map(
+                                    (item, index) => (
+                                        <div
+                                            key={index}
+                                            className='rounded-xl border border-red-500/20 bg-red-500/[0.06] p-4'
+                                        >
+                                            <p className='font-semibold text-red-300'>
+                                                {item.word}
+                                            </p>
+                                            <p className='mt-2 text-sm text-slate-300'>
+                                                Expected: {item.expectedMeaning}
+                                            </p>
+                                            <p className='text-sm text-slate-400'>
+                                                Dataset: {item.currentMeaning}
+                                            </p>
+                                        </div>
+                                    ),
+                                )}
+                            </div>
+                        )}
+                    </CollapsibleSection>
+
+                    <CollapsibleSection title='🔁 Example Variety'>
+                        {insights.exampleVariety.length === 0 ? (
+                            <div className='w-fit rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4'>
+                                <p className='text-emerald-300'>
+                                    ✓ No repetitive opening patterns detected.
+                                </p>
+                            </div>
+                        ) : (
+                            <div className='space-y-4'>
+                                <p className='text-sm text-slate-500'>
+                                    Openings repeated 5+ times across examples.
+                                </p>
+
+                                <div className='flex flex-wrap items-center gap-3'>
+                                    {insights.exampleVariety.map((item) => (
+                                        <div
+                                            key={item.opening}
+                                            className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 backdrop-blur-xl'
+                                        >
+                                            <p className='text-sm text-slate-300'>
+                                                <span
+                                                    className={`mr-2 font-bold ${
+                                                        item.count >= 10
+                                                            ? 'text-red-400'
+                                                            : 'text-yellow-400'
+                                                    }`}
+                                                >
+                                                    {item.count}×
+                                                </span>
+                                                <span className='font-mono'>
+                                                    "
+                                                    {item.opening
+                                                        .charAt(0)
+                                                        .toUpperCase() +
+                                                        item.opening
+                                                            .slice(1)
+                                                            .toLowerCase()}
+                                                    ..."
+                                                </span>
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ) : (
-                                <div className='space-y-3'>
-                                    {insights.falseFriendsFound.map(
-                                        (item, index) => (
-                                            <div
-                                                key={index}
-                                                className='rounded-xl border border-red-500/20 bg-red-500/[0.06] p-4'
-                                            >
-                                                <p className='font-semibold text-red-300'>
-                                                    {item.word}
-                                                </p>
-                                                <p className='mt-2 text-sm text-slate-300'>
-                                                    Expected:{' '}
-                                                    {item.expectedMeaning}
-                                                </p>
-                                                <p className='text-sm text-slate-400'>
-                                                    Dataset:{' '}
-                                                    {item.currentMeaning}
-                                                </p>
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </CollapsibleSection>
 
                     <div className='mt-6 border-t border-white/[0.08] pt-5'>
@@ -513,8 +555,8 @@ function DatasetAudit({ onBack }) {
                                                         <span className='mb-1 block text-[10px] font-bold tracking-[0.15em] text-slate-500 uppercase'>
                                                             Reason
                                                         </span>
-                                                        <p className='text-sm leading-relaxed text-slate-400 italic'>
-                                                            "{issue.reason}"
+                                                        <p className='text-sm text-slate-400'>
+                                                            {issue.reason}
                                                         </p>
                                                     </div>
                                                 </div>
