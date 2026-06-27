@@ -19,6 +19,11 @@ function App() {
         questionCount: 20,
     });
 
+    const handleGoHome = () => {
+        setResultsData(null);
+        setScreen('home');
+    };
+
     return (
         <>
             {screen === 'home' && (
@@ -49,14 +54,8 @@ function App() {
                     accuracyPercentage={resultsData.accuracyPercentage}
                     finalMessage={resultsData.finalMessage}
                     bestStreak={resultsData.bestStreak}
-                    onRestart={() => {
-                        setResultsData(null);
-                        setScreen('home');
-                    }}
-                    onHome={() => {
-                        setResultsData(null);
-                        setScreen('home');
-                    }}
+                    onRestart={handleGoHome}
+                    onHome={handleGoHome}
                 />
             )}
 
