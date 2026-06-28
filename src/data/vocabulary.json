@@ -1480,9 +1480,14 @@
         {
             "id": 132,
             "word": "cleansing",
-            "displayMeaning": "depuración",
+            "displayMeaning": "limpieza de datos",
             "wordType": "noun",
-            "acceptedAnswers": ["depuración", "limpieza de registros"],
+            "acceptedAnswers": [
+                "limpieza de datos",
+                "limpieza de registros",
+                "depuración",
+                "limpieza"
+            ],
             "example": "Data cleansing is necessary to remove duplicate validation IDs.",
             "exampleHighlight": ["cleansing"],
             "category": "technology",

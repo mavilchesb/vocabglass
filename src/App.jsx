@@ -17,6 +17,7 @@ function App() {
         categories: CATEGORIES.filter((category) => category !== 'mixed'),
         difficulty: 'medium',
         questionCount: 20,
+        answerLanguage: 'es',
     });
 
     const handleGoHome = () => {

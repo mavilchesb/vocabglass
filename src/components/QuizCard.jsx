@@ -2,8 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import capitalizeText from '../utils/capitalizeText';
 import { useMemo } from 'react';
 
-function QuizCard({ wordData, showAnswer, quizMode }) {
+function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
     const highlightedExample = useMemo(() => {
+        if (answerLanguage === 'en') return wordData.example;
+
         let highlightedText = wordData.example;
 
         wordData.exampleHighlight.forEach((highlight) => {
@@ -11,9 +13,7 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
                 /[.*+?^${}()|[\]\\]/g,
                 '\\$&',
             );
-
             const regex = new RegExp(escapedHighlight, 'gi');
-
             highlightedText = highlightedText.replace(
                 regex,
                 (match) =>
@@ -22,7 +22,7 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
         });
 
         return highlightedText;
-    }, [wordData.example, wordData.exampleHighlight]);
+    }, [wordData.example, wordData.exampleHighlight, answerLanguage]);
 
     return (
         <motion.div
@@ -49,14 +49,22 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
             </p>
 
             <h1 className='mb-8 text-center text-5xl font-bold tracking-tight text-cyan-300'>
-                {capitalizeText(wordData.word)}
+                {answerLanguage === 'en'
+                    ? capitalizeText(wordData.displayMeaning)
+                    : capitalizeText(wordData.word)}
             </h1>
 
             <div className='mb-10 text-center'>
-                <p
-                    className='text-lg leading-relaxed text-slate-400'
-                    dangerouslySetInnerHTML={{ __html: highlightedExample }}
-                />
+                {answerLanguage === 'en' ? (
+                    <p className='text-lg text-slate-600 italic'>
+                        No example available in this mode yet.
+                    </p>
+                ) : (
+                    <p
+                        className='text-lg leading-relaxed text-slate-400'
+                        dangerouslySetInnerHTML={{ __html: highlightedExample }}
+                    />
+                )}
             </div>
 
             <AnimatePresence>
@@ -78,10 +86,14 @@ function QuizCard({ wordData, showAnswer, quizMode }) {
                         }}
                         className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 text-center'
                     >
-                        <p className='mb-1 text-sm text-slate-500'>Meaning</p>
+                        <p className='mb-1 text-sm text-slate-500'>
+                            {answerLanguage === 'en' ? 'Word' : 'Meaning'}
+                        </p>
 
                         <p className='text-2xl font-semibold text-white'>
-                            {capitalizeText(wordData.displayMeaning)}
+                            {answerLanguage === 'en'
+                                ? capitalizeText(wordData.word)
+                                : capitalizeText(wordData.displayMeaning)}
                         </p>
                     </motion.div>
                 )}

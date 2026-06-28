@@ -18,3 +18,8 @@ export const DIFFICULTIES = ['easy', 'medium', 'hard'];
 export const CATEGORIES = [
     ...new Set(vocabularyData.vocabulary.map((word) => word.category)),
 ].sort();
+
+export const ANSWER_LANGUAGES = [
+    { value: 'es', label: 'Spanish' },
+    { value: 'en', label: 'English' },
+];

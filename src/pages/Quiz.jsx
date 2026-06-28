@@ -32,12 +32,13 @@ function Quiz({ quizSettings, onFinish, onExit }) {
         quizWords[currentQuestionIndex] || quizWords[QUIZ_SIZE - 1];
 
     const multipleChoiceOptions = useMemo(() => {
-        if (!currentWord) {
-            return [];
-        }
-
-        return getRandomOptions(currentWord, vocabulary);
-    }, [currentWord, vocabulary]);
+        if (!currentWord) return [];
+        return getRandomOptions(
+            currentWord,
+            vocabulary,
+            quizSettings.answerLanguage,
+        );
+    }, [currentWord, vocabulary, quizSettings.answerLanguage]);
 
     const [userAnswer, setUserAnswer] = useState('');
 
@@ -112,69 +113,78 @@ function Quiz({ quizSettings, onFinish, onExit }) {
     };
 
     const handleCheckAnswer = () => {
-        if (answerSubmitted) {
-            return;
-        }
+        if (answerSubmitted) return;
 
         const normalizedAnswer = normalizeText(userAnswer);
 
-        const validAnswers = currentWord.acceptedAnswers.map((answer) =>
-            normalizeText(answer),
-        );
-
         if (normalizedAnswer === '') {
             setFeedback('⚠ Please enter an answer.');
-
             return;
         }
 
-        if (validAnswers.includes(normalizedAnswer)) {
-            setFeedback('✅ Correct!');
+        if (quizSettings.answerLanguage === 'en') {
+            const correctWord = normalizeText(currentWord.word);
 
-            setCorrectAnswers((prev) => prev + 1);
-
-            increaseStreak();
+            if (normalizedAnswer === correctWord) {
+                setFeedback('✅ Correct!');
+                setCorrectAnswers((prev) => prev + 1);
+                increaseStreak();
+            } else {
+                setFeedback(`❌ Correct answer: ${currentWord.word}`);
+                setWrongAnswers((prev) => prev + 1);
+                resetStreak();
+            }
         } else {
-            setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
+            const validAnswers = currentWord.acceptedAnswers.map((answer) =>
+                normalizeText(answer),
+            );
 
-            setWrongAnswers((prev) => prev + 1);
-
-            resetStreak();
+            if (validAnswers.includes(normalizedAnswer)) {
+                setFeedback('✅ Correct!');
+                setCorrectAnswers((prev) => prev + 1);
+                increaseStreak();
+            } else {
+                setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
+                setWrongAnswers((prev) => prev + 1);
+                resetStreak();
+            }
         }
 
         setShowAnswer(true);
-
         setAnswerSubmitted(true);
     };
 
-    const handleSelectOption = (selectedOption) => {
-        if (answerSubmitted) {
-            return;
-        }
+    const handleSelectOption = (option) => {
+        if (answerSubmitted) return;
 
-        setSelectedOption(selectedOption);
+        setSelectedOption(option);
 
-        if (selectedOption === currentWord.displayMeaning) {
+        const correctOption =
+            quizSettings.answerLanguage === 'en'
+                ? currentWord.word
+                : currentWord.displayMeaning;
+
+        if (option === correctOption) {
             setFeedback('✅ Correct!');
-
             setCorrectAnswers((prev) => prev + 1);
-
             increaseStreak();
         } else {
-            setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
-
+            setFeedback(`❌ Correct answer: ${correctOption}`);
             setWrongAnswers((prev) => prev + 1);
-
             resetStreak();
         }
 
         setShowAnswer(true);
-
         setAnswerSubmitted(true);
     };
 
     const handleSkip = () => {
-        setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
+        const correctOption =
+            quizSettings.answerLanguage === 'en'
+                ? currentWord.word
+                : currentWord.displayMeaning;
+
+        setFeedback(`❌ Correct answer: ${correctOption}`);
         setWrongAnswers((prev) => prev + 1);
         resetStreak();
         setShowAnswer(true);
@@ -336,6 +346,7 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                         wordData={currentWord}
                         showAnswer={showAnswer}
                         quizMode={quizSettings.mode}
+                        answerLanguage={quizSettings.answerLanguage}
                     />
 
                     {quizSettings.mode === 'write' ? (
@@ -352,7 +363,11 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                             handleSelectOption={handleSelectOption}
                             answerSubmitted={answerSubmitted}
                             selectedOption={selectedOption}
-                            correctAnswer={currentWord.displayMeaning}
+                            correctAnswer={
+                                quizSettings.answerLanguage === 'en'
+                                    ? currentWord.word
+                                    : currentWord.displayMeaning
+                            }
                         />
                     )}
                 </div>
