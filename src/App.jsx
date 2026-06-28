@@ -25,6 +25,11 @@ function App() {
         setScreen('home');
     };
 
+    const handleRestart = () => {
+        setResultsData(null);
+        setScreen('quiz');
+    };
+
     return (
         <>
             {screen === 'home' && (
@@ -54,7 +59,7 @@ function App() {
                     wrongAnswers={resultsData.wrongAnswers}
                     accuracyPercentage={resultsData.accuracyPercentage}
                     bestStreak={resultsData.bestStreak}
-                    onRestart={handleGoHome}
+                    onRestart={handleRestart}
                     onHome={handleGoHome}
                 />
             )}

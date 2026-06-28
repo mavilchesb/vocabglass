@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import capitalizeText from '../utils/capitalizeText';
 import { useMemo } from 'react';
+import { getWordProgress, isDifficult } from '../utils/progressManager';
 
 function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
     const highlightedExample = useMemo(() => {
@@ -23,6 +24,9 @@ function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
 
         return highlightedText;
     }, [wordData.example, wordData.exampleHighlight, answerLanguage]);
+
+    const wordProgress = getWordProgress(wordData.id);
+    const isWordDifficult = isDifficult(wordProgress);
 
     return (
         <motion.div
@@ -47,6 +51,14 @@ function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
             <p className='mb-5 text-center text-sm tracking-[0.2em] text-slate-500 uppercase'>
                 {wordData.category}
             </p>
+
+            {isWordDifficult && (
+                <div className='mb-4 flex justify-center'>
+                    <span className='rounded-full border border-yellow-400/20 bg-yellow-400/10 px-3 py-1 text-xs tracking-[0.15em] text-yellow-300 uppercase'>
+                        🔁 Reviewing
+                    </span>
+                </div>
+            )}
 
             <h1 className='mb-8 text-center text-5xl font-bold tracking-tight text-cyan-300'>
                 {answerLanguage === 'en'

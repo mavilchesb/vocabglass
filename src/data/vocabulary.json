@@ -6354,13 +6354,18 @@
         },
         {
             "id": 556,
-            "word": "roaming",
+            "word": "roam",
             "displayMeaning": "deambular",
-            "wordType": "noun",
-            "acceptedAnswers": ["deambular", "itinerancia"],
-            "example": "Turn off data roaming to avoid extra charges abroad.",
-            "exampleHighlight": ["roaming"],
-            "category": "travel",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "deambular",
+                "vagar",
+                "rondar",
+                "caminar sin rumbo"
+            ],
+            "example": "We loved to roam through the streets of the old city.",
+            "exampleHighlight": ["roam"],
+            "category": "everyday-english",
             "difficulty": "medium"
         },
         {

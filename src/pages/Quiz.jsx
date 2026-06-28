@@ -1,27 +1,42 @@
 import { useEffect, useMemo, useState } from 'react';
-
 import QuizCard from '../components/QuizCard';
 import AnswerInput from '../components/AnswerInput';
-
 import vocabularyData from '../data/vocabulary.json';
-
 import normalizeText from '../utils/normalizeText';
-
 import filterWords from '../utils/filterWords';
 import shuffleArray from '../utils/shuffleArray';
-
 import MultipleChoice from '../components/MultipleChoice';
 import getRandomOptions from '../utils/getRandomOptions';
-
 import { AnimatePresence, motion } from 'framer-motion';
+import {
+    getWordProgress,
+    recordResult,
+    sortByPriority,
+} from '../utils/progressManager';
 
 function Quiz({ quizSettings, onFinish, onExit }) {
     const vocabulary = vocabularyData.vocabulary;
 
     const quizWords = useMemo(() => {
         const filteredWords = filterWords(vocabulary, quizSettings);
+        const prioritized = sortByPriority(filteredWords);
 
-        return shuffleArray(filteredWords).slice(0, quizSettings.questionCount);
+        const difficult = prioritized.filter((w) => {
+            const p = getWordProgress(w.id);
+            return p.score <= -1 && p.wrong >= 3;
+        });
+
+        const rest = prioritized.filter((w) => {
+            const p = getWordProgress(w.id);
+            return !(p.score <= -1 && p.wrong >= 3);
+        });
+
+        const selected = [
+            ...shuffleArray(difficult),
+            ...shuffleArray(rest),
+        ].slice(0, quizSettings.questionCount);
+
+        return selected;
     }, [vocabulary, quizSettings]);
 
     const QUIZ_SIZE = quizWords.length;
@@ -129,10 +144,12 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                 setFeedback('✅ Correct!');
                 setCorrectAnswers((prev) => prev + 1);
                 increaseStreak();
+                recordResult(currentWord.id, true);
             } else {
                 setFeedback(`❌ Correct answer: ${currentWord.word}`);
                 setWrongAnswers((prev) => prev + 1);
                 resetStreak();
+                recordResult(currentWord.id, false);
             }
         } else {
             const validAnswers = currentWord.acceptedAnswers.map((answer) =>
@@ -143,10 +160,12 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                 setFeedback('✅ Correct!');
                 setCorrectAnswers((prev) => prev + 1);
                 increaseStreak();
+                recordResult(currentWord.id, true);
             } else {
                 setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
                 setWrongAnswers((prev) => prev + 1);
                 resetStreak();
+                recordResult(currentWord.id, false);
             }
         }
 
@@ -168,10 +187,12 @@ function Quiz({ quizSettings, onFinish, onExit }) {
             setFeedback('✅ Correct!');
             setCorrectAnswers((prev) => prev + 1);
             increaseStreak();
+            recordResult(currentWord.id, true);
         } else {
             setFeedback(`❌ Correct answer: ${correctOption}`);
             setWrongAnswers((prev) => prev + 1);
             resetStreak();
+            recordResult(currentWord.id, false);
         }
 
         setShowAnswer(true);
@@ -189,6 +210,7 @@ function Quiz({ quizSettings, onFinish, onExit }) {
         resetStreak();
         setShowAnswer(true);
         setAnswerSubmitted(true);
+        recordResult(currentWord.id, false);
     };
 
     useEffect(() => {
