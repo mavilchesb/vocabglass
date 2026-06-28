@@ -190,9 +190,9 @@
         {
             "id": 18,
             "word": "alligator",
-            "displayMeaning": "aligátor",
+            "displayMeaning": "caimán",
             "wordType": "noun",
-            "acceptedAnswers": ["aligátor", "caimán"],
+            "acceptedAnswers": ["caimán", "aligátor"],
             "example": "We saw a large alligator swimming quietly in the river.",
             "exampleHighlight": ["alligator"],
             "category": "animal",

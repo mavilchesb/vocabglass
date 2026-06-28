@@ -1,24 +1,49 @@
 import shuffleArray from './shuffleArray';
 
 function getRandomOptions(currentWord, vocabulary, answerLanguage = 'es') {
-    const wrongOptions = vocabulary
-        .filter((word) => word.id !== currentWord.id)
-        .filter((word) => word.displayMeaning !== currentWord.displayMeaning);
+    const getLabel = (word) =>
+        answerLanguage === 'en' ? word.word : word.displayMeaning;
 
-    const shuffledWrongOptions = shuffleArray(wrongOptions);
+    const correctLabel = getLabel(currentWord);
 
-    const selectedWrongOptions = shuffledWrongOptions
+    const pool = vocabulary.filter(
+        (word) =>
+            word.id !== currentWord.id &&
+            word.displayMeaning !== currentWord.displayMeaning,
+    );
+
+    const sameCategoryAndDifficulty = shuffleArray(
+        pool.filter(
+            (word) =>
+                word.category === currentWord.category &&
+                word.difficulty === currentWord.difficulty,
+        ),
+    );
+
+    const sameCategoryOnly = shuffleArray(
+        pool.filter(
+            (word) =>
+                word.category === currentWord.category &&
+                word.difficulty !== currentWord.difficulty,
+        ),
+    );
+
+    const remaining = shuffleArray(
+        pool.filter((word) => word.category !== currentWord.category),
+    );
+
+    const prioritized = [
+        ...sameCategoryAndDifficulty,
+        ...sameCategoryOnly,
+        ...remaining,
+    ];
+
+    const wrongOptions = prioritized
+        .filter((word) => getLabel(word) !== correctLabel)
         .slice(0, 3)
-        .map((word) =>
-            answerLanguage === 'en' ? word.word : word.displayMeaning,
-        );
+        .map(getLabel);
 
-    const correctOption =
-        answerLanguage === 'en' ? currentWord.word : currentWord.displayMeaning;
-
-    const options = [correctOption, ...selectedWrongOptions];
-
-    return shuffleArray(options);
+    return shuffleArray([correctLabel, ...wrongOptions]);
 }
 
 export default getRandomOptions;
