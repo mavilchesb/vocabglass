@@ -1130,7 +1130,7 @@
             "displayMeaning": "llamar por teléfono",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["llamar por teléfono", "evocar un recuerdo"],
-            "example": "I will call up the cloud service support team to check our storage subscription.",
+            "example": "She will call up the tech support team tomorrow.",
             "exampleHighlight": ["call up"],
             "category": "technology",
             "difficulty": "easy"
@@ -1141,7 +1141,7 @@
             "displayMeaning": "calmarse",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["calmarse", "tranquilizarse"],
-            "example": "Calm down, we can easily recover the lost records from the latest backup file.",
+            "example": "Take a deep breath and calm down.",
             "exampleHighlight": ["calm down"],
             "category": "technology",
             "difficulty": "easy"
@@ -1430,7 +1430,7 @@
             "displayMeaning": "vaciar",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["vaciar", "despejar", "limpiar"],
-            "example": "We need to clear out the garage this weekend.",
+            "example": "Before moving to their new house, they decided to clear out the attic.",
             "exampleHighlight": ["clear out"],
             "category": "everyday-english",
             "difficulty": "medium"
@@ -1965,7 +1965,7 @@
             "displayMeaning": "cortar algo",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["cortar algo"],
-            "example": "We had to cut off the bed's legs to get it through the door.",
+            "example": "The workers cut off the tree branches yesterday.",
             "exampleHighlight": ["cut off"],
             "category": "everyday-english",
             "difficulty": "medium"
@@ -2182,7 +2182,7 @@
             "displayMeaning": "desvío",
             "wordType": "noun",
             "acceptedAnswers": ["desvío"],
-            "example": "We had to take a detour because the main road was closed.",
+            "example": "The closed road forced us into a long detour.",
             "exampleHighlight": ["detour"],
             "category": "travel",
             "difficulty": "medium"
@@ -2795,8 +2795,8 @@
             "displayMeaning": "resolver",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["resolver", "averiguar", "entender"],
-            "example": "We need to figure out why the application is crashing.",
-            "exampleHighlight": ["figure out"],
+            "example": "They finally figured out the software bug.",
+            "exampleHighlight": ["figured out"],
             "category": "technology",
             "difficulty": "medium"
         },
@@ -2907,17 +2907,6 @@
             "exampleHighlight": ["flea"],
             "category": "animal",
             "difficulty": "medium"
-        },
-        {
-            "id": 266,
-            "word": "flex",
-            "displayMeaning": "presumir",
-            "wordType": "verb",
-            "acceptedAnswers": ["presumir", "alardear"],
-            "example": "Listing certifications on a CV is a great way to flex your skills.",
-            "exampleHighlight": ["flex"],
-            "category": "slang",
-            "difficulty": "easy"
         },
         {
             "id": 267,
@@ -3978,8 +3967,12 @@
             "word": "hold off",
             "displayMeaning": "retrasar una acción",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": ["retrasar una acción", "mantenerse alejado"],
-            "example": "Please hold off on running the pipeline script until the network stabilizes.",
+            "acceptedAnswers": [
+                "retrasar una acción",
+                "mantenerse alejado",
+                "retrasar"
+            ],
+            "example": "Investors decided to hold off on buying shares.",
             "exampleHighlight": ["hold off"],
             "category": "everyday-english",
             "difficulty": "hard"
@@ -4838,7 +4831,7 @@
             "displayMeaning": "investigar",
             "wordType": "phrasal-verb",
             "acceptedAnswers": ["investigar", "examinar un asunto"],
-            "example": "The management control analyst will look into the warehouse stock discrepancies.",
+            "example": "The manager promised to look into the issue.",
             "exampleHighlight": ["look into"],
             "category": "business",
             "difficulty": "medium"
@@ -5800,7 +5793,7 @@
             "displayMeaning": "posponer",
             "wordType": "verb",
             "acceptedAnswers": ["posponer", "aplazar"],
-            "example": "We had to postpone the implementation of the new database system.",
+            "example": "Heavy rain forced them to postpone the outdoor match.",
             "exampleHighlight": ["postpone"],
             "category": "everyday-english",
             "difficulty": "medium"
@@ -6887,7 +6880,7 @@
                 "involucrado",
                 "interesado"
             ],
-            "example": "We need to inform every stakeholder about the new project timeline.",
+            "example": "Each stakeholder received the updated project timeline.",
             "exampleHighlight": ["stakeholder"],
             "category": "business",
             "difficulty": "medium"
@@ -6897,8 +6890,8 @@
             "word": "stand",
             "displayMeaning": "estar de pie",
             "wordType": "verb",
-            "acceptedAnswers": ["estar de pie"],
-            "example": "We had to stand during the concert.",
+            "acceptedAnswers": ["estar de pie", "están de pie"],
+            "example": "Many passengers stand during the train ride.",
             "exampleHighlight": ["stand"],
             "category": "everyday-english",
             "difficulty": "medium"
@@ -9063,7 +9056,7 @@
             "displayMeaning": "aduana",
             "wordType": "noun",
             "acceptedAnswers": ["aduana", "control aduanero", "fiscalización"],
-            "example": "We had to show our passports at customs.",
+            "example": "The officers inspected our bags at customs.",
             "exampleHighlight": ["customs"],
             "category": "travel",
             "difficulty": "easy"
@@ -9631,7 +9624,7 @@
                 "actualizarse",
                 "ponerse al tanto"
             ],
-            "example": "We need to catch up after missing the last meeting.",
+            "example": "Let's meet tomorrow to catch up properly.",
             "exampleHighlight": ["catch up"],
             "category": "everyday-english",
             "difficulty": "easy"
@@ -10059,7 +10052,7 @@
             "displayMeaning": "alinear",
             "wordType": "verb",
             "acceptedAnswers": ["alinear", "coordinar", "ajustar"],
-            "example": "We need to align our goals with the company strategy.",
+            "example": "Our team goals must align with the company strategy.",
             "exampleHighlight": ["align"],
             "category": "business",
             "difficulty": "medium"
@@ -11944,6 +11937,436 @@
             "example": "She felt upset after the argument.",
             "exampleHighlight": ["upset"],
             "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1046,
+            "word": "sojourn",
+            "displayMeaning": "estancia",
+            "wordType": "noun",
+            "acceptedAnswers": ["estancia", "permanencia", "estadía"],
+            "example": "After a brief sojourn in Paris, she continued her journey to Rome.",
+            "exampleHighlight": ["sojourn"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1049,
+            "word": "wanderlust",
+            "displayMeaning": "pasión por viajar",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "pasión por viajar",
+                "espíritu viajero",
+                "ansia de viajar"
+            ],
+            "example": "His intense wanderlust prevented him from settling down in one city.",
+            "exampleHighlight": ["wanderlust"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1050,
+            "word": "red-eye",
+            "displayMeaning": "vuelo nocturno",
+            "wordType": "noun",
+            "acceptedAnswers": ["vuelo nocturno", "vuelo de madrugada"],
+            "example": "I took a red-eye flight from Los Angeles and arrived exhausted.",
+            "exampleHighlight": ["red-eye"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1051,
+            "word": "globetrotter",
+            "displayMeaning": "trotamundos",
+            "wordType": "noun",
+            "acceptedAnswers": ["trotamundos", "viajero incansable"],
+            "example": "As a seasoned globetrotter, she has visited over fifty countries.",
+            "exampleHighlight": ["globetrotter"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1052,
+            "word": "disembark",
+            "displayMeaning": "desembarcar",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "desembarcar",
+                "bajar del avión",
+                "bajar del barco"
+            ],
+            "example": "Passengers were asked to remain seated until it was safe to disembark.",
+            "exampleHighlight": ["disembark"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1053,
+            "word": "jet lag",
+            "displayMeaning": "desfase horario",
+            "wordType": "noun",
+            "acceptedAnswers": ["desfase horario", "jet lag"],
+            "example": "It took me three days to recover from the severe jet lag.",
+            "exampleHighlight": ["jet lag"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1054,
+            "word": "expedition",
+            "displayMeaning": "expedición",
+            "wordType": "noun",
+            "acceptedAnswers": ["expedición", "viaje de exploración"],
+            "example": "They organized a scientific expedition to the Amazon rainforest.",
+            "exampleHighlight": ["expedition"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1055,
+            "word": "charter",
+            "displayMeaning": "fletar",
+            "wordType": "verb",
+            "acceptedAnswers": ["fletar", "alquilar"],
+            "example": "The company decided to charter a private jet for the executives.",
+            "exampleHighlight": ["charter"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1056,
+            "word": "inbound",
+            "displayMeaning": "de llegada",
+            "wordType": "adjective",
+            "acceptedAnswers": ["de llegada", "entrante", "hacia el interior"],
+            "example": "All inbound flights were delayed due to the heavy snowstorm.",
+            "exampleHighlight": ["inbound"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1057,
+            "word": "outbound",
+            "displayMeaning": "de salida",
+            "wordType": "adjective",
+            "acceptedAnswers": ["de salida", "saliente", "hacia el exterior"],
+            "example": "The outbound traffic on the highway was heavily congested.",
+            "exampleHighlight": ["outbound"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1058,
+            "word": "staycation",
+            "displayMeaning": "vacaciones en casa",
+            "wordType": "noun",
+            "acceptedAnswers": ["vacaciones en casa", "turismo local"],
+            "example": "Instead of traveling abroad this year, we opted for a relaxing staycation.",
+            "exampleHighlight": ["staycation"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1059,
+            "word": "ecotourism",
+            "displayMeaning": "ecoturismo",
+            "wordType": "noun",
+            "acceptedAnswers": ["ecoturismo", "turismo ecológico"],
+            "example": "The island promotes ecotourism to protect its fragile coral reefs.",
+            "exampleHighlight": ["ecotourism"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1060,
+            "word": "berth",
+            "displayMeaning": "litera",
+            "wordType": "noun",
+            "acceptedAnswers": ["litera", "camarote", "amarradero"],
+            "example": "He booked a comfortable sleeping berth on the overnight train.",
+            "exampleHighlight": ["berth"],
+            "category": "travel",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1061,
+            "word": "ghost",
+            "displayMeaning": "hacer ghosting",
+            "wordType": "verb",
+            "acceptedAnswers": ["hacer ghosting", "desaparecer", "ignorar"],
+            "example": "I thought the date went well, but he completely ghosted me afterward.",
+            "exampleHighlight": ["ghosted"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1063,
+            "word": "flex",
+            "displayMeaning": "presumir",
+            "wordType": "verb",
+            "acceptedAnswers": ["presumir", "alardear", "ostentar"],
+            "example": "Buying that expensive watch was just a way to flex his wealth.",
+            "exampleHighlight": ["flex"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1064,
+            "word": "lowkey",
+            "displayMeaning": "discretamente",
+            "wordType": "adverb",
+            "acceptedAnswers": ["discretamente", "en secreto", "un poco"],
+            "example": "I lowkey want to stay home tonight instead of going to the party.",
+            "exampleHighlight": ["lowkey"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1065,
+            "word": "highkey",
+            "displayMeaning": "totalmente",
+            "wordType": "adverb",
+            "acceptedAnswers": ["totalmente", "abiertamente", "sin rodeos"],
+            "example": "I highkey love this new album; it's the best thing they've released.",
+            "exampleHighlight": ["highkey"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1067,
+            "word": "slay",
+            "displayMeaning": "romperla",
+            "wordType": "verb",
+            "acceptedAnswers": ["romperla", "lucirse", "hacerlo excelente"],
+            "example": "She worked so hard on her performance and she totally slayed.",
+            "exampleHighlight": ["slayed"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1070,
+            "word": "simp",
+            "displayMeaning": "arrastrado",
+            "wordType": "noun",
+            "acceptedAnswers": ["arrastrado", "lamebotas", "pagafantas"],
+            "example": "Don't be a simp and stop buying her gifts when she ignores you.",
+            "exampleHighlight": ["simp"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1071,
+            "word": "clout",
+            "displayMeaning": "influencia",
+            "wordType": "noun",
+            "acceptedAnswers": ["influencia", "fama", "prestigio"],
+            "example": "Some social media influencers do crazy stunts just for clout.",
+            "exampleHighlight": ["clout"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1072,
+            "word": "platypus",
+            "displayMeaning": "ornitorrinco",
+            "wordType": "noun",
+            "acceptedAnswers": ["ornitorrinco"],
+            "example": "The platypus is a unique semi-aquatic mammal native to Australia.",
+            "exampleHighlight": ["platypus"],
+            "category": "animal",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1073,
+            "word": "chameleon",
+            "displayMeaning": "camaleón",
+            "wordType": "noun",
+            "acceptedAnswers": ["camaleón"],
+            "example": "The chameleon changed its color to blend perfectly with the green leaves.",
+            "exampleHighlight": ["chameleon"],
+            "category": "animal",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1074,
+            "word": "porcupine",
+            "displayMeaning": "puercoespín",
+            "wordType": "noun",
+            "acceptedAnswers": ["puercoespín", "puerco espín"],
+            "example": "A porcupine uses its sharp quills as a defense mechanism against predators.",
+            "exampleHighlight": ["porcupine"],
+            "category": "animal",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1078,
+            "word": "sloth",
+            "displayMeaning": "perezoso",
+            "wordType": "noun",
+            "acceptedAnswers": ["perezoso", "oso perezoso"],
+            "example": "Moving at an incredibly slow pace, the sloth spent the day hanging upside down.",
+            "exampleHighlight": ["sloth"],
+            "category": "animal",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1079,
+            "word": "tadpole",
+            "displayMeaning": "renacuajo",
+            "wordType": "noun",
+            "acceptedAnswers": ["renacuajo"],
+            "example": "Over a few weeks, the small tadpole will grow legs and transform into a frog.",
+            "exampleHighlight": ["tadpole"],
+            "category": "animal",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1080,
+            "word": "rizz",
+            "displayMeaning": "carisma",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "carisma",
+                "atractivo",
+                "encanto para coquetear"
+            ],
+            "example": "He has so much rizz that he can charm anyone he talks to.",
+            "exampleHighlight": ["rizz"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1081,
+            "word": "bussin'",
+            "displayMeaning": "buenísimo",
+            "wordType": "adjective",
+            "acceptedAnswers": ["buenísimo", "delicioso", "excelente"],
+            "example": "This homemade burger is honestly bussin'.",
+            "exampleHighlight": ["bussin'"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1082,
+            "word": "glow up",
+            "displayMeaning": "transformación positiva",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "transformación positiva",
+                "cambio radical",
+                "mejora física"
+            ],
+            "example": "Look at her high school photo; she had a major glow up.",
+            "exampleHighlight": ["glow up"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1083,
+            "word": "finna",
+            "displayMeaning": "ir a",
+            "wordType": "verb",
+            "acceptedAnswers": ["ir a", "estar por", "voy a"],
+            "example": "I'm finna order some pizza because the fridge is completely empty.",
+            "exampleHighlight": ["finna"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1084,
+            "word": "shook",
+            "displayMeaning": "impactado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["impactado", "conmocionado", "en shock"],
+            "example": "The plot twist at the end of the movie left me completely shook.",
+            "exampleHighlight": ["shook"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1085,
+            "word": "savage",
+            "displayMeaning": "salvaje",
+            "wordType": "adjective",
+            "acceptedAnswers": ["salvaje", "despiadado", "brutal"],
+            "example": "Her reply to his rude comment was absolutely savage.",
+            "exampleHighlight": ["savage"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1086,
+            "word": "valid",
+            "displayMeaning": "comprensible",
+            "wordType": "adjective",
+            "acceptedAnswers": ["comprensible", "justificable", "aceptable"],
+            "example": "Your reason for being upset with the decision is totally valid.",
+            "exampleHighlight": ["valid"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1087,
+            "word": "ate",
+            "displayMeaning": "lucirse",
+            "wordType": "verb",
+            "acceptedAnswers": ["lucirse", "romperla", "hacerlo increíble"],
+            "example": "Did you see her performance on stage? She absolutely ate.",
+            "exampleHighlight": ["ate"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1088,
+            "word": "gucci",
+            "displayMeaning": "todo bien",
+            "wordType": "adjective",
+            "acceptedAnswers": ["todo bien", "excelente", "genial"],
+            "example": "Don't worry about the late reply, we are totally gucci.",
+            "exampleHighlight": ["gucci"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1089,
+            "word": "goat",
+            "displayMeaning": "el más grande",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "el más grande",
+                "el mejor de todos los tiempos",
+                "leyenda"
+            ],
+            "example": "Many football fans consider Cristiano Ronaldo to be the undisputed goat.",
+            "exampleHighlight": ["goat"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1090,
+            "word": "rent-free",
+            "displayMeaning": "obsesionado sin querer",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "obsesionado sin querer",
+                "en la mente todo el tiempo"
+            ],
+            "example": "That embarrassing memory from middle school is living rent-free in my mind.",
+            "exampleHighlight": ["rent-free"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1091,
+            "word": "plane",
+            "displayMeaning": "avión",
+            "wordType": "noun",
+            "acceptedAnswers": ["avión", "aeroplano"],
+            "example": "The plane took off on time despite the rainy weather.",
+            "exampleHighlight": ["plane"],
+            "category": "travel",
             "difficulty": "easy"
         }
     ]
