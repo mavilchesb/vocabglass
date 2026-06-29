@@ -277,7 +277,7 @@ function DatasetAudit({ onBack }) {
                     </CollapsibleSection>
 
                     <CollapsibleSection title='📚 Pedagogical Insights'>
-                        <div className='flex flex-wrap gap-3 space-y-3'>
+                        <div className='flex flex-wrap gap-x-3 gap-y-4'>
                             {insights.pedagogicalInsights.map(
                                 (insight, index) => (
                                     <div

@@ -170,7 +170,7 @@
             "word": "ain't",
             "displayMeaning": "no es",
             "wordType": "expression",
-            "acceptedAnswers": ["no es", "no son"],
+            "acceptedAnswers": ["no voy", "no voy a ir", "no estoy"],
             "example": "I ain't going to the party tonight.",
             "exampleHighlight": ["ain't"],
             "category": "slang",
@@ -214,7 +214,7 @@
             "word": "ambiguous",
             "displayMeaning": "ambiguo",
             "wordType": "adjective",
-            "acceptedAnswers": ["ambiguo"],
+            "acceptedAnswers": ["ambiguo", "ambiguos"],
             "example": "The results of the analysis were ambiguous.",
             "exampleHighlight": ["ambiguous"],
             "category": "academic",
@@ -228,17 +228,6 @@
             "acceptedAnswers": ["entre", "en medio de"],
             "example": "I found my old notebook among those dusty boxes.",
             "exampleHighlight": ["among"],
-            "category": "everyday-english",
-            "difficulty": "medium"
-        },
-        {
-            "id": 22,
-            "word": "amount",
-            "displayMeaning": "cantidad",
-            "wordType": "noun",
-            "acceptedAnswers": ["cantidad"],
-            "example": "A large amount of data was processed today.",
-            "exampleHighlight": ["amount"],
             "category": "everyday-english",
             "difficulty": "medium"
         },
@@ -340,17 +329,6 @@
             "exampleHighlight": ["anyway"],
             "category": "everyday-english",
             "difficulty": "medium"
-        },
-        {
-            "id": 32,
-            "word": "appointment",
-            "displayMeaning": "cita",
-            "wordType": "noun",
-            "acceptedAnswers": ["cita", "compromiso"],
-            "example": "I have an appointment with the dentist at four o'clock.",
-            "exampleHighlight": ["appointment"],
-            "category": "everyday-english",
-            "difficulty": "hard"
         },
         {
             "id": 33,
@@ -466,7 +444,7 @@
             "id": 43,
             "word": "back",
             "displayMeaning": "de vuelta",
-            "wordType": "noun",
+            "wordType": "adverb",
             "acceptedAnswers": ["de vuelta", "atrás"],
             "example": "I'll be back in five minutes.",
             "exampleHighlight": ["back"],
@@ -481,7 +459,7 @@
             "acceptedAnswers": ["retractarse"],
             "example": "Neither engineer wanted to back down regarding the script structure layout.",
             "exampleHighlight": ["back down"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "hard"
         },
         {
@@ -492,7 +470,7 @@
             "acceptedAnswers": ["echarse atrás", "retirarse"],
             "example": "The provider decided to back out of the cloud infrastructure project contract.",
             "exampleHighlight": ["back out"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "medium"
         },
         {
@@ -500,7 +478,11 @@
             "word": "back up",
             "displayMeaning": "respaldar",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": ["respaldar", "copia de seguridad"],
+            "acceptedAnswers": [
+                "respaldar",
+                "copia de seguridad",
+                "hacer una copia de seguridad"
+            ],
             "example": "Remember to back up your computer files regularly.",
             "exampleHighlight": ["back up"],
             "category": "everyday-english",
@@ -516,17 +498,6 @@
             "exampleHighlight": ["backend"],
             "category": "technology",
             "difficulty": "hard"
-        },
-        {
-            "id": 48,
-            "word": "backup",
-            "displayMeaning": "copia de seguridad",
-            "wordType": "noun",
-            "acceptedAnswers": ["copia de seguridad", "respaldo", "respaldar"],
-            "example": "Always create a local backup before dropping a database index.",
-            "exampleHighlight": ["backup"],
-            "category": "technology",
-            "difficulty": "easy"
         },
         {
             "id": 49,
@@ -602,7 +573,7 @@
             "acceptedAnswers": ["convertirse en", "llegar a ser"],
             "example": "He wants to become a strategic data analyst.",
             "exampleHighlight": ["become"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "medium"
         },
         {
@@ -720,17 +691,6 @@
             "difficulty": "medium"
         },
         {
-            "id": 68,
-            "word": "blow",
-            "displayMeaning": "soplar",
-            "wordType": "verb",
-            "acceptedAnswers": ["soplar", "golpe"],
-            "example": "Blow out the candles on your birthday cake.",
-            "exampleHighlight": ["blow"],
-            "category": "everyday-english",
-            "difficulty": "easy"
-        },
-        {
             "id": 69,
             "word": "blow down",
             "displayMeaning": "derribar",
@@ -738,7 +698,7 @@
             "acceptedAnswers": ["derribar", "tumbar", "tirar"],
             "example": "The fierce storm managed to blow down the main telecommunications antenna.",
             "exampleHighlight": ["blow down"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -746,10 +706,7 @@
             "word": "blow out",
             "displayMeaning": "apagar una llama soplando",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": [
-                "apagar una llama soplando",
-                "reventarse un neumático"
-            ],
+            "acceptedAnswers": ["apagar una llama soplando", "apagarse"],
             "example": "Candles blow out easily when the ventilation is too strong.",
             "exampleHighlight": ["blow out"],
             "category": "everyday-english",
@@ -760,14 +717,10 @@
             "word": "blow up",
             "displayMeaning": "hacer explotar",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": [
-                "hacer explotar",
-                "inflar algo",
-                "perder los nervios"
-            ],
+            "acceptedAnswers": ["colapsar", "saturar", "hacer fallar"],
             "example": "Heavy queries can blow up the cloud computing execution cluster.",
             "exampleHighlight": ["blow up"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -840,7 +793,7 @@
             "id": 78,
             "word": "brainstorm",
             "displayMeaning": "lluvia de ideas",
-            "wordType": "noun",
+            "wordType": "verb",
             "acceptedAnswers": ["lluvia de ideas"],
             "example": "Let's brainstorm some new ideas for the campaign.",
             "exampleHighlight": ["brainstorm"],
@@ -893,12 +846,7 @@
             "word": "break in",
             "displayMeaning": "entrar a la fuerza",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": [
-                "entrar a la fuerza",
-                "interrumpir",
-                "asaltar",
-                "estrenar"
-            ],
+            "acceptedAnswers": ["entrar a la fuerza", "asaltar"],
             "example": "Someone tried to break in last night, but the alarm scared them off.",
             "exampleHighlight": ["break in"],
             "category": "everyday-english",
@@ -912,7 +860,7 @@
             "acceptedAnswers": ["entrar a la fuerza", "interrumpir"],
             "example": "Cybercriminals tried to break into our database using a brute-force attack.",
             "exampleHighlight": ["break into"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -945,12 +893,12 @@
         {
             "id": 86,
             "word": "break up",
-            "displayMeaning": "terminar una relación",
+            "displayMeaning": "entrecortarse",
             "wordType": "phrasal-verb",
             "acceptedAnswers": [
-                "terminar una relación",
-                "dividirse",
-                "distorsionarse el audio"
+                "entrecortarse",
+                "distorsionarse el audio",
+                "cortarse"
             ],
             "example": "Your voice can break up during an unstable video call.",
             "exampleHighlight": ["break up"],
@@ -1020,7 +968,7 @@
             "acceptedAnswers": ["traer de vuelta", "recordar algo del pasado"],
             "example": "The company decided to bring back the old legacy interface by popular demand.",
             "exampleHighlight": ["bring back"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "easy"
         },
         {
@@ -1133,17 +1081,6 @@
             "difficulty": "medium"
         },
         {
-            "id": 101,
-            "word": "by the way",
-            "displayMeaning": "por cierto",
-            "wordType": "expression",
-            "acceptedAnswers": ["por cierto"],
-            "example": "By the way, did you finish?",
-            "exampleHighlight": ["by the way"],
-            "category": "everyday-english",
-            "difficulty": "medium"
-        },
-        {
             "id": 102,
             "word": "call back",
             "displayMeaning": "devolver la llamada",
@@ -1195,7 +1132,7 @@
             "acceptedAnswers": ["llamar por teléfono", "evocar un recuerdo"],
             "example": "I will call up the cloud service support team to check our storage subscription.",
             "exampleHighlight": ["call up"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "easy"
         },
         {
@@ -1206,7 +1143,7 @@
             "acceptedAnswers": ["calmarse", "tranquilizarse"],
             "example": "Calm down, we can easily recover the lost records from the latest backup file.",
             "exampleHighlight": ["calm down"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "easy"
         },
         {
@@ -1272,7 +1209,7 @@
             "acceptedAnswers": ["continuar", "seguir"],
             "example": "You must carry on with your postgraduate assignment even if it gets tough.",
             "exampleHighlight": ["carry on"],
-            "category": "everyday-english",
+            "category": "academic",
             "difficulty": "medium"
         },
         {
@@ -1307,17 +1244,6 @@
             "exampleHighlight": ["cat"],
             "category": "animal",
             "difficulty": "easy"
-        },
-        {
-            "id": 117,
-            "word": "catch up",
-            "displayMeaning": "ponerse al día",
-            "wordType": "phrasal-verb",
-            "acceptedAnswers": ["ponerse al día"],
-            "example": "Let's catch up over coffee and talk about our recent projects.",
-            "exampleHighlight": ["catch up"],
-            "category": "everyday-english",
-            "difficulty": "medium"
         },
         {
             "id": 118,
@@ -1371,7 +1297,7 @@
             "acceptedAnswers": ["alegrarse", "animar a alguien"],
             "example": "Cheer up! You passed your intermediate level exam with excellent grades.",
             "exampleHighlight": ["cheer up"],
-            "category": "everyday-english",
+            "category": "academic",
             "difficulty": "easy"
         },
         {
@@ -1411,8 +1337,13 @@
             "id": 126,
             "word": "chill",
             "displayMeaning": "relajado",
-            "wordType": "noun",
-            "acceptedAnswers": ["relajado"],
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "relajado",
+                "relajada",
+                "tranquilo",
+                "tranquila"
+            ],
             "example": "The client is very chill.",
             "exampleHighlight": ["chill"],
             "category": "slang",
@@ -1516,7 +1447,7 @@
             ],
             "example": "This training session will clear up any confusion regarding asset management.",
             "exampleHighlight": ["clear up"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "easy"
         },
         {
@@ -1538,7 +1469,7 @@
             "acceptedAnswers": ["cerrar", "dar de baja"],
             "example": "The company decided to close down the legacy platform after the update.",
             "exampleHighlight": ["close down"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -1549,7 +1480,7 @@
             "acceptedAnswers": ["cerrar por completo", "cerrar", "cerrar todo"],
             "example": "Make sure to lock the lab racks and close up the server room safely.",
             "exampleHighlight": ["close up"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -1626,21 +1557,6 @@
             "difficulty": "medium"
         },
         {
-            "id": 144,
-            "word": "come across",
-            "displayMeaning": "encontrarse con",
-            "wordType": "phrasal-verb",
-            "acceptedAnswers": [
-                "encontrarse con",
-                "encontré",
-                "me encontré con"
-            ],
-            "example": "I came across some old photos while cleaning the attic.",
-            "exampleHighlight": ["came across"],
-            "category": "everyday-english",
-            "difficulty": "hard"
-        },
-        {
             "id": 145,
             "word": "come along",
             "displayMeaning": "progresar",
@@ -1654,7 +1570,7 @@
             ],
             "example": "How is your strategic report analysis coming along? Is it ready for review?",
             "exampleHighlight": ["coming along"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "medium"
         },
         {
@@ -1665,7 +1581,7 @@
             "acceptedAnswers": ["regresar", "volver a un lugar"],
             "example": "Please come back to the main office once you finish verifying the assets.",
             "exampleHighlight": ["come back"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "easy"
         },
         {
@@ -1701,7 +1617,7 @@
             ],
             "example": "The development team can come through in the end and fix bugs.",
             "exampleHighlight": ["come through"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "hard"
         },
         {
@@ -1712,7 +1628,7 @@
             "acceptedAnswers": ["surgir", "aparecer", "presentarse"],
             "example": "A position has come up in the accounts department.",
             "exampleHighlight": ["come up"],
-            "category": "everyday-english",
+            "category": "business",
             "difficulty": "hard"
         },
         {
@@ -1836,7 +1752,7 @@
             "acceptedAnswers": ["contar con", "confiar en"],
             "example": "You can count on me to design an efficient data pipeline framework.",
             "exampleHighlight": ["count on"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "easy"
         },
         {
@@ -2220,7 +2136,7 @@
             "id": 196,
             "word": "deliverable",
             "displayMeaning": "entregable",
-            "wordType": "adjective",
+            "wordType": "noun",
             "acceptedAnswers": ["entregable", "producto o informe final"],
             "example": "The clean dataset file is the primary deliverable of this stage.",
             "exampleHighlight": ["deliverable"],
@@ -2276,14 +2192,7 @@
             "word": "developer",
             "displayMeaning": "desarrollador",
             "wordType": "noun",
-            "acceptedAnswers": [
-                "desarrollador",
-                "programador",
-                "desarrolladora",
-                "programadora",
-                "desarrolladores",
-                "programadores"
-            ],
+            "acceptedAnswers": ["desarrollador", "programador"],
             "example": "He's the new developer in the IT area.",
             "exampleHighlight": ["developer"],
             "category": "technology",
@@ -2392,8 +2301,8 @@
             "acceptedAnswers": ["profesores universitarios"],
             "example": "The Oxford dons gathered for the annual academic meeting.",
             "exampleHighlight": ["dons"],
-            "category": "everyday-english",
-            "difficulty": "easy"
+            "category": "academic",
+            "difficulty": "hard"
         },
         {
             "id": 212,
@@ -2472,7 +2381,7 @@
             "acceptedAnswers": ["pasar por", "pasarse", "visitar"],
             "example": "Feel free to drop in my office if you run into any calculation bugs.",
             "exampleHighlight": ["drop in"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -2494,7 +2403,7 @@
             "acceptedAnswers": ["abandonar los estudios"],
             "example": "He had to drop out of the programming bootcamp due to time constraints.",
             "exampleHighlight": ["drop out"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -2527,17 +2436,6 @@
             "acceptedAnswers": ["oreja", "oído"],
             "example": "The sound was loud, so I covered my ear.",
             "exampleHighlight": ["ear"],
-            "category": "everyday-english",
-            "difficulty": "easy"
-        },
-        {
-            "id": 225,
-            "word": "earn",
-            "displayMeaning": "ganar",
-            "wordType": "verb",
-            "acceptedAnswers": ["ganar", "merecer"],
-            "example": "She worked hard to earn her promotion.",
-            "exampleHighlight": ["earn"],
             "category": "everyday-english",
             "difficulty": "easy"
         },
@@ -2755,7 +2653,18 @@
             "word": "fall",
             "displayMeaning": "caer",
             "wordType": "noun",
-            "acceptedAnswers": ["caer", "otoño"],
+            "acceptedAnswers": ["caer", "caerse"],
+            "example": "Be careful not to fall on the wet floor.",
+            "exampleHighlight": ["fall"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 2455,
+            "word": "fall",
+            "displayMeaning": "otoño",
+            "wordType": "noun",
+            "acceptedAnswers": ["otoño"],
             "example": "The leaves turn yellow during the fall.",
             "exampleHighlight": ["fall"],
             "category": "everyday-english",
@@ -2769,7 +2678,7 @@
             "acceptedAnswers": ["quedarse atrás", "retrasarse", "atrasarse"],
             "example": "If we don't automate this pipeline, we will fall behind our project schedule.",
             "exampleHighlight": ["fall behind"],
-            "category": "everyday-english",
+            "category": "technology",
             "difficulty": "medium"
         },
         {
@@ -2965,7 +2874,13 @@
             "word": "fit",
             "displayMeaning": "encajar",
             "wordType": "verb",
-            "acceptedAnswers": ["encajar", "quedar bien"],
+            "acceptedAnswers": [
+                "encajar",
+                "quedar bien",
+                "quedar",
+                "calzar",
+                "ajustar"
+            ],
             "example": "These shoes fit perfectly, they are very comfortable.",
             "exampleHighlight": ["fit"],
             "category": "everyday-english",
@@ -2997,7 +2912,7 @@
             "id": 266,
             "word": "flex",
             "displayMeaning": "presumir",
-            "wordType": "noun",
+            "wordType": "verb",
             "acceptedAnswers": ["presumir", "alardear"],
             "example": "Listing certifications on a CV is a great way to flex your skills.",
             "exampleHighlight": ["flex"],
@@ -3094,12 +3009,12 @@
         },
         {
             "id": 275,
-            "word": "freaker",
-            "displayMeaning": "bicho raro",
-            "wordType": "noun",
-            "acceptedAnswers": ["bicho raro", "persona excéntrica"],
-            "example": "He is a total control freaker at work.",
-            "exampleHighlight": ["freaker"],
+            "word": "control freak",
+            "displayMeaning": "maniático del control",
+            "wordType": "expression",
+            "acceptedAnswers": ["maniático del control"],
+            "example": "He is a total control freak who checks every detail twice.",
+            "exampleHighlight": ["control freak"],
             "category": "slang",
             "difficulty": "medium"
         },
@@ -3345,7 +3260,7 @@
             "word": "get out",
             "displayMeaning": "bajarse",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": ["bajarse", "salir", "bajate", "sal", ""],
+            "acceptedAnswers": ["bajarse", "salir", "bajate", "sal"],
             "example": "Please get out of this class.",
             "exampleHighlight": ["get out"],
             "category": "everyday-english",
@@ -3689,17 +3604,6 @@
             "exampleHighlight": ["go up"],
             "category": "everyday-english",
             "difficulty": "easy"
-        },
-        {
-            "id": 322,
-            "word": "goal",
-            "displayMeaning": "meta",
-            "wordType": "noun",
-            "acceptedAnswers": ["meta", "objetivo"],
-            "example": "My main goal this year is to master data analytics.",
-            "exampleHighlight": ["goal"],
-            "category": "everyday-english",
-            "difficulty": "medium"
         },
         {
             "id": 323,
@@ -4352,7 +4256,7 @@
             "id": 380,
             "word": "initiatory",
             "displayMeaning": "iniciático",
-            "wordType": "noun",
+            "wordType": "adjective",
             "acceptedAnswers": ["iniciático", "de iniciación"],
             "example": "They performed an initiatory ritual for new members.",
             "exampleHighlight": ["initiatory"],
@@ -4380,17 +4284,6 @@
             "exampleHighlight": ["innovative"],
             "category": "academic",
             "difficulty": "easy"
-        },
-        {
-            "id": 383,
-            "word": "insane",
-            "displayMeaning": "de locos",
-            "wordType": "adjective",
-            "acceptedAnswers": ["de locos", "demente"],
-            "example": "The traffic in the city today is insane.",
-            "exampleHighlight": ["insane"],
-            "category": "slang",
-            "difficulty": "medium"
         },
         {
             "id": 384,
@@ -4478,17 +4371,6 @@
             "example": "Be careful while swimming because that jellyfish can sting you.",
             "exampleHighlight": ["jellyfish"],
             "category": "animal",
-            "difficulty": "easy"
-        },
-        {
-            "id": 392,
-            "word": "jerk",
-            "displayMeaning": "idiota",
-            "wordType": "noun",
-            "acceptedAnswers": ["idiota", "tipo insoportable"],
-            "example": "Don't act like a jerk; apologize to your colleague.",
-            "exampleHighlight": ["jerk"],
-            "category": "slang",
             "difficulty": "easy"
         },
         {
@@ -5311,7 +5193,7 @@
             "example": "My neighbour helped me fix my car.",
             "exampleHighlight": ["neighbour"],
             "category": "everyday-english",
-            "difficulty": "hard"
+            "difficulty": "easy"
         },
         {
             "id": 469,
@@ -5665,15 +5547,27 @@
         {
             "id": 497,
             "word": "pass out",
+            "displayMeaning": "distribuir",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["distribuir", "distribuyó"],
+            "example": "The teacher passed out the test booklets.",
+            "exampleHighlight": ["passed out"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 4977,
+            "word": "pass out",
             "displayMeaning": "desmayarse",
             "wordType": "phrasal-verb",
             "acceptedAnswers": [
                 "desmayarse",
                 "perder el conocimiento",
-                "distribuir algo"
+                "se desmayó",
+                "perdió el conocimiento"
             ],
-            "example": "Technicians pass out brochures during the system training.",
-            "exampleHighlight": ["pass out"],
+            "example": "She passed out from the heat during the outdoor event",
+            "exampleHighlight": ["passed out"],
             "category": "everyday-english",
             "difficulty": "medium"
         },
@@ -6416,7 +6310,8 @@
                 "chocar",
                 "enfrentar",
                 "me encontré con",
-                "tropecé con"
+                "tropecé con",
+                "me topé con"
             ],
             "example": "I ran into an old friend at the supermarket yesterday.",
             "exampleHighlight": ["ran into"],
@@ -6479,17 +6374,6 @@
             "difficulty": "hard"
         },
         {
-            "id": 566,
-            "word": "salty",
-            "displayMeaning": "picado",
-            "wordType": "adjective",
-            "acceptedAnswers": ["picado", "resentido", "molesto"],
-            "example": "Don't get salty just because your automated function failed to compile.",
-            "exampleHighlight": ["salty"],
-            "category": "slang",
-            "difficulty": "medium"
-        },
-        {
             "id": 567,
             "word": "same",
             "displayMeaning": "mismo",
@@ -6527,7 +6411,7 @@
             "word": "scarf",
             "displayMeaning": "bufanda",
             "wordType": "noun",
-            "acceptedAnswers": ["bufanda"],
+            "acceptedAnswers": ["bufanda", "pañuelo", "chal"],
             "example": "She wrapped a red scarf around her neck.",
             "exampleHighlight": ["scarf"],
             "category": "everyday-english",
@@ -6808,17 +6692,6 @@
             "difficulty": "easy"
         },
         {
-            "id": 596,
-            "word": "show up",
-            "displayMeaning": "aparecer",
-            "wordType": "phrasal-verb",
-            "acceptedAnswers": ["aparecer", "presentarse en un lugar"],
-            "example": "He didn't show up to the data review session, which delayed our choice.",
-            "exampleHighlight": ["show up"],
-            "category": "everyday-english",
-            "difficulty": "easy"
-        },
-        {
             "id": 597,
             "word": "side",
             "displayMeaning": "lado",
@@ -6843,9 +6716,14 @@
         {
             "id": 599,
             "word": "slay",
-            "displayMeaning": "hacer algo excelente",
+            "displayMeaning": "triunfar",
             "wordType": "verb",
-            "acceptedAnswers": ["hacer algo excelente", "destacar", "triunfar"],
+            "acceptedAnswers": [
+                "triunfar",
+                "hacer algo excelente",
+                "destacar",
+                "arrasar"
+            ],
             "example": "She can slay any challenge with the right preparation.",
             "exampleHighlight": ["slay"],
             "category": "slang",
@@ -7083,9 +6961,14 @@
         {
             "id": 621,
             "word": "stand up",
-            "displayMeaning": "se puso de pie",
+            "displayMeaning": "ponerse de pie",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": ["se puso de pie", "plantado", "se levantó"],
+            "acceptedAnswers": [
+                "ponerse de pie",
+                "levantarse",
+                "se puso de pie",
+                "se levantó"
+            ],
             "example": "He stood up to shake my hand.",
             "exampleHighlight": ["stood up"],
             "category": "everyday-english",
@@ -7096,7 +6979,11 @@
             "word": "storage",
             "displayMeaning": "almacenamiento",
             "wordType": "noun",
-            "acceptedAnswers": ["almacenamiento", "espacio de disco"],
+            "acceptedAnswers": [
+                "almacenamiento",
+                "espacio de disco",
+                "espacio en disco"
+            ],
             "example": "Cloud storage costs drop if you compress old text files.",
             "exampleHighlight": ["storage"],
             "category": "technology",
@@ -7233,17 +7120,6 @@
             "exampleHighlight": ["surround"],
             "category": "everyday-english",
             "difficulty": "hard"
-        },
-        {
-            "id": 635,
-            "word": "sus",
-            "displayMeaning": "sospechoso",
-            "wordType": "adjective",
-            "acceptedAnswers": ["sospechoso"],
-            "example": "That guy is acting really sus.",
-            "exampleHighlight": ["sus"],
-            "category": "slang",
-            "difficulty": "easy"
         },
         {
             "id": 636,
@@ -8466,6 +8342,3609 @@
             "exampleHighlight": ["ailment"],
             "category": "academic",
             "difficulty": "hard"
+        },
+
+        {
+            "id": 743,
+            "word": "boot",
+            "displayMeaning": "arranque",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "arranque",
+                "proceso de arranque",
+                "inicio del sistema"
+            ],
+            "example": "The boot process finished in less than ten seconds.",
+            "exampleHighlight": ["boot"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 744,
+            "word": "reboot",
+            "displayMeaning": "reiniciar",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "reiniciar",
+                "volver a iniciar",
+                "reiniciar el sistema"
+            ],
+            "example": "You may need to reboot the laptop after the update.",
+            "exampleHighlight": ["reboot"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 745,
+            "word": "backlog",
+            "displayMeaning": "pendientes",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "pendientes",
+                "acumulación de trabajo",
+                "retrasos"
+            ],
+            "example": "The team cleared a backlog of support tickets by Friday.",
+            "exampleHighlight": ["backlog"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 746,
+            "word": "look for",
+            "displayMeaning": "buscar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["buscar", "buscar algo", "tratar de encontrar"],
+            "example": "I need to look for my keys before leaving.",
+            "exampleHighlight": ["look for"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 747,
+            "word": "luggage",
+            "displayMeaning": "equipaje",
+            "wordType": "noun",
+            "acceptedAnswers": ["equipaje", "maletas", "bultos"],
+            "example": "Please keep your luggage with you at all times.",
+            "exampleHighlight": ["luggage"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 748,
+            "word": "suit",
+            "displayMeaning": "traje",
+            "wordType": "noun",
+            "acceptedAnswers": ["traje", "terno", "conjunto formal"],
+            "example": "He wore a dark suit to the interview.",
+            "exampleHighlight": ["suit"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 749,
+            "word": "suitcase",
+            "displayMeaning": "maleta",
+            "wordType": "noun",
+            "acceptedAnswers": ["maleta", "valija", "maletín de viaje"],
+            "example": "She packed her suitcase the night before the trip.",
+            "exampleHighlight": ["suitcase"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 750,
+            "word": "store",
+            "displayMeaning": "tienda",
+            "wordType": "noun",
+            "acceptedAnswers": ["tienda", "local", "comercio"],
+            "example": "We stopped at a store to buy some water.",
+            "exampleHighlight": ["store"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 751,
+            "word": "warehouse",
+            "displayMeaning": "almacén",
+            "wordType": "noun",
+            "acceptedAnswers": ["almacén", "bodega", "depósito"],
+            "example": "The boxes are kept in the warehouse until shipping day.",
+            "exampleHighlight": ["warehouse"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 754,
+            "word": "diagnosis",
+            "displayMeaning": "diagnóstico",
+            "wordType": "noun",
+            "acceptedAnswers": ["diagnóstico", "evaluación médica", "dictamen"],
+            "example": "The doctor gave a diagnosis after reviewing the test results.",
+            "exampleHighlight": ["diagnosis"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 755,
+            "word": "scar",
+            "displayMeaning": "cicatriz",
+            "wordType": "noun",
+            "acceptedAnswers": ["cicatriz", "marca", "señal"],
+            "example": "He still has a scar from the surgery.",
+            "exampleHighlight": ["scar"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 756,
+            "word": "syringe",
+            "displayMeaning": "jeringa",
+            "wordType": "noun",
+            "acceptedAnswers": ["jeringa", "inyector", "jeringuilla"],
+            "example": "The nurse filled the syringe with medicine.",
+            "exampleHighlight": ["syringe"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 757,
+            "word": "bleeding",
+            "displayMeaning": "sangrado",
+            "wordType": "noun",
+            "acceptedAnswers": ["sangrado", "hemorragia", "pérdida de sangre"],
+            "example": "The bleeding stopped after a few minutes.",
+            "exampleHighlight": ["bleeding"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 758,
+            "word": "cough",
+            "displayMeaning": "tos",
+            "wordType": "noun",
+            "acceptedAnswers": ["tos", "tos seca", "tos persistente"],
+            "example": "Her cough got worse during the night.",
+            "exampleHighlight": ["cough"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 759,
+            "word": "dizziness",
+            "displayMeaning": "mareo",
+            "wordType": "noun",
+            "acceptedAnswers": ["mareo", "vértigo", "aturdimiento"],
+            "example": "He felt dizziness after standing up too quickly.",
+            "exampleHighlight": ["dizziness"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 760,
+            "word": "flu",
+            "displayMeaning": "gripe",
+            "wordType": "noun",
+            "acceptedAnswers": ["gripe", "influenza", "resfrío fuerte"],
+            "example": "She stayed home because she had the flu.",
+            "exampleHighlight": ["flu"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 761,
+            "word": "intense pain",
+            "displayMeaning": "dolor intenso",
+            "wordType": "expression",
+            "acceptedAnswers": ["dolor intenso", "dolor fuerte", "dolor agudo"],
+            "example": "He felt intense pain in his leg after the accident.",
+            "exampleHighlight": ["intense pain"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 762,
+            "word": "inflammation",
+            "displayMeaning": "inflamación",
+            "wordType": "noun",
+            "acceptedAnswers": ["inflamación", "hinchazón", "irritación"],
+            "example": "The doctor noticed inflammation around the injury.",
+            "exampleHighlight": ["inflammation"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 763,
+            "word": "sore throat",
+            "displayMeaning": "dolor de garganta",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "dolor de garganta",
+                "garganta irritada",
+                "irritación de garganta"
+            ],
+            "example": "I have a sore throat and it hurts to swallow.",
+            "exampleHighlight": ["sore throat"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 764,
+            "word": "sprain",
+            "displayMeaning": "torcedura",
+            "wordType": "noun",
+            "acceptedAnswers": ["torcedura", "esguince", "lesión"],
+            "example": "She got a sprain in her wrist while playing tennis.",
+            "exampleHighlight": ["sprain"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 765,
+            "word": "bump",
+            "displayMeaning": "golpe",
+            "wordType": "noun",
+            "acceptedAnswers": ["golpe", "chichón", "protuberancia"],
+            "example": "He got a bump on his head after hitting the door.",
+            "exampleHighlight": ["bump"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 766,
+            "word": "swollen",
+            "displayMeaning": "hinchado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["hinchado", "inflamado", "abultado"],
+            "example": "My ankle is swollen after the fall.",
+            "exampleHighlight": ["swollen"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 767,
+            "word": "checkup",
+            "displayMeaning": "revisión médica",
+            "wordType": "noun",
+            "acceptedAnswers": ["revisión médica", "chequeo", "control médico"],
+            "example": "I have a checkup scheduled for next Monday.",
+            "exampleHighlight": ["checkup"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 768,
+            "word": "first aid",
+            "displayMeaning": "primeros auxilios",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "primeros auxilios",
+                "atención inmediata",
+                "asistencia básica"
+            ],
+            "example": "She learned first aid at a community workshop.",
+            "exampleHighlight": ["first aid"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 769,
+            "word": "pills",
+            "displayMeaning": "pastillas",
+            "wordType": "noun",
+            "acceptedAnswers": ["pastillas", "tabletas", "comprimidos"],
+            "example": "The pharmacist told him to take the pills with water.",
+            "exampleHighlight": ["pills"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 770,
+            "word": "painkillers",
+            "displayMeaning": "analgésicos",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "analgésicos",
+                "calmantes",
+                "medicamentos para el dolor"
+            ],
+            "example": "She took painkillers to ease the headache.",
+            "exampleHighlight": ["painkillers"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 772,
+            "word": "prescription",
+            "displayMeaning": "receta médica",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "receta médica",
+                "prescripción",
+                "orden médica"
+            ],
+            "example": "The doctor wrote a prescription for antibiotics.",
+            "exampleHighlight": ["prescription"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 773,
+            "word": "stitches",
+            "displayMeaning": "puntos",
+            "wordType": "noun",
+            "acceptedAnswers": ["puntos", "suturas", "puntos de sutura"],
+            "example": "The doctor removed the stitches after two weeks.",
+            "exampleHighlight": ["stitches"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 774,
+            "word": "surgery",
+            "displayMeaning": "cirugía",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "cirugía",
+                "operación",
+                "intervención quirúrgica"
+            ],
+            "example": "She needed surgery to fix the broken bone.",
+            "exampleHighlight": ["surgery"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 775,
+            "word": "vaccine",
+            "displayMeaning": "vacuna",
+            "wordType": "noun",
+            "acceptedAnswers": ["vacuna", "inmunización", "vacunación"],
+            "example": "The vaccine helps protect people from the virus.",
+            "exampleHighlight": ["vaccine"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 776,
+            "word": "aisle",
+            "displayMeaning": "pasillo",
+            "wordType": "noun",
+            "acceptedAnswers": ["pasillo", "corredor", "fila"],
+            "example": "Please keep the aisle clear during the flight.",
+            "exampleHighlight": ["aisle"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 777,
+            "word": "trolley",
+            "displayMeaning": "carrito",
+            "wordType": "noun",
+            "acceptedAnswers": ["carrito", "carro", "carrito de compras"],
+            "example": "She pushed the trolley through the supermarket.",
+            "exampleHighlight": ["trolley"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 778,
+            "word": "cart",
+            "displayMeaning": "carrito",
+            "wordType": "noun",
+            "acceptedAnswers": ["carrito", "carro", "carrito de compras"],
+            "example": "He loaded the cart with fruits and vegetables.",
+            "exampleHighlight": ["cart"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 779,
+            "word": "basket",
+            "displayMeaning": "canasta",
+            "wordType": "noun",
+            "acceptedAnswers": ["canasta", "cesta", "canasto"],
+            "example": "She carried the apples in a basket.",
+            "exampleHighlight": ["basket"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 780,
+            "word": "shelf",
+            "displayMeaning": "estante",
+            "wordType": "noun",
+            "acceptedAnswers": ["estante", "repisa", "balda"],
+            "example": "The books were arranged neatly on the shelf.",
+            "exampleHighlight": ["shelf"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 781,
+            "word": "refund",
+            "displayMeaning": "reembolso",
+            "wordType": "noun",
+            "acceptedAnswers": ["reembolso", "devolución", "reintegro"],
+            "example": "I asked for a refund because the product was damaged.",
+            "exampleHighlight": ["refund"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 782,
+            "word": "dress",
+            "displayMeaning": "vestido",
+            "wordType": "noun",
+            "acceptedAnswers": ["vestido", "pollera", "prenda"],
+            "example": "She bought a red dress for the party.",
+            "exampleHighlight": ["dress"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 783,
+            "word": "blouse",
+            "displayMeaning": "blusa",
+            "wordType": "noun",
+            "acceptedAnswers": ["blusa", "camisera", "polera femenina"],
+            "example": "That blouse looks great with the black skirt.",
+            "exampleHighlight": ["blouse"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 785,
+            "word": "belt",
+            "displayMeaning": "cinturón",
+            "wordType": "noun",
+            "acceptedAnswers": ["cinturón", "correa", "faja"],
+            "example": "He tightened his belt before leaving home.",
+            "exampleHighlight": ["belt"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 786,
+            "word": "underwear",
+            "displayMeaning": "ropa interior",
+            "wordType": "noun",
+            "acceptedAnswers": ["ropa interior", "calzoncillos", "lencería"],
+            "example": "He packed clean underwear for the trip.",
+            "exampleHighlight": ["underwear"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 787,
+            "word": "fitting room",
+            "displayMeaning": "probador",
+            "wordType": "noun",
+            "acceptedAnswers": ["probador", "vestidor"],
+            "example": "She tried on the jeans in the fitting room.",
+            "exampleHighlight": ["fitting room"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 788,
+            "word": "i'm away",
+            "displayMeaning": "estoy fuera",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "estoy fuera",
+                "no estoy disponible",
+                "no estoy"
+            ],
+            "example": "I'm away from my desk at the moment.",
+            "exampleHighlight": ["i'm away"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 789,
+            "word": "backward",
+            "displayMeaning": "hacia atrás",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "hacia atrás",
+                "al revés",
+                "en dirección contraria"
+            ],
+            "example": "The car rolled backward down the hill.",
+            "exampleHighlight": ["backward"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 790,
+            "word": "disease",
+            "displayMeaning": "enfermedad",
+            "wordType": "noun",
+            "acceptedAnswers": ["enfermedad", "padecimiento", "trastorno"],
+            "example": "Doctors are studying the disease more closely.",
+            "exampleHighlight": ["disease"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 791,
+            "word": "welfare",
+            "displayMeaning": "bienestar",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "bienestar",
+                "ayuda social",
+                "asistencia social"
+            ],
+            "example": "The program was designed to improve child welfare.",
+            "exampleHighlight": ["welfare"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 792,
+            "word": "shelter",
+            "displayMeaning": "refugio",
+            "wordType": "noun",
+            "acceptedAnswers": ["refugio", "albergue", "resguardo"],
+            "example": "The animals were taken to a shelter after the storm.",
+            "exampleHighlight": ["shelter"],
+            "category": "animal",
+            "difficulty": "medium"
+        },
+        {
+            "id": 793,
+            "word": "aware of",
+            "displayMeaning": "consciente de",
+            "wordType": "expression",
+            "acceptedAnswers": ["consciente de", "al tanto de", "enterado de"],
+            "example": "She was aware of the risks before making a decision.",
+            "exampleHighlight": ["aware of"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 794,
+            "word": "path",
+            "displayMeaning": "camino",
+            "wordType": "noun",
+            "acceptedAnswers": ["camino", "sendero", "ruta"],
+            "example": "We followed the path through the forest.",
+            "exampleHighlight": ["path"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 795,
+            "word": "stuttering",
+            "displayMeaning": "tartamudeo",
+            "wordType": "noun",
+            "acceptedAnswers": ["tartamudeo", "balbuceo", "disfluencia"],
+            "example": "His stuttering gets worse when he feels nervous.",
+            "exampleHighlight": ["stuttering"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 796,
+            "word": "tear",
+            "displayMeaning": "desgarro",
+            "wordType": "noun",
+            "acceptedAnswers": ["desgarro", "rotura", "rasgadura"],
+            "example": "The fabric has a small tear near the seam.",
+            "exampleHighlight": ["tear"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 797,
+            "word": "edge",
+            "displayMeaning": "borde",
+            "wordType": "noun",
+            "acceptedAnswers": ["borde", "orilla", "extremo"],
+            "example": "Be careful near the edge of the platform.",
+            "exampleHighlight": ["edge"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 798,
+            "word": "coat",
+            "displayMeaning": "cubrir",
+            "wordType": "verb",
+            "acceptedAnswers": ["cubrir", "recubrir", "forrar"],
+            "example": "Coat the pan with oil before adding the eggs.",
+            "exampleHighlight": ["Coat"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 799,
+            "word": "above",
+            "displayMeaning": "encima de",
+            "wordType": "preposition",
+            "acceptedAnswers": ["encima de", "sobre", "por encima de"],
+            "example": "The clock is above the door.",
+            "exampleHighlight": ["above"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 800,
+            "word": "at least",
+            "displayMeaning": "al menos",
+            "wordType": "expression",
+            "acceptedAnswers": ["al menos", "como mínimo", "por lo menos"],
+            "example": "You should rest for at least eight hours.",
+            "exampleHighlight": ["at least"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 801,
+            "word": "shout",
+            "displayMeaning": "gritar",
+            "wordType": "verb",
+            "acceptedAnswers": ["gritar", "vociferar", "alzar la voz"],
+            "example": "He had to shout to be heard over the noise.",
+            "exampleHighlight": ["shout"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 802,
+            "word": "shut down",
+            "displayMeaning": "apagar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["apagar", "cerrar", "desconectar"],
+            "example": "Please shut down the computer before you leave.",
+            "exampleHighlight": ["shut down"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 803,
+            "word": "shut up",
+            "displayMeaning": "callarse",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "callarse",
+                "dejar de hablar",
+                "callar",
+                "guardar silencio",
+                "cerrar la boca",
+                "se callaran",
+                "se callen",
+                "guardaran silencio"
+            ],
+            "example": "The teacher told the students to shut up during the exam.",
+            "exampleHighlight": ["shut up"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 805,
+            "word": "forfeit",
+            "displayMeaning": "perder",
+            "wordType": "verb",
+            "acceptedAnswers": ["perder", "renunciar a", "decomisar"],
+            "example": "If you miss the deadline, you forfeit your chance to submit the project.",
+            "exampleHighlight": ["forfeit"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 806,
+            "word": "behavior",
+            "displayMeaning": "comportamiento",
+            "wordType": "noun",
+            "acceptedAnswers": ["comportamiento", "conducta", "actitud"],
+            "example": "The child's behavior improved after a few weeks.",
+            "exampleHighlight": ["behavior"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 807,
+            "word": "gate",
+            "displayMeaning": "puerta",
+            "wordType": "noun",
+            "acceptedAnswers": ["puerta", "portón", "acceso"],
+            "example": "The boarding agent checked our tickets at the gate.",
+            "exampleHighlight": ["gate"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 808,
+            "word": "customs",
+            "displayMeaning": "aduana",
+            "wordType": "noun",
+            "acceptedAnswers": ["aduana", "control aduanero", "fiscalización"],
+            "example": "We had to show our passports at customs.",
+            "exampleHighlight": ["customs"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 809,
+            "word": "landmark",
+            "displayMeaning": "hito",
+            "wordType": "noun",
+            "acceptedAnswers": ["hito", "punto de referencia", "monumento"],
+            "example": "The old tower is a famous landmark in the city.",
+            "exampleHighlight": ["landmark"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 810,
+            "word": "subway",
+            "displayMeaning": "metro",
+            "wordType": "noun",
+            "acceptedAnswers": ["metro", "subterráneo", "tren subterráneo"],
+            "example": "She took the subway to work every morning.",
+            "exampleHighlight": ["subway"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 811,
+            "word": "departure",
+            "displayMeaning": "salida",
+            "wordType": "noun",
+            "acceptedAnswers": ["salida", "partida", "despegue"],
+            "example": "The departure time was moved to 6:30 a.m.",
+            "exampleHighlight": ["departure"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 812,
+            "word": "arrival",
+            "displayMeaning": "llegada",
+            "wordType": "noun",
+            "acceptedAnswers": ["llegada", "arribo", "entrada"],
+            "example": "Her arrival was delayed by heavy traffic.",
+            "exampleHighlight": ["arrival"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 813,
+            "word": "currency exchange",
+            "displayMeaning": "cambio de divisas",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "cambio de divisas",
+                "casa de cambio",
+                "cambio de moneda"
+            ],
+            "example": "We used the currency exchange at the airport.",
+            "exampleHighlight": ["currency exchange"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 814,
+            "word": "banish",
+            "displayMeaning": "desterrar",
+            "wordType": "verb",
+            "acceptedAnswers": ["desterrar", "expulsar", "exiliar"],
+            "example": "The king decided to banish the traitor from the kingdom.",
+            "exampleHighlight": ["banish"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 815,
+            "word": "stage",
+            "displayMeaning": "escenario",
+            "wordType": "noun",
+            "acceptedAnswers": ["escenario", "tarima", "plataforma"],
+            "example": "The band stepped onto the stage to start the concert.",
+            "exampleHighlight": ["stage"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 816,
+            "word": "insane",
+            "displayMeaning": "loco",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "loco",
+                "insensato",
+                "desquiciado",
+                "loca",
+                "insensata",
+                "desquiciada"
+            ],
+            "example": "That was an insane idea, but it somehow worked.",
+            "exampleHighlight": ["insane"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 817,
+            "word": "jogging",
+            "displayMeaning": "trote",
+            "wordType": "noun",
+            "acceptedAnswers": ["trote", "carrera suave", "ejercicio de trote"],
+            "example": "He goes jogging every morning before breakfast.",
+            "exampleHighlight": ["jogging"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 818,
+            "word": "sudden",
+            "displayMeaning": "repentino",
+            "wordType": "adjective",
+            "acceptedAnswers": ["repentino", "inesperado", "brusco"],
+            "example": "There was a sudden change in the weather.",
+            "exampleHighlight": ["sudden"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 819,
+            "word": "insight",
+            "displayMeaning": "perspectiva",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "perspectiva",
+                "visión",
+                "comprensión profunda"
+            ],
+            "example": "Her insight helped the team solve the problem faster.",
+            "exampleHighlight": ["insight"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 820,
+            "word": "chase",
+            "displayMeaning": "perseguir",
+            "wordType": "verb",
+            "acceptedAnswers": ["perseguir", "correr tras", "seguir"],
+            "example": "The dog loves to chase balls across the yard.",
+            "exampleHighlight": ["chase"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 821,
+            "word": "booster",
+            "displayMeaning": "refuerzo",
+            "wordType": "noun",
+            "acceptedAnswers": ["refuerzo", "potenciador", "dosis de refuerzo"],
+            "example": "He got a booster shot before traveling abroad.",
+            "exampleHighlight": ["booster"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 822,
+            "word": "delay",
+            "displayMeaning": "retraso",
+            "wordType": "noun",
+            "acceptedAnswers": ["retraso", "demora", "aplazamiento"],
+            "example": "The flight had a two-hour delay because of the storm.",
+            "exampleHighlight": ["delay"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 824,
+            "word": "layover",
+            "displayMeaning": "escala",
+            "wordType": "noun",
+            "acceptedAnswers": ["escala", "conexión", "parada intermedia"],
+            "example": "We had a four-hour layover in Madrid.",
+            "exampleHighlight": ["layover"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 825,
+            "word": "carry-on",
+            "displayMeaning": "equipaje de mano",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "equipaje de mano",
+                "maleta de mano",
+                "bolso de cabina"
+            ],
+            "example": "Your carry-on must fit under the seat.",
+            "exampleHighlight": ["carry-on"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 826,
+            "word": "baggage claim",
+            "displayMeaning": "recogida de equipaje",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "recogida de equipaje",
+                "reclamo de equipaje",
+                "zona de equipajes"
+            ],
+            "example": "We met at baggage claim after landing.",
+            "exampleHighlight": ["baggage claim"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 827,
+            "word": "seat upgrade",
+            "displayMeaning": "mejora de asiento",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "mejora de asiento",
+                "cambio a mejor asiento",
+                "ascenso de asiento"
+            ],
+            "example": "She received a seat upgrade at the airport counter.",
+            "exampleHighlight": ["seat upgrade"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 828,
+            "word": "itinerary",
+            "displayMeaning": "itinerario",
+            "wordType": "noun",
+            "acceptedAnswers": ["itinerario", "plan de viaje", "ruta"],
+            "example": "Our itinerary includes two cities and one beach stop.",
+            "exampleHighlight": ["itinerary"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 829,
+            "word": "red-eye flight",
+            "displayMeaning": "vuelo nocturno",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "vuelo nocturno",
+                "vuelo de madrugada",
+                "vuelo de ojo rojo"
+            ],
+            "example": "They took a red-eye flight to arrive early in the morning.",
+            "exampleHighlight": ["red-eye flight"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 830,
+            "word": "overbooked",
+            "displayMeaning": "sobrevendido",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "sobrevendido",
+                "sobreocupado",
+                "con exceso de reservas"
+            ],
+            "example": "The airline was overbooked, so some passengers had to wait.",
+            "exampleHighlight": ["overbooked"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 831,
+            "word": "customs declaration",
+            "displayMeaning": "declaración de aduana",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "declaración de aduana",
+                "declaración aduanera",
+                "formulario de aduana"
+            ],
+            "example": "Fill out the customs declaration before you land.",
+            "exampleHighlight": ["customs declaration"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 832,
+            "word": "jet lag",
+            "displayMeaning": "jet lag",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "jet lag",
+                "jetlag",
+                "desfase horario",
+                "fatiga por cambio de horario"
+            ],
+            "example": "She felt jet lag after the long flight from Europe.",
+            "exampleHighlight": ["jet lag"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 833,
+            "word": "duty-free",
+            "displayMeaning": "libre de impuestos",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "libre de impuestos",
+                "exento de aranceles",
+                "sin impuestos"
+            ],
+            "example": "We bought perfume at the duty-free shop.",
+            "exampleHighlight": ["duty-free"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 834,
+            "word": "device",
+            "displayMeaning": "dispositivo",
+            "wordType": "noun",
+            "acceptedAnswers": ["dispositivo", "aparato", "equipo"],
+            "example": "Please turn off your device during takeoff.",
+            "exampleHighlight": ["device"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 835,
+            "word": "cloud storage",
+            "displayMeaning": "almacenamiento en la nube",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "almacenamiento en la nube",
+                "nube",
+                "almacenamiento cloud"
+            ],
+            "example": "Cloud storage keeps your files available from anywhere.",
+            "exampleHighlight": ["cloud storage"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 836,
+            "word": "bandwidth",
+            "displayMeaning": "ancho de banda",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "ancho de banda",
+                "capacidad de transmisión",
+                "banda ancha"
+            ],
+            "example": "The video call used a lot of bandwidth.",
+            "exampleHighlight": ["bandwidth"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 837,
+            "word": "bug",
+            "displayMeaning": "error",
+            "wordType": "noun",
+            "acceptedAnswers": ["error", "fallo", "bug"],
+            "example": "The update fixed a bug in the app.",
+            "exampleHighlight": ["bug"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 838,
+            "word": "backup",
+            "displayMeaning": "copia de seguridad",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "copia de seguridad",
+                "respaldo",
+                "copia de respaldo",
+                "backup"
+            ],
+            "example": "Always make a backup before changing the system.",
+            "exampleHighlight": ["backup"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 839,
+            "word": "machine learning",
+            "displayMeaning": "aprendizaje automático",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "aprendizaje automático",
+                "aprendizaje de máquina",
+                "machine learning"
+            ],
+            "example": "The app uses machine learning to improve recommendations.",
+            "exampleHighlight": ["machine learning"],
+            "category": "technology",
+            "difficulty": "hard"
+        },
+        {
+            "id": 840,
+            "word": "deploy",
+            "displayMeaning": "desplegar",
+            "wordType": "verb",
+            "acceptedAnswers": ["desplegar", "implementar", "publicar"],
+            "example": "The team will deploy the new version tonight.",
+            "exampleHighlight": ["deploy"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 841,
+            "word": "homework",
+            "displayMeaning": "tarea",
+            "wordType": "noun",
+            "acceptedAnswers": ["tarea", "deberes", "trabajo para la casa"],
+            "example": "I finished my homework before dinner.",
+            "exampleHighlight": ["homework"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 842,
+            "word": "grade",
+            "displayMeaning": "nota",
+            "wordType": "noun",
+            "acceptedAnswers": ["nota", "calificación", "puntaje"],
+            "example": "She was happy with her grade on the test.",
+            "exampleHighlight": ["grade"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 843,
+            "word": "notebook",
+            "displayMeaning": "cuaderno",
+            "wordType": "noun",
+            "acceptedAnswers": ["cuaderno", "libreta", "bloc de notas"],
+            "example": "He wrote the lecture notes in his notebook.",
+            "exampleHighlight": ["notebook"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 844,
+            "word": "research",
+            "displayMeaning": "investigación",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "investigación",
+                "estudio",
+                "búsqueda de información"
+            ],
+            "example": "The research took several months to complete.",
+            "exampleHighlight": ["research"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 845,
+            "word": "assignment",
+            "displayMeaning": "tarea",
+            "wordType": "noun",
+            "acceptedAnswers": ["tarea", "asignación", "trabajo"],
+            "example": "The assignment is due on Friday.",
+            "exampleHighlight": ["assignment"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 846,
+            "word": "scholarship",
+            "displayMeaning": "beca",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "beca",
+                "ayuda económica",
+                "subsidio educativo"
+            ],
+            "example": "She received a scholarship to study abroad.",
+            "exampleHighlight": ["scholarship"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 847,
+            "word": "syllabus",
+            "displayMeaning": "programa",
+            "wordType": "noun",
+            "acceptedAnswers": ["programa", "temario", "plan de estudios"],
+            "example": "The professor explained the syllabus on the first day of class.",
+            "exampleHighlight": ["syllabus"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 848,
+            "word": "schedule",
+            "displayMeaning": "horario",
+            "wordType": "noun",
+            "acceptedAnswers": ["horario", "agenda", "programación"],
+            "example": "My schedule is full this week.",
+            "exampleHighlight": ["schedule"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 849,
+            "word": "appointment",
+            "displayMeaning": "cita",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "cita",
+                "turno",
+                "reunión programada",
+                "compromiso",
+                "reunión"
+            ],
+            "example": "I have an appointment with my advisor tomorrow.",
+            "exampleHighlight": ["appointment"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 850,
+            "word": "dissertation",
+            "displayMeaning": "tesis",
+            "wordType": "noun",
+            "acceptedAnswers": ["tesis", "disertación", "trabajo doctoral"],
+            "example": "She spent three years writing her dissertation.",
+            "exampleHighlight": ["dissertation"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 851,
+            "word": "chill",
+            "displayMeaning": "relajarse",
+            "wordType": "verb",
+            "acceptedAnswers": ["relajarse", "descansar", "tomarlo con calma"],
+            "example": "Let's chill at home after a long day.",
+            "exampleHighlight": ["chill"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 852,
+            "word": "i'm down",
+            "displayMeaning": "me apunto",
+            "wordType": "expression",
+            "acceptedAnswers": ["me apunto", "me sumo", "voy"],
+            "example": "If you want to go out tonight, I'm down.",
+            "exampleHighlight": ["i'm down"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 853,
+            "word": "catch up",
+            "displayMeaning": "ponerse al día",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "ponerse al día",
+                "alcanzar",
+                "actualizarse",
+                "ponerse al tanto"
+            ],
+            "example": "We need to catch up after missing the last meeting.",
+            "exampleHighlight": ["catch up"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 854,
+            "word": "figure out",
+            "displayMeaning": "averiguar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["averiguar", "resolver", "entender"],
+            "example": "I can't figure out how to fix this error.",
+            "exampleHighlight": ["figure out"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 856,
+            "word": "show up",
+            "displayMeaning": "aparecer",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["aparecer", "presentarse", "llegar", "asistir"],
+            "example": "He didn't show up to the interview.",
+            "exampleHighlight": ["show up"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 857,
+            "word": "hit the sack",
+            "displayMeaning": "irse a dormir",
+            "wordType": "expression",
+            "acceptedAnswers": ["irse a dormir", "acostarse", "irse a la cama"],
+            "example": "I'm exhausted, so I'm going to hit the sack early.",
+            "exampleHighlight": ["hit the sack"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 858,
+            "word": "piece of cake",
+            "displayMeaning": "muy fácil",
+            "wordType": "expression",
+            "acceptedAnswers": ["muy fácil", "pan comido", "sencillísimo"],
+            "example": "The test was a piece of cake for her.",
+            "exampleHighlight": ["piece of cake"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 859,
+            "word": "bite the bullet",
+            "displayMeaning": "armarse de valor",
+            "wordType": "expression",
+            "acceptedAnswers": ["armarse de valor", "afrontar", "apechugar"],
+            "example": "I had to bite the bullet and call the dentist.",
+            "exampleHighlight": ["bite the bullet"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 860,
+            "word": "let down",
+            "displayMeaning": "decepcionar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["decepcionar", "fallarle a", "defraudar"],
+            "example": "I didn't want to let down my team.",
+            "exampleHighlight": ["let down"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 861,
+            "word": "break the ice",
+            "displayMeaning": "romper el hielo",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "romper el hielo",
+                "iniciar la conversación",
+                "relajar el ambiente"
+            ],
+            "example": "He told a joke to break the ice at the meeting.",
+            "exampleHighlight": ["break the ice"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 862,
+            "word": "hit the nail on the head",
+            "displayMeaning": "dar en el clavo",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "dar en el clavo",
+                "acertar",
+                "dar en el blanco"
+            ],
+            "example": "Your comment hit the nail on the head.",
+            "exampleHighlight": ["hit the nail on the head"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 863,
+            "word": "burn out",
+            "displayMeaning": "agotarse",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["agotarse", "quemarse", "desgastarse"],
+            "example": "Many employees burn out when they work too much.",
+            "exampleHighlight": ["burn out"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 864,
+            "word": "spill the beans",
+            "displayMeaning": "revelar un secreto",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "revelar un secreto",
+                "contar el chisme",
+                "soltar la sopa"
+            ],
+            "example": "Don't spill the beans about the surprise party.",
+            "exampleHighlight": ["spill the beans"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 865,
+            "word": "back me up",
+            "displayMeaning": "respaldarme",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["respaldarme", "apoyarme"],
+            "example": "Can you back me up during the presentation?",
+            "exampleHighlight": ["back me up"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 866,
+            "word": "wanna",
+            "displayMeaning": "querer",
+            "wordType": "expression",
+            "acceptedAnswers": ["querer", "tener ganas de"],
+            "example": "Do you wanna grab lunch later?",
+            "exampleHighlight": ["wanna"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 867,
+            "word": "gonna",
+            "displayMeaning": "ir a",
+            "wordType": "expression",
+            "acceptedAnswers": ["ir a", "va a", "voy a"],
+            "example": "I'm gonna call you after work.",
+            "exampleHighlight": ["gonna"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 868,
+            "word": "dude",
+            "displayMeaning": "amigo",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "amigo",
+                "tipo",
+                "compa",
+                "amiga",
+                "tipa",
+                "pana",
+                "tío",
+                "güey",
+                "wey"
+            ],
+            "example": "Dude, you won't believe what happened to me on my way home yesterday.",
+            "exampleHighlight": ["dude"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 869,
+            "word": "stan",
+            "displayMeaning": "fanático",
+            "wordType": "noun",
+            "acceptedAnswers": ["fanático", "seguidor", "fan"],
+            "example": "She's a stan of that singer and knows every song.",
+            "exampleHighlight": ["stan"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 870,
+            "word": "salty",
+            "displayMeaning": "molesto",
+            "wordType": "adjective",
+            "acceptedAnswers": ["molesto", "picado", "amargado", "resentido"],
+            "example": "He got salty after losing the game.",
+            "exampleHighlight": ["salty"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 871,
+            "word": "ghosted",
+            "displayMeaning": "ignorado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["ignorado", "dejado en visto", "rechazado"],
+            "example": "She felt ghosted after he stopped replying.",
+            "exampleHighlight": ["ghosted"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 872,
+            "word": "sus",
+            "displayMeaning": "sospechoso",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "sospechoso",
+                "raro",
+                "dudoso",
+                "sospechosa",
+                "rara",
+                "dudosa",
+                "turbio",
+                "turbia"
+            ],
+            "example": "That excuse sounds sus to me.",
+            "exampleHighlight": ["sus"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 874,
+            "word": "bet",
+            "displayMeaning": "dale",
+            "wordType": "expression",
+            "acceptedAnswers": ["dale", "hecho", "de una", "va"],
+            "example": "I said bet when he asked if I was coming.",
+            "exampleHighlight": ["bet"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 875,
+            "word": "cap",
+            "displayMeaning": "mentira",
+            "wordType": "noun",
+            "acceptedAnswers": ["mentira", "falso", "exageración"],
+            "example": "That's cap; I know what really happened.",
+            "exampleHighlight": ["cap"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 876,
+            "word": "glow up",
+            "displayMeaning": "mejorar notablemente",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "mejorar notablemente",
+                "verse mejor",
+                "cambiar para mejor"
+            ],
+            "example": "He had a big glow up after starting to exercise regularly.",
+            "exampleHighlight": ["glow up"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 877,
+            "word": "cover letter",
+            "displayMeaning": "carta de presentación",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "carta de presentación",
+                "carta de postulación",
+                "carta de motivación"
+            ],
+            "example": "She attached a cover letter to her job application.",
+            "exampleHighlight": ["cover letter"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 878,
+            "word": "hire",
+            "displayMeaning": "contratar",
+            "wordType": "verb",
+            "acceptedAnswers": ["contratar", "emplear", "incorporar"],
+            "example": "The company decided to hire two new designers.",
+            "exampleHighlight": ["hire"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 879,
+            "word": "strengths and weaknesses",
+            "displayMeaning": "fortalezas y debilidades",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "fortalezas y debilidades",
+                "puntos fuertes y débiles",
+                "virtudes y defectos"
+            ],
+            "example": "During the interview, she talked about her strengths and weaknesses.",
+            "exampleHighlight": ["strengths and weaknesses"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 880,
+            "word": "career path",
+            "displayMeaning": "trayectoria profesional",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "trayectoria profesional",
+                "camino profesional",
+                "carrera laboral"
+            ],
+            "example": "He chose a career path in software development.",
+            "exampleHighlight": ["career path"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 881,
+            "word": "hands-on experience",
+            "displayMeaning": "experiencia práctica",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "experiencia práctica",
+                "experiencia directa",
+                "experiencia en terreno"
+            ],
+            "example": "The internship gave her hands-on experience with real clients.",
+            "exampleHighlight": ["hands-on experience"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 882,
+            "word": "multitask",
+            "displayMeaning": "hacer multitarea",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "hacer multitarea",
+                "hacer varias cosas a la vez",
+                "multitarea",
+                "realizar varias tareas",
+                "hacer varias tareas"
+            ],
+            "example": "She can multitask while answering calls and writing reports.",
+            "exampleHighlight": ["multitask"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 883,
+            "word": "meet targets",
+            "displayMeaning": "cumplir objetivos",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "cumplir objetivos",
+                "alcanzar metas",
+                "lograr objetivos"
+            ],
+            "example": "The sales team managed to meet targets this quarter.",
+            "exampleHighlight": ["meet targets"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 885,
+            "word": "thrive",
+            "displayMeaning": "prosperar",
+            "wordType": "verb",
+            "acceptedAnswers": ["prosperar", "crecer", "desarrollarse"],
+            "example": "New employees often thrive in a supportive environment.",
+            "exampleHighlight": ["thrive"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 886,
+            "word": "environment",
+            "displayMeaning": "entorno",
+            "wordType": "noun",
+            "acceptedAnswers": ["entorno", "ambiente", "medio"],
+            "example": "A positive environment helps people work better.",
+            "exampleHighlight": ["environment"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 887,
+            "word": "results-driven",
+            "displayMeaning": "orientado a resultados",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "orientado a resultados",
+                "enfocado en resultados",
+                "impulsado por resultados"
+            ],
+            "example": "They are looking for a results-driven manager.",
+            "exampleHighlight": ["results-driven"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 888,
+            "word": "achievement",
+            "displayMeaning": "logro",
+            "wordType": "noun",
+            "acceptedAnswers": ["logro", "consecución", "éxito"],
+            "example": "Finishing the project was a major achievement.",
+            "exampleHighlight": ["achievement"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 889,
+            "word": "align",
+            "displayMeaning": "alinear",
+            "wordType": "verb",
+            "acceptedAnswers": ["alinear", "coordinar", "ajustar"],
+            "example": "We need to align our goals with the company strategy.",
+            "exampleHighlight": ["align"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 890,
+            "word": "goal",
+            "displayMeaning": "meta",
+            "wordType": "noun",
+            "acceptedAnswers": ["meta", "objetivo", "propósito", "aspiración"],
+            "example": "Her goal is to finish university next year.",
+            "exampleHighlight": ["goal"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 891,
+            "word": "brigand",
+            "displayMeaning": "bandido",
+            "wordType": "noun",
+            "acceptedAnswers": ["bandido", "salteador", "forajido"],
+            "example": "The brigand attacked travelers on the road.",
+            "exampleHighlight": ["brigand"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 892,
+            "word": "by the way",
+            "displayMeaning": "por cierto",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "por cierto",
+                "a propósito",
+                "dicho sea de paso",
+                "de paso"
+            ],
+            "example": "By the way, did you send the email?",
+            "exampleHighlight": ["by the way"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 893,
+            "word": "doom",
+            "displayMeaning": "fatalidad",
+            "wordType": "noun",
+            "acceptedAnswers": ["fatalidad", "desgracia", "condena"],
+            "example": "He feared doom after hearing the bad news.",
+            "exampleHighlight": ["doom"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 894,
+            "word": "kitty",
+            "displayMeaning": "gatito",
+            "wordType": "noun",
+            "acceptedAnswers": ["gatito", "gatita", "cachorro de gato"],
+            "example": "The kitty slept on the sofa all afternoon.",
+            "exampleHighlight": ["kitty"],
+            "category": "animal",
+            "difficulty": "easy"
+        },
+        {
+            "id": 895,
+            "word": "plain",
+            "displayMeaning": "simple",
+            "wordType": "adjective",
+            "acceptedAnswers": ["simple", "sencillo", "llano"],
+            "example": "She wore a plain white shirt to the meeting.",
+            "exampleHighlight": ["plain"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 896,
+            "word": "workstation",
+            "displayMeaning": "estación de trabajo",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "estación de trabajo",
+                "puesto de trabajo",
+                "área de trabajo"
+            ],
+            "example": "Each employee has a workstation with two monitors.",
+            "exampleHighlight": ["workstation"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 897,
+            "word": "knob",
+            "displayMeaning": "perilla",
+            "wordType": "noun",
+            "acceptedAnswers": ["perilla", "pomo", "botón giratorio"],
+            "example": "Turn the knob to adjust the volume.",
+            "exampleHighlight": ["knob"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 898,
+            "word": "amount",
+            "displayMeaning": "cantidad",
+            "wordType": "noun",
+            "acceptedAnswers": ["cantidad", "monto", "porción", "medida"],
+            "example": "The amount of sugar in this recipe is small.",
+            "exampleHighlight": ["amount"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 899,
+            "word": "shift",
+            "displayMeaning": "turno",
+            "wordType": "noun",
+            "acceptedAnswers": ["turno", "jornada", "cambio"],
+            "example": "She starts her night shift at 10 p.m.",
+            "exampleHighlight": ["shift"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 900,
+            "word": "sign",
+            "displayMeaning": "señal",
+            "wordType": "noun",
+            "acceptedAnswers": ["señal", "letrero", "aviso"],
+            "example": "Look at the sign before crossing the street.",
+            "exampleHighlight": ["sign"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 901,
+            "word": "signal",
+            "displayMeaning": "señal",
+            "wordType": "noun",
+            "acceptedAnswers": ["señal", "indicación", "sinal"],
+            "example": "There was no signal in the tunnel.",
+            "exampleHighlight": ["signal"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 902,
+            "word": "whole",
+            "displayMeaning": "entero",
+            "wordType": "adjective",
+            "acceptedAnswers": ["entero", "completo", "total"],
+            "example": "He ate the whole pizza by himself.",
+            "exampleHighlight": ["whole"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 903,
+            "word": "hug",
+            "displayMeaning": "abrazar",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "abrazar",
+                "dar un abrazo",
+                "estrechar",
+                "abrazó"
+            ],
+            "example": "She hugged her brother when he arrived.",
+            "exampleHighlight": ["hugged"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 904,
+            "word": "huge",
+            "displayMeaning": "enorme",
+            "wordType": "adjective",
+            "acceptedAnswers": ["enorme", "gigante", "muy grande"],
+            "example": "They bought a huge table for the new house.",
+            "exampleHighlight": ["huge"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 905,
+            "word": "road",
+            "displayMeaning": "carretera",
+            "wordType": "noun",
+            "acceptedAnswers": ["carretera", "camino", "ruta"],
+            "example": "The road was closed because of the accident.",
+            "exampleHighlight": ["road"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 906,
+            "word": "customer",
+            "displayMeaning": "cliente",
+            "wordType": "noun",
+            "acceptedAnswers": ["cliente", "comprador", "consumidor"],
+            "example": "A customer asked for a refund at the desk.",
+            "exampleHighlight": ["customer"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 907,
+            "word": "client",
+            "displayMeaning": "cliente",
+            "wordType": "noun",
+            "acceptedAnswers": ["cliente", "usuario", "consumidor"],
+            "example": "The lawyer met with a client in the morning.",
+            "exampleHighlight": ["client"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 908,
+            "word": "invoice",
+            "displayMeaning": "factura",
+            "wordType": "noun",
+            "acceptedAnswers": ["factura", "cuenta", "boleta"],
+            "example": "Please send the invoice before the end of the month.",
+            "exampleHighlight": ["invoice"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 909,
+            "word": "bill",
+            "displayMeaning": "cuenta",
+            "wordType": "noun",
+            "acceptedAnswers": ["cuenta", "factura", "boleta"],
+            "example": "We paid the bill after dinner.",
+            "exampleHighlight": ["bill"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 910,
+            "word": "brawl",
+            "displayMeaning": "pelea",
+            "wordType": "noun",
+            "acceptedAnswers": ["pelea", "riña", "riña violenta"],
+            "example": "A brawl broke out after the match.",
+            "exampleHighlight": ["brawl"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 911,
+            "word": "scramble",
+            "displayMeaning": "agarrar apresuradamente",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "agarrar apresuradamente",
+                "apresurarse",
+                "luchar por conseguir",
+                "apresuramos"
+            ],
+            "example": "We scrambled to find our passports before boarding.",
+            "exampleHighlight": ["scrambled"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 912,
+            "word": "clutch",
+            "displayMeaning": "agarrar con fuerza",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "agarrar con fuerza",
+                "aferrar",
+                "sujetar",
+                "agarró con fuerza"
+            ],
+            "example": "She clutched her bag when the bus stopped suddenly.",
+            "exampleHighlight": ["clutched"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 913,
+            "word": "sneak",
+            "displayMeaning": "escabullirse",
+            "wordType": "verb",
+            "acceptedAnswers": ["escabullirse", "colarse", "esconderse"],
+            "example": "He tried to sneak out without waking anyone.",
+            "exampleHighlight": ["sneak"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 914,
+            "word": "badass",
+            "displayMeaning": "genial",
+            "wordType": "adjective",
+            "acceptedAnswers": ["genial", "impresionante", "fuerte"],
+            "example": "She gave a badass performance on stage.",
+            "exampleHighlight": ["badass"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 915,
+            "word": "inquiry",
+            "displayMeaning": "consulta",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "consulta",
+                "pregunta",
+                "solicitud de información"
+            ],
+            "example": "We received an inquiry about the new service.",
+            "exampleHighlight": ["inquiry"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 916,
+            "word": "playback",
+            "displayMeaning": "reproducción",
+            "wordType": "noun",
+            "acceptedAnswers": ["reproducción", "retroceso", "repetición"],
+            "example": "The coach watched the playback of the game.",
+            "exampleHighlight": ["playback"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 917,
+            "word": "enhancements",
+            "displayMeaning": "mejoras",
+            "wordType": "noun",
+            "acceptedAnswers": ["mejoras", "mejoramientos", "actualizaciones"],
+            "example": "The app includes several new enhancements.",
+            "exampleHighlight": ["enhancements"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 918,
+            "word": "lick",
+            "displayMeaning": "lamer",
+            "wordType": "verb",
+            "acceptedAnswers": ["lamer", "chupar", "pasar la lengua"],
+            "example": "The dog tried to lick my hand.",
+            "exampleHighlight": ["lick"],
+            "category": "animal",
+            "difficulty": "easy"
+        },
+        {
+            "id": 919,
+            "word": "leak",
+            "displayMeaning": "fuga",
+            "wordType": "noun",
+            "acceptedAnswers": ["fuga", "escape", "filtración"],
+            "example": "There was a leak in the bathroom ceiling.",
+            "exampleHighlight": ["leak"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 920,
+            "word": "bind",
+            "displayMeaning": "atar",
+            "wordType": "verb",
+            "acceptedAnswers": ["atar", "unir", "sujetar"],
+            "example": "The rope was used to bind the package.",
+            "exampleHighlight": ["bind"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 921,
+            "word": "hustler",
+            "displayMeaning": "emprendedor",
+            "wordType": "noun",
+            "acceptedAnswers": ["emprendedor", "luchador", "buscavidas"],
+            "example": "He's a hustler who always finds a way to make money.",
+            "exampleHighlight": ["hustler"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 922,
+            "word": "vanish",
+            "displayMeaning": "desaparecer",
+            "wordType": "verb",
+            "acceptedAnswers": ["desaparecer", "esfumarse", "evaporarse"],
+            "example": "The magician made the coin vanish.",
+            "exampleHighlight": ["vanish"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 923,
+            "word": "lead",
+            "displayMeaning": "liderar",
+            "wordType": "verb",
+            "acceptedAnswers": ["liderar", "guiar", "encabezar"],
+            "example": "She will lead the project next month.",
+            "exampleHighlight": ["lead"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 924,
+            "word": "bound",
+            "displayMeaning": "destinado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["destinado", "obligado", "encaminado"],
+            "example": "We are bound to make some mistakes at first.",
+            "exampleHighlight": ["bound"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 925,
+            "word": "astonish",
+            "displayMeaning": "sorprender",
+            "wordType": "verb",
+            "acceptedAnswers": ["sorprender", "asombrar", "dejar boquiabierto"],
+            "example": "The result will astonish everyone.",
+            "exampleHighlight": ["astonish"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 926,
+            "word": "clever",
+            "displayMeaning": "inteligente",
+            "wordType": "adjective",
+            "acceptedAnswers": ["inteligente", "astuto", "ingenioso"],
+            "example": "She came up with a clever solution.",
+            "exampleHighlight": ["clever"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 927,
+            "word": "kidnapped",
+            "displayMeaning": "secuestrado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["secuestrado", "raptado", "retenido"],
+            "example": "The kidnapped child was found safe.",
+            "exampleHighlight": ["kidnapped"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 928,
+            "word": "far-fetched",
+            "displayMeaning": "inverosímil",
+            "wordType": "adjective",
+            "acceptedAnswers": ["inverosímil", "improbable", "forzado"],
+            "example": "His explanation sounded far-fetched to everyone.",
+            "exampleHighlight": ["far-fetched"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 929,
+            "word": "prey",
+            "displayMeaning": "presa",
+            "wordType": "noun",
+            "acceptedAnswers": ["presa", "víctima", "caza"],
+            "example": "The lion chased its prey across the field.",
+            "exampleHighlight": ["prey"],
+            "category": "animal",
+            "difficulty": "medium"
+        },
+        {
+            "id": 930,
+            "word": "seem",
+            "displayMeaning": "parecer",
+            "wordType": "verb",
+            "acceptedAnswers": ["parecer", "aparentar", "lucir"],
+            "example": "You seem tired after the trip.",
+            "exampleHighlight": ["seem"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 931,
+            "word": "drag",
+            "displayMeaning": "arrastrar",
+            "wordType": "verb",
+            "acceptedAnswers": ["arrastrar", "tirar de", "jalar"],
+            "example": "He had to drag the heavy box upstairs.",
+            "exampleHighlight": ["drag"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 932,
+            "word": "dare",
+            "displayMeaning": "atreverse",
+            "wordType": "verb",
+            "acceptedAnswers": ["atreverse", "osar", "desafiar"],
+            "example": "I dare you to jump over the puddle.",
+            "exampleHighlight": ["dare"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 933,
+            "word": "lack",
+            "displayMeaning": "faltar",
+            "wordType": "verb",
+            "acceptedAnswers": ["faltar", "carecer de", "no tener"],
+            "example": "They lack the resources to finish the job.",
+            "exampleHighlight": ["lack"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 934,
+            "word": "earn",
+            "displayMeaning": "ganar",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "ganar",
+                "obtener",
+                "merecer",
+                "percibir",
+                "cobrar",
+                "gana",
+                "percibe",
+                "cobra"
+            ],
+            "example": "She earns a good salary at the company.",
+            "exampleHighlight": ["earns"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 935,
+            "word": "spare",
+            "displayMeaning": "extra",
+            "wordType": "adjective",
+            "acceptedAnswers": ["extra", "de repuesto", "sobrante"],
+            "example": "Do you have a spare charger I can borrow?",
+            "exampleHighlight": ["spare"],
+            "category": "technology",
+            "difficulty": "easy"
+        },
+        {
+            "id": 936,
+            "word": "desire",
+            "displayMeaning": "deseo",
+            "wordType": "noun",
+            "acceptedAnswers": ["deseo", "anhelo", "ganas"],
+            "example": "He has a strong desire to travel the world.",
+            "exampleHighlight": ["desire"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 937,
+            "word": "messy",
+            "displayMeaning": "desordenado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["desordenado", "sucio", "caótico"],
+            "example": "His desk is always messy.",
+            "exampleHighlight": ["messy"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 938,
+            "word": "remark",
+            "displayMeaning": "comentario",
+            "wordType": "noun",
+            "acceptedAnswers": ["comentario", "observación", "acotación"],
+            "example": "Her remark made everyone laugh.",
+            "exampleHighlight": ["remark"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 939,
+            "word": "chief",
+            "displayMeaning": "jefe",
+            "wordType": "noun",
+            "acceptedAnswers": ["jefe", "líder", "principal"],
+            "example": "The chief gave the final order.",
+            "exampleHighlight": ["chief"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 940,
+            "word": "rough",
+            "displayMeaning": "áspero",
+            "wordType": "adjective",
+            "acceptedAnswers": ["áspero", "tosco", "dificil"],
+            "example": "The surface felt rough to the touch.",
+            "exampleHighlight": ["rough"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 941,
+            "word": "fortress",
+            "displayMeaning": "fortaleza",
+            "wordType": "noun",
+            "acceptedAnswers": ["fortaleza", "castillo", "bastión"],
+            "example": "The fortress stood on top of the hill.",
+            "exampleHighlight": ["fortress"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 942,
+            "word": "chew",
+            "displayMeaning": "masticar",
+            "wordType": "verb",
+            "acceptedAnswers": ["masticar", "rumiar", "moler"],
+            "example": "Please chew your food slowly.",
+            "exampleHighlight": ["chew"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 943,
+            "word": "blow up",
+            "displayMeaning": "explotar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["explotar", "estallar", "inflarse"],
+            "example": "The balloon began to blow up when he filled it with air.",
+            "exampleHighlight": ["blow up"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 944,
+            "word": "excel",
+            "displayMeaning": "sobresalir",
+            "wordType": "verb",
+            "acceptedAnswers": ["sobresalir", "destacar", "brillar"],
+            "example": "Students excel when they feel supported.",
+            "exampleHighlight": ["excel"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 945,
+            "word": "utter",
+            "displayMeaning": "auténtico",
+            "wordType": "adjective",
+            "acceptedAnswers": ["auténtico", "absoluto", "total"],
+            "example": "It was utter chaos after the announcement.",
+            "exampleHighlight": ["utter"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 946,
+            "word": "accommodation",
+            "displayMeaning": "alojamiento",
+            "wordType": "noun",
+            "acceptedAnswers": ["alojamiento", "hospedaje", "estancia"],
+            "example": "We booked accommodation near the beach.",
+            "exampleHighlight": ["accommodation"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 947,
+            "word": "brochure",
+            "displayMeaning": "folleto",
+            "wordType": "noun",
+            "acceptedAnswers": ["folleto", "prospecto", "tríptico"],
+            "example": "The brochure includes maps and hotel prices.",
+            "exampleHighlight": ["brochure"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 948,
+            "word": "car hire",
+            "displayMeaning": "alquiler de auto",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "alquiler de auto",
+                "renta de auto",
+                "arriendo de auto"
+            ],
+            "example": "We used car hire to get around the city.",
+            "exampleHighlight": ["car hire"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 949,
+            "word": "downtown",
+            "displayMeaning": "centro",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "centro",
+                "centro de la ciudad",
+                "casco central"
+            ],
+            "example": "The hotel is downtown, close to the station.",
+            "exampleHighlight": ["downtown"],
+            "category": "travel",
+            "difficulty": "easy"
+        },
+        {
+            "id": 950,
+            "word": "sightseer",
+            "displayMeaning": "turista",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "turista",
+                "visitante",
+                "excursionista",
+                "turistas",
+                "visitantes",
+                "excursionistas"
+            ],
+            "example": "A group of sightseers took photos near the monument.",
+            "exampleHighlight": ["sightseers"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 951,
+            "word": "sunburn",
+            "displayMeaning": "quemadura solar",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "quemadura solar",
+                "eritema solar",
+                "insolación"
+            ],
+            "example": "He got sunburn after spending the afternoon at the beach.",
+            "exampleHighlight": ["sunburn"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 952,
+            "word": "voyage",
+            "displayMeaning": "viaje",
+            "wordType": "noun",
+            "acceptedAnswers": ["viaje", "travesía", "recorrido"],
+            "example": "The voyage across the ocean took two weeks.",
+            "exampleHighlight": ["voyage"],
+            "category": "travel",
+            "difficulty": "medium"
+        },
+        {
+            "id": 953,
+            "word": "weep",
+            "displayMeaning": "llorar",
+            "wordType": "verb",
+            "acceptedAnswers": ["llorar", "sollozar", "lamentarse"],
+            "example": "She began to weep when she heard the bad news.",
+            "exampleHighlight": ["weep"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 954,
+            "word": "wound",
+            "displayMeaning": "herida",
+            "wordType": "noun",
+            "acceptedAnswers": ["herida", "lesión", "lastimadura"],
+            "example": "The soldier had a wound on his arm.",
+            "exampleHighlight": ["wound"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 955,
+            "word": "injury",
+            "displayMeaning": "lesión",
+            "wordType": "noun",
+            "acceptedAnswers": ["lesión", "daño", "herida"],
+            "example": "He suffered an injury during the match.",
+            "exampleHighlight": ["injury"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 956,
+            "word": "bandage",
+            "displayMeaning": "vendaje",
+            "wordType": "noun",
+            "acceptedAnswers": ["vendaje", "curita", "apósito", "venda"],
+            "example": "The nurse wrapped a bandage around his ankle.",
+            "exampleHighlight": ["bandage"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 957,
+            "word": "heal",
+            "displayMeaning": "curar",
+            "wordType": "verb",
+            "acceptedAnswers": ["curar", "sanar", "recuperar"],
+            "example": "The cut will heal in a few days.",
+            "exampleHighlight": ["heal"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 958,
+            "word": "sting",
+            "displayMeaning": "picar",
+            "wordType": "verb",
+            "acceptedAnswers": ["picar", "arder", "punzar"],
+            "example": "The antiseptic may sting for a moment.",
+            "exampleHighlight": ["sting"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 959,
+            "word": "ointment",
+            "displayMeaning": "pomada",
+            "wordType": "noun",
+            "acceptedAnswers": ["pomada", "ungüento", "crema medicinal"],
+            "example": "Apply the ointment to the rash twice a day.",
+            "exampleHighlight": ["ointment"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 960,
+            "word": "burn",
+            "displayMeaning": "quemadura",
+            "wordType": "noun",
+            "acceptedAnswers": ["quemadura", "ardor", "lesión por calor"],
+            "example": "He got a small burn from the hot pan.",
+            "exampleHighlight": ["burn"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 961,
+            "word": "fracture",
+            "displayMeaning": "fractura",
+            "wordType": "noun",
+            "acceptedAnswers": ["fractura", "rotura", "quebradura"],
+            "example": "The X-ray showed a fracture in her wrist.",
+            "exampleHighlight": ["fracture"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 962,
+            "word": "bruise",
+            "displayMeaning": "moretón",
+            "wordType": "noun",
+            "acceptedAnswers": ["moretón", "hematoma", "contusión"],
+            "example": "He had a bruise on his leg after falling off the bike.",
+            "exampleHighlight": ["bruise"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 963,
+            "word": "fall apart",
+            "displayMeaning": "desmoronarse",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["desmoronarse", "deshacerse", "colapsar"],
+            "example": "The old chair started to fall apart.",
+            "exampleHighlight": ["fall apart"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 964,
+            "word": "make up for",
+            "displayMeaning": "compensar",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["compensar", "reponer", "resarcir"],
+            "example": "He worked extra hours to make up for the delay.",
+            "exampleHighlight": ["make up for"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 965,
+            "word": "moreover",
+            "displayMeaning": "además",
+            "wordType": "adverb",
+            "acceptedAnswers": ["además", "igualmente", "encima"],
+            "example": "The plan is expensive; moreover, it is risky.",
+            "exampleHighlight": ["moreover"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 966,
+            "word": "however",
+            "displayMeaning": "sin embargo",
+            "wordType": "adverb",
+            "acceptedAnswers": ["sin embargo", "no obstante", "pero"],
+            "example": "The task was difficult; however, they finished on time.",
+            "exampleHighlight": ["however"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 967,
+            "word": "therefore",
+            "displayMeaning": "por lo tanto",
+            "wordType": "adverb",
+            "acceptedAnswers": ["por lo tanto", "por consiguiente", "así que"],
+            "example": "It was raining, therefore the event was canceled.",
+            "exampleHighlight": ["therefore"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 968,
+            "word": "meanwhile",
+            "displayMeaning": "mientras tanto",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "mientras tanto",
+                "entre tanto",
+                "al mismo tiempo"
+            ],
+            "example": "The soup is cooking; meanwhile, set the table.",
+            "exampleHighlight": ["meanwhile"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 969,
+            "word": "nevertheless",
+            "displayMeaning": "sin embargo",
+            "wordType": "adverb",
+            "acceptedAnswers": ["sin embargo", "no obstante", "aun así"],
+            "example": "It was expensive; nevertheless, many people bought it.",
+            "exampleHighlight": ["nevertheless"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 970,
+            "word": "although",
+            "displayMeaning": "aunque",
+            "wordType": "expression",
+            "acceptedAnswers": ["aunque", "a pesar de que", "si bien"],
+            "example": "Although it was late, she kept working.",
+            "exampleHighlight": ["Although"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 971,
+            "word": "likewise",
+            "displayMeaning": "asimismo",
+            "wordType": "adverb",
+            "acceptedAnswers": ["asimismo", "igualmente", "del mismo modo"],
+            "example": "He thanked the team, and she likewise thanked the team.",
+            "exampleHighlight": ["likewise"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 972,
+            "word": "sneaky",
+            "displayMeaning": "sigiloso",
+            "wordType": "adjective",
+            "acceptedAnswers": ["sigiloso", "astuto", "mañoso"],
+            "example": "The sneaky cat entered the kitchen without making noise.",
+            "exampleHighlight": ["sneaky"],
+            "category": "animal",
+            "difficulty": "medium"
+        },
+        {
+            "id": 973,
+            "word": "ruthless",
+            "displayMeaning": "implacable",
+            "wordType": "adjective",
+            "acceptedAnswers": ["implacable", "cruel", "despiadado"],
+            "example": "The ruthless leader fired anyone who disagreed.",
+            "exampleHighlight": ["ruthless"],
+            "category": "business",
+            "difficulty": "hard"
+        },
+        {
+            "id": 974,
+            "word": "mean",
+            "displayMeaning": "tacaño",
+            "wordType": "adjective",
+            "acceptedAnswers": ["tacaño", "mezquino", "avaro"],
+            "example": "He is too mean to share his snacks.",
+            "exampleHighlight": ["mean"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 975,
+            "word": "mean",
+            "displayMeaning": "significado",
+            "wordType": "verb",
+            "acceptedAnswers": ["significado", "querer decir", "significar"],
+            "example": "What does this word mean in Spanish?",
+            "exampleHighlight": ["mean"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 976,
+            "word": "fussy",
+            "displayMeaning": "quisquilloso",
+            "wordType": "adjective",
+            "acceptedAnswers": ["quisquilloso", "exigente", "delicado"],
+            "example": "The baby gets fussy when she's sleepy.",
+            "exampleHighlight": ["fussy"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 977,
+            "word": "callous",
+            "displayMeaning": "insensible",
+            "wordType": "adjective",
+            "acceptedAnswers": ["insensible", "desconsiderado", "indiferente"],
+            "example": "His callous response upset everyone.",
+            "exampleHighlight": ["callous"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 978,
+            "word": "nasty",
+            "displayMeaning": "desagradable",
+            "wordType": "adjective",
+            "acceptedAnswers": ["desagradable", "malicioso", "feo"],
+            "example": "That was a nasty comment.",
+            "exampleHighlight": ["nasty"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 979,
+            "word": "greedy",
+            "displayMeaning": "codicioso",
+            "wordType": "adjective",
+            "acceptedAnswers": ["codicioso", "ambicioso", "avaro"],
+            "example": "The greedy man wanted all the money.",
+            "exampleHighlight": ["greedy"],
+            "category": "business",
+            "difficulty": "easy"
+        },
+        {
+            "id": 980,
+            "word": "inwards",
+            "displayMeaning": "hacia adentro",
+            "wordType": "adverb",
+            "acceptedAnswers": ["hacia adentro", "al interior", "internamente"],
+            "example": "Push the door inwards to open it.",
+            "exampleHighlight": ["inwards"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 981,
+            "word": "outwards",
+            "displayMeaning": "hacia afuera",
+            "wordType": "adverb",
+            "acceptedAnswers": ["hacia afuera", "al exterior", "externamente"],
+            "example": "The petals opened outwards in the sun.",
+            "exampleHighlight": ["outwards"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 982,
+            "word": "backwards",
+            "displayMeaning": "hacia atrás",
+            "wordType": "adverb",
+            "acceptedAnswers": ["hacia atrás", "al revés", "en reversa"],
+            "example": "He stepped backwards to avoid the puddle.",
+            "exampleHighlight": ["backwards"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 983,
+            "word": "forwards",
+            "displayMeaning": "hacia adelante",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "hacia adelante",
+                "adelante",
+                "en dirección frontal"
+            ],
+            "example": "Move forwards slowly and carefully.",
+            "exampleHighlight": ["forwards"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 984,
+            "word": "onwards",
+            "displayMeaning": "en adelante",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "en adelante",
+                "desde ahora",
+                "a partir de entonces"
+            ],
+            "example": "From this point onwards, we will work remotely.",
+            "exampleHighlight": ["onwards"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 985,
+            "word": "indoors",
+            "displayMeaning": "adentro",
+            "wordType": "adverb",
+            "acceptedAnswers": ["adentro", "en el interior", "dentro de casa"],
+            "example": "We stayed indoors because it was raining heavily.",
+            "exampleHighlight": ["indoors"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 986,
+            "word": "below",
+            "displayMeaning": "debajo de",
+            "wordType": "preposition",
+            "acceptedAnswers": ["debajo de", "más abajo de", "bajo"],
+            "example": "The temperature fell below zero at night.",
+            "exampleHighlight": ["below"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 987,
+            "word": "beneath",
+            "displayMeaning": "debajo de",
+            "wordType": "preposition",
+            "acceptedAnswers": ["debajo de", "bajo", "por debajo de"],
+            "example": "The keys were hidden beneath the sofa.",
+            "exampleHighlight": ["beneath"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 988,
+            "word": "upwards",
+            "displayMeaning": "hacia arriba",
+            "wordType": "adverb",
+            "acceptedAnswers": ["hacia arriba", "arriba", "en ascenso"],
+            "example": "The balloon floated upwards into the sky.",
+            "exampleHighlight": ["upwards"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 989,
+            "word": "touchy-feely",
+            "displayMeaning": "demasiado afectuoso",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "demasiado afectuoso",
+                "muy cariñoso",
+                "pegajoso"
+            ],
+            "example": "He is touchy-feely with everyone at work.",
+            "exampleHighlight": ["touchy-feely"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 990,
+            "word": "bossy-wossy",
+            "displayMeaning": "mandón",
+            "wordType": "expression",
+            "acceptedAnswers": ["mandón", "mandona", "mandoncito"],
+            "example": "Don't be bossy-wossy with your classmates.",
+            "exampleHighlight": ["bossy-wossy"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 991,
+            "word": "lazy-daisy",
+            "displayMeaning": "vago",
+            "wordType": "expression",
+            "acceptedAnswers": ["vago", "flojo", "perezoso"],
+            "example": "Stop acting like a lazy-daisy and finish your homework.",
+            "exampleHighlight": ["lazy-daisy"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 992,
+            "word": "sniffy-sniffy",
+            "displayMeaning": "siútico",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "siútico",
+                "siútica",
+                "esnob",
+                "estirado",
+                "estirada",
+                "creído",
+                "creída"
+            ],
+            "example": "She sounded sniffy-sniffy about the small restaurant.",
+            "exampleHighlight": ["sniffy-sniffy"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 993,
+            "word": "nervy-werve",
+            "displayMeaning": "nervioso",
+            "wordType": "expression",
+            "acceptedAnswers": ["nervioso", "ansioso", "inquieto"],
+            "example": "He got nervy-werve before the interview.",
+            "exampleHighlight": ["nervy-werve"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 994,
+            "word": "gloomy-dummy",
+            "displayMeaning": "triste",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "triste",
+                "deprimido",
+                "melancólico",
+                "bajoneado"
+            ],
+            "example": "He looked like a gloomy-dummy all afternoon.",
+            "exampleHighlight": ["gloomy-dummy"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 995,
+            "word": "jerk",
+            "displayMeaning": "idiota",
+            "wordType": "noun",
+            "acceptedAnswers": [
+                "idiota",
+                "imbécil",
+                "tonto",
+                "tonta",
+                "pesado",
+                "pesada",
+                "estúpido",
+                "estúpida",
+                "grosero",
+                "grosera"
+            ],
+            "example": "Don't be a jerk to your friends.",
+            "exampleHighlight": ["jerk"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 996,
+            "word": "moron",
+            "displayMeaning": "imbécil",
+            "wordType": "noun",
+            "acceptedAnswers": ["imbécil", "idiota", "estúpido"],
+            "example": "Only a moron would ignore that warning.",
+            "exampleHighlight": ["moron"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 997,
+            "word": "scumbag",
+            "displayMeaning": "basura",
+            "wordType": "noun",
+            "acceptedAnswers": ["basura", "despreciable", "canalla"],
+            "example": "He called the thief a scumbag.",
+            "exampleHighlight": ["scumbag"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 998,
+            "word": "loser",
+            "displayMeaning": "perdedor",
+            "wordType": "noun",
+            "acceptedAnswers": ["perdedor", "fracasado", "fracaso"],
+            "example": "He felt like a loser after failing the test.",
+            "exampleHighlight": ["loser"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 999,
+            "word": "fool",
+            "displayMeaning": "tonto",
+            "wordType": "noun",
+            "acceptedAnswers": ["tonto", "ingenuo", "bobo"],
+            "example": "Don't make a fool of yourself in front of everyone.",
+            "exampleHighlight": ["fool"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1000,
+            "word": "grudgingly",
+            "displayMeaning": "a regañadientes",
+            "wordType": "adverb",
+            "acceptedAnswers": [
+                "a regañadientes",
+                "de mala gana",
+                "sin entusiasmo"
+            ],
+            "example": "He grudgingly agreed to help.",
+            "exampleHighlight": ["grudgingly"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1001,
+            "word": "wham-bam",
+            "displayMeaning": "rápidamente",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "rápidamente",
+                "de golpe",
+                "sin demora",
+                "rápido",
+                "en un abrir y cerrar de ojos",
+                "en un segundo",
+                "en un instante"
+            ],
+            "example": "The repairs were done wham-bam and the shop reopened.",
+            "exampleHighlight": ["wham-bam"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1002,
+            "word": "artsy-fartsy",
+            "displayMeaning": "pretencioso",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "pretencioso",
+                "pretenciosa",
+                "afectado",
+                "afectada",
+                "muy artístico",
+                "muy artística",
+                "artistoide"
+            ],
+            "example": "The gallery felt a little artsy-fartsy for him.",
+            "exampleHighlight": ["artsy-fartsy"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1003,
+            "word": "gobsmacked",
+            "displayMeaning": "asombrado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["asombrado", "impactado", "boquiabierto"],
+            "example": "She was gobsmacked by the news.",
+            "exampleHighlight": ["gobsmacked"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1004,
+            "word": "smack",
+            "displayMeaning": "golpear",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "golpear",
+                "dar un golpe",
+                "abofetear",
+                "golpeó",
+                "dió un golpe",
+                "abofeteó"
+            ],
+            "example": "He smacked the ball across the field.",
+            "exampleHighlight": ["smacked"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1005,
+            "word": "blow",
+            "displayMeaning": "soplar",
+            "wordType": "verb",
+            "acceptedAnswers": ["soplar", "exhalar", "hinchar"],
+            "example": "The wind began to blow harder in the afternoon.",
+            "exampleHighlight": ["blow"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1006,
+            "word": "skedaddle",
+            "displayMeaning": "largarse",
+            "wordType": "verb",
+            "acceptedAnswers": [
+                "largarse",
+                "irse rápido",
+                "escaparse",
+                "salió corriendo",
+                "escaparon",
+                "salieron corriendo",
+                "se largaron"
+            ],
+            "example": "When the police arrived, the kids skedaddled.",
+            "exampleHighlight": ["skedaddled"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1007,
+            "word": "kerfuffle",
+            "displayMeaning": "alboroto",
+            "wordType": "noun",
+            "acceptedAnswers": ["alboroto", "escándalo", "confusión"],
+            "example": "There was a kerfuffle at the entrance after the announcement.",
+            "exampleHighlight": ["kerfuffle"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1008,
+            "word": "shenanigans",
+            "displayMeaning": "travesuras",
+            "wordType": "noun",
+            "acceptedAnswers": ["travesuras", "tonterías", "líos"],
+            "example": "The children were up to their usual shenanigans in the yard.",
+            "exampleHighlight": ["shenanigans"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1009,
+            "word": "cattywampus",
+            "displayMeaning": "torcido",
+            "wordType": "adjective",
+            "acceptedAnswers": ["torcido", "chueco", "desalineado"],
+            "example": "The picture frame hung cattywampus on the wall.",
+            "exampleHighlight": ["cattywampus"],
+            "category": "slang",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1010,
+            "word": "play along",
+            "displayMeaning": "seguir la corriente",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "seguir la corriente",
+                "hacer como si",
+                "colaborar",
+                "siguió la corriente",
+                "hizo como si",
+                "colaboró"
+            ],
+            "example": "She knew the joke was fake, but she played along.",
+            "exampleHighlight": ["played along"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1011,
+            "word": "lay off",
+            "displayMeaning": "despedir",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["despedir", "cesar", "reducir personal"],
+            "example": "The company had to lay off several workers.",
+            "exampleHighlight": ["lay off"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1012,
+            "word": "come across",
+            "displayMeaning": "encontrarse con",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "encontrarse con",
+                "toparse con",
+                "dar con",
+                "encontrar",
+                "me encontré con",
+                "me encontré",
+                "me topé con",
+                "me topé",
+                "encontré",
+                "di con"
+            ],
+            "example": "I came across an old photo while cleaning my room.",
+            "exampleHighlight": ["came across"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1013,
+            "word": "zero in on",
+            "displayMeaning": "centrarse en",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "centrarse en",
+                "enfocarse en",
+                "apuntar a",
+                "se centró en",
+                "se enfocó en",
+                "apuntó a"
+            ],
+            "example": "The team zeroed in on the main problem.",
+            "exampleHighlight": ["zeroed in on"],
+            "category": "business",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1014,
+            "word": "back off",
+            "displayMeaning": "retroceder",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["retroceder", "alejarse", "retirarse"],
+            "example": "The guard told him to back off immediately.",
+            "exampleHighlight": ["back off"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1015,
+            "word": "buzz off",
+            "displayMeaning": "lárgate",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": ["lárgate", "vete", "déjame en paz"],
+            "example": "He told the salesman to buzz off.",
+            "exampleHighlight": ["buzz off"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1016,
+            "word": "don't bother me",
+            "displayMeaning": "no me molestes",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "no me molestes",
+                "déjame en paz",
+                "no me interrumpas"
+            ],
+            "example": "Please don't bother me while I'm studying.",
+            "exampleHighlight": ["don't bother me"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1017,
+            "word": "scram",
+            "displayMeaning": "lárgate",
+            "wordType": "verb",
+            "acceptedAnswers": ["lárgate", "vete", "desaparece"],
+            "example": "The owner told the kids to scram from the yard.",
+            "exampleHighlight": ["scram"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1018,
+            "word": "fed up",
+            "displayMeaning": "harto",
+            "wordType": "adjective",
+            "acceptedAnswers": ["harto", "cansado", "fastidiado"],
+            "example": "I'm fed up with waiting so long.",
+            "exampleHighlight": ["fed up"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1019,
+            "word": "mess",
+            "displayMeaning": "desorden",
+            "wordType": "noun",
+            "acceptedAnswers": ["desorden", "caos", "lío"],
+            "example": "The kitchen was a mess after dinner.",
+            "exampleHighlight": ["mess"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1020,
+            "word": "luck",
+            "displayMeaning": "suerte",
+            "wordType": "noun",
+            "acceptedAnswers": ["suerte", "fortuna", "azar"],
+            "example": "Good luck on your exam tomorrow.",
+            "exampleHighlight": ["luck"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1021,
+            "word": "look",
+            "displayMeaning": "mirar",
+            "wordType": "verb",
+            "acceptedAnswers": ["mirar", "observar", "ver"],
+            "example": "Come and look at the view from here.",
+            "exampleHighlight": ["look"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1023,
+            "word": "careless",
+            "displayMeaning": "descuidado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["descuidado", "negligente", "despreocupado"],
+            "example": "It was careless to leave the door unlocked.",
+            "exampleHighlight": ["careless"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1024,
+            "word": "slovenly",
+            "displayMeaning": "desaliñado",
+            "wordType": "adjective",
+            "acceptedAnswers": ["desaliñado", "desordenado", "descuidado"],
+            "example": "His slovenly room was hard to walk through.",
+            "exampleHighlight": ["slovenly"],
+            "category": "academic",
+            "difficulty": "hard"
+        },
+        {
+            "id": 1025,
+            "word": "overgrown",
+            "displayMeaning": "cubierto de maleza",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "cubierto de maleza",
+                "crecido de más",
+                "abandonado"
+            ],
+            "example": "The path was overgrown with weeds.",
+            "exampleHighlight": ["overgrown"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1026,
+            "word": "thoughtless",
+            "displayMeaning": "irreflexivo",
+            "wordType": "adjective",
+            "acceptedAnswers": ["irreflexivo", "desconsiderado", "imprudente"],
+            "example": "That was a thoughtless remark.",
+            "exampleHighlight": ["thoughtless"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1028,
+            "word": "mocking",
+            "displayMeaning": "burlón",
+            "wordType": "adjective",
+            "acceptedAnswers": ["burlón", "sarcastico", "irónico"],
+            "example": "He gave her a mocking smile.",
+            "exampleHighlight": ["mocking"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1029,
+            "word": "mock",
+            "displayMeaning": "burlarse",
+            "wordType": "verb",
+            "acceptedAnswers": ["burlarse", "ridiculizar", "imitar"],
+            "example": "The kids mock the way he talks.",
+            "exampleHighlight": ["mock"],
+            "category": "slang",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1030,
+            "word": "mood",
+            "displayMeaning": "estado de ánimo",
+            "wordType": "noun",
+            "acceptedAnswers": ["estado de ánimo", "ánimo", "humor"],
+            "example": "She's in a good mood today.",
+            "exampleHighlight": ["mood"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1031,
+            "word": "messed up",
+            "displayMeaning": "arruinado",
+            "wordType": "adjective",
+            "acceptedAnswers": [
+                "arruinado",
+                "desordenado",
+                "hecho un desastre"
+            ],
+            "example": "The plan got messed up at the last minute.",
+            "exampleHighlight": ["messed up"],
+            "category": "everyday-english",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1032,
+            "word": "little by little",
+            "displayMeaning": "poco a poco",
+            "wordType": "expression",
+            "acceptedAnswers": ["poco a poco", "gradualmente", "de a poco"],
+            "example": "Little by little, she learned to speak English fluently.",
+            "exampleHighlight": ["little by little"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1033,
+            "word": "slow down",
+            "displayMeaning": "disminuir la velocidad",
+            "wordType": "phrasal-verb",
+            "acceptedAnswers": [
+                "disminuir la velocidad",
+                "ir más despacio",
+                "ralentizar"
+            ],
+            "example": "Please slow down near the school.",
+            "exampleHighlight": ["slow down"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1034,
+            "word": "go ahead",
+            "displayMeaning": "adelante",
+            "wordType": "expression",
+            "acceptedAnswers": ["adelante", "sigue", "hazlo"],
+            "example": "Go ahead and start without me.",
+            "exampleHighlight": ["go ahead"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1035,
+            "word": "no kidding",
+            "displayMeaning": "en serio",
+            "wordType": "expression",
+            "acceptedAnswers": ["en serio", "de verdad", "no me digas"],
+            "example": "No kidding, that was the fastest car I've ever seen.",
+            "exampleHighlight": ["no kidding"],
+            "category": "slang",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1036,
+            "word": "alright",
+            "displayMeaning": "está bien",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "está bien",
+                "de acuerdo",
+                "vale",
+                "bueno",
+                "dale",
+                "ok",
+                "bien"
+            ],
+            "example": "Alright, if everyone is ready, we can leave now.",
+            "exampleHighlight": ["alright"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1037,
+            "word": "same thing",
+            "displayMeaning": "lo mismo",
+            "wordType": "expression",
+            "acceptedAnswers": ["lo mismo", "igual", "la misma cosa"],
+            "example": "For me, both options are the same thing.",
+            "exampleHighlight": ["same thing"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1038,
+            "word": "even though",
+            "displayMeaning": "aunque",
+            "wordType": "expression",
+            "acceptedAnswers": ["aunque", "a pesar de que", "si bien"],
+            "example": "Even though it was cold, they went out.",
+            "exampleHighlight": ["even though"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1039,
+            "word": "in spite of",
+            "displayMeaning": "a pesar de",
+            "wordType": "preposition",
+            "acceptedAnswers": ["a pesar de", "pese a", "no obstante"],
+            "example": "In spite of the rain, the game continued.",
+            "exampleHighlight": ["in spite of"],
+            "category": "academic",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1040,
+            "word": "despite",
+            "displayMeaning": "a pesar de",
+            "wordType": "preposition",
+            "acceptedAnswers": ["a pesar de", "pese a", "no obstante"],
+            "example": "Despite the noise, she kept studying.",
+            "exampleHighlight": ["despite"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1041,
+            "word": "just in case",
+            "displayMeaning": "por si acaso",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "por si acaso",
+                "por precaución",
+                "en caso de que"
+            ],
+            "example": "Take an umbrella just in case it rains.",
+            "exampleHighlight": ["just in case"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1042,
+            "word": "on purpose",
+            "displayMeaning": "a propósito",
+            "wordType": "expression",
+            "acceptedAnswers": [
+                "a propósito",
+                "intencionalmente",
+                "deliberadamente"
+            ],
+            "example": "He broke the vase on purpose.",
+            "exampleHighlight": ["on purpose"],
+            "category": "everyday-english",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1043,
+            "word": "instead",
+            "displayMeaning": "en cambio",
+            "wordType": "adverb",
+            "acceptedAnswers": ["en cambio", "en su lugar", "en vez de eso"],
+            "example": "I had coffee instead of tea.",
+            "exampleHighlight": ["instead"],
+            "category": "academic",
+            "difficulty": "easy"
+        },
+        {
+            "id": 1044,
+            "word": "setup",
+            "displayMeaning": "configuración",
+            "wordType": "noun",
+            "acceptedAnswers": ["configuración", "instalación", "montaje"],
+            "example": "The new setup took less than ten minutes.",
+            "exampleHighlight": ["setup"],
+            "category": "technology",
+            "difficulty": "medium"
+        },
+        {
+            "id": 1045,
+            "word": "upset",
+            "displayMeaning": "molesto",
+            "wordType": "adjective",
+            "acceptedAnswers": ["molesto", "triste", "enojado"],
+            "example": "She felt upset after the argument.",
+            "exampleHighlight": ["upset"],
+            "category": "everyday-english",
+            "difficulty": "easy"
         }
     ]
 }
