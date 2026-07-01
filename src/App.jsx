@@ -1,11 +1,10 @@
 import { useState } from 'react';
-
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Results from './pages/Results';
 import { CATEGORIES } from './constants/quizOptions';
-
 import DatasetAudit from './pages/DatasetAudit';
+import Dashboard from './pages/Dashboard';
 
 function App() {
     const [screen, setScreen] = useState('home');
@@ -38,6 +37,7 @@ function App() {
                     setQuizSettings={setQuizSettings}
                     onStart={() => setScreen('quiz')}
                     onAudit={() => setScreen('audit')}
+                    onDashboard={() => setScreen('dashboard')}
                 />
             )}
 
@@ -66,6 +66,10 @@ function App() {
 
             {screen === 'audit' && (
                 <DatasetAudit onBack={() => setScreen('home')} />
+            )}
+
+            {screen === 'dashboard' && (
+                <Dashboard onBack={() => setScreen('home')} />
             )}
         </>
     );

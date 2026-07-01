@@ -1,29 +1,11 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import capitalizeText from '../utils/capitalizeText';
-import { useMemo } from 'react';
+import { useHighlightedExamples } from '../hooks/useHighlightedExamples';
 import { getWordProgress, isDifficult } from '../utils/progressManager';
 
-function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
-    const highlightedExample = useMemo(() => {
-        if (answerLanguage === 'en') return wordData.example;
-
-        let highlightedText = wordData.example;
-
-        wordData.exampleHighlight.forEach((highlight) => {
-            const escapedHighlight = highlight.replace(
-                /[.*+?^${}()|[\]\\]/g,
-                '\\$&',
-            );
-            const regex = new RegExp(escapedHighlight, 'gi');
-            highlightedText = highlightedText.replace(
-                regex,
-                (match) =>
-                    `<span class="text-cyan-300 font-semibold">${match}</span>`,
-            );
-        });
-
-        return highlightedText;
-    }, [wordData.example, wordData.exampleHighlight, answerLanguage]);
+function QuizCard({ wordData, answerLanguage }) {
+    const { highlightedExample, highlightedExampleEs } =
+        useHighlightedExamples(wordData);
 
     const wordProgress = getWordProgress(wordData.id);
     const isWordDifficult = isDifficult(wordProgress);
@@ -68,9 +50,18 @@ function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
 
             <div className='mb-10 text-center'>
                 {answerLanguage === 'en' ? (
-                    <p className='text-lg text-slate-600 italic'>
-                        No example available in this mode yet.
-                    </p>
+                    wordData.exampleEs ? (
+                        <p
+                            className='text-lg leading-relaxed text-slate-400'
+                            dangerouslySetInnerHTML={{
+                                __html: highlightedExampleEs,
+                            }}
+                        />
+                    ) : (
+                        <p className='text-lg text-slate-600 italic'>
+                            No example available in this mode yet.
+                        </p>
+                    )
                 ) : (
                     <p
                         className='text-lg leading-relaxed text-slate-400'
@@ -78,38 +69,6 @@ function QuizCard({ wordData, showAnswer, quizMode, answerLanguage }) {
                     />
                 )}
             </div>
-
-            <AnimatePresence>
-                {showAnswer && quizMode === 'write' && (
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: 10,
-                        }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        exit={{
-                            opacity: 0,
-                        }}
-                        transition={{
-                            duration: 0.25,
-                        }}
-                        className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 text-center'
-                    >
-                        <p className='mb-1 text-sm text-slate-500'>
-                            {answerLanguage === 'en' ? 'Word' : 'Meaning'}
-                        </p>
-
-                        <p className='text-2xl font-semibold text-white'>
-                            {answerLanguage === 'en'
-                                ? capitalizeText(wordData.word)
-                                : capitalizeText(wordData.displayMeaning)}
-                        </p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </motion.div>
     );
 }

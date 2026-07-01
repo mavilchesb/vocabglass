@@ -783,6 +783,18 @@ export default function auditVocabulary(vocabulary) {
                 reason: 'Highlight is split into multiple strings. Rewrite the example so the phrasal verb appears together.',
             });
         }
+
+        // Missing Spanish example translation
+        if (!item.exampleEs || !item.exampleHighlightEs) {
+            infos.push({
+                severity: 'info',
+                word: item.word,
+                field: 'exampleEs',
+                currentValue: '(missing)',
+                suggestedValue: 'Add Spanish translation',
+                reason: 'Word is missing exampleEs/exampleHighlightEs for reverse mode and Spanish reveal.',
+            });
+        }
     });
 
     return {

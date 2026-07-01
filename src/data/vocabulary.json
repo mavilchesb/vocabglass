@@ -1272,11 +1272,13 @@
             "word": "check in",
             "displayMeaning": "facturar",
             "wordType": "phrasal-verb",
-            "acceptedAnswers": ["facturar"],
+            "acceptedAnswers": ["facturar", "factura"],
             "example": "Check in at least two hours before your flight.",
             "exampleHighlight": ["check in"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Factura al menos dos horas antes de tu vuelo.",
+            "exampleHighlightEs": ["factura"]
         },
         {
             "id": 121,
@@ -2185,7 +2187,9 @@
             "example": "The closed road forced us into a long detour.",
             "exampleHighlight": ["detour"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "La carretera cerrada nos obligó a dar un desvío largo.",
+            "exampleHighlightEs": ["desvío"]
         },
         {
             "id": 202,
@@ -3242,7 +3246,9 @@
             "example": "Make sure you get off the bus at the next stop.",
             "exampleHighlight": ["get off"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Asegúrate de bajarte del autobús en la siguiente parada.",
+            "exampleHighlightEs": ["bajarte"]
         },
         {
             "id": 295,
@@ -7200,7 +7206,9 @@
             "example": "The plane is scheduled to take off at noon.",
             "exampleHighlight": ["take off"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "El avión tiene programado despegar al mediodía.",
+            "exampleHighlightEs": ["despegar"]
         },
         {
             "id": 644,
@@ -8402,7 +8410,9 @@
             "example": "Please keep your luggage with you at all times.",
             "exampleHighlight": ["luggage"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Por favor mantén tu equipaje contigo en todo momento.",
+            "exampleHighlightEs": ["equipaje"]
         },
         {
             "id": 748,
@@ -8708,7 +8718,9 @@
             "example": "Please keep the aisle clear during the flight.",
             "exampleHighlight": ["aisle"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Por favor mantén el pasillo despejado durante el vuelo.",
+            "exampleHighlightEs": ["pasillo"]
         },
         {
             "id": 777,
@@ -8907,7 +8919,9 @@
             "example": "We followed the path through the forest.",
             "exampleHighlight": ["path"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Seguimos el camino a través del bosque.",
+            "exampleHighlightEs": ["camino"]
         },
         {
             "id": 795,
@@ -9048,7 +9062,9 @@
             "example": "The boarding agent checked our tickets at the gate.",
             "exampleHighlight": ["gate"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "El agente de embarque revisó nuestros boletos en la puerta.",
+            "exampleHighlightEs": ["puerta"]
         },
         {
             "id": 808,
@@ -9059,7 +9075,9 @@
             "example": "The officers inspected our bags at customs.",
             "exampleHighlight": ["customs"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Los oficiales inspeccionaron nuestras maletas en la aduana.",
+            "exampleHighlightEs": ["aduana"]
         },
         {
             "id": 809,
@@ -9070,7 +9088,9 @@
             "example": "The old tower is a famous landmark in the city.",
             "exampleHighlight": ["landmark"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "La antigua torre es un hito famoso en la ciudad.",
+            "exampleHighlightEs": ["hito"]
         },
         {
             "id": 810,
@@ -9081,7 +9101,9 @@
             "example": "She took the subway to work every morning.",
             "exampleHighlight": ["subway"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Ella tomaba el metro al trabajo todas las mañanas.",
+            "exampleHighlightEs": ["metro"]
         },
         {
             "id": 811,
@@ -9092,7 +9114,9 @@
             "example": "The departure time was moved to 6:30 a.m.",
             "exampleHighlight": ["departure"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "La hora de salida se cambió a las 6:30 a.m.",
+            "exampleHighlightEs": ["salida"]
         },
         {
             "id": 812,
@@ -9103,22 +9127,26 @@
             "example": "Her arrival was delayed by heavy traffic.",
             "exampleHighlight": ["arrival"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "Su llegada se retrasó por el tráfico intenso.",
+            "exampleHighlightEs": ["llegada"]
         },
         {
             "id": 813,
             "word": "currency exchange",
-            "displayMeaning": "cambio de divisas",
+            "displayMeaning": "casa de cambio",
             "wordType": "noun",
             "acceptedAnswers": [
-                "cambio de divisas",
                 "casa de cambio",
+                "cambio de divisas",
                 "cambio de moneda"
             ],
             "example": "We used the currency exchange at the airport.",
             "exampleHighlight": ["currency exchange"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Usamos la casa de cambio en el aeropuerto.",
+            "exampleHighlightEs": ["casa de cambio"]
         },
         {
             "id": 814,
@@ -9239,7 +9267,9 @@
             "example": "We had a four-hour layover in Madrid.",
             "exampleHighlight": ["layover"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Tuvimos una escala de cuatro horas en Madrid.",
+            "exampleHighlightEs": ["escala"]
         },
         {
             "id": 825,
@@ -9254,7 +9284,9 @@
             "example": "Your carry-on must fit under the seat.",
             "exampleHighlight": ["carry-on"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Tu equipaje de mano debe caber debajo del asiento.",
+            "exampleHighlightEs": ["equipaje de mano"]
         },
         {
             "id": 826,
@@ -9269,7 +9301,9 @@
             "example": "We met at baggage claim after landing.",
             "exampleHighlight": ["baggage claim"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Nos encontramos en la recogida de equipaje después de aterrizar.",
+            "exampleHighlightEs": ["recogida de equipaje"]
         },
         {
             "id": 827,
@@ -9284,7 +9318,9 @@
             "example": "She received a seat upgrade at the airport counter.",
             "exampleHighlight": ["seat upgrade"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Ella recibió una mejora de asiento en el mostrador del aeropuerto.",
+            "exampleHighlightEs": ["mejora de asiento"]
         },
         {
             "id": 828,
@@ -9295,7 +9331,9 @@
             "example": "Our itinerary includes two cities and one beach stop.",
             "exampleHighlight": ["itinerary"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Nuestro itinerario incluye dos ciudades y una parada en la playa.",
+            "exampleHighlightEs": ["itinerario"]
         },
         {
             "id": 829,
@@ -9310,7 +9348,9 @@
             "example": "They took a red-eye flight to arrive early in the morning.",
             "exampleHighlight": ["red-eye flight"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Tomaron un vuelo nocturno para llegar temprano por la mañana.",
+            "exampleHighlightEs": ["vuelo nocturno"]
         },
         {
             "id": 830,
@@ -9325,7 +9365,9 @@
             "example": "The airline was overbooked, so some passengers had to wait.",
             "exampleHighlight": ["overbooked"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "La aerolínea estaba sobrevendida, así que algunos pasajeros tuvieron que esperar.",
+            "exampleHighlightEs": ["sobrevendida"]
         },
         {
             "id": 831,
@@ -9340,7 +9382,9 @@
             "example": "Fill out the customs declaration before you land.",
             "exampleHighlight": ["customs declaration"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Completa la declaración de aduana antes de aterrizar.",
+            "exampleHighlightEs": ["declaración de aduana"]
         },
         {
             "id": 832,
@@ -9356,7 +9400,9 @@
             "example": "She felt jet lag after the long flight from Europe.",
             "exampleHighlight": ["jet lag"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Ella sintió jet lag después del vuelo largo desde Europa.",
+            "exampleHighlightEs": ["jet lag"]
         },
         {
             "id": 833,
@@ -9371,7 +9417,9 @@
             "example": "We bought perfume at the duty-free shop.",
             "exampleHighlight": ["duty-free"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Compramos perfume en la tienda libre de impuestos.",
+            "exampleHighlightEs": ["libre de impuestos"]
         },
         {
             "id": 834,
@@ -10245,7 +10293,9 @@
             "example": "The road was closed because of the accident.",
             "exampleHighlight": ["road"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "La carretera estaba cerrada debido al accidente.",
+            "exampleHighlightEs": ["carretera"]
         },
         {
             "id": 906,
@@ -10453,7 +10503,14 @@
             "word": "lead",
             "displayMeaning": "liderar",
             "wordType": "verb",
-            "acceptedAnswers": ["liderar", "guiar", "encabezar"],
+            "acceptedAnswers": [
+                "liderar",
+                "guiar",
+                "encabezar",
+                "liderará",
+                "guiará",
+                "encabezará"
+            ],
             "example": "She will lead the project next month.",
             "exampleHighlight": ["lead"],
             "category": "business",
@@ -10719,7 +10776,9 @@
             "example": "We booked accommodation near the beach.",
             "exampleHighlight": ["accommodation"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Reservamos alojamiento cerca de la playa.",
+            "exampleHighlightEs": ["alojamiento"]
         },
         {
             "id": 947,
@@ -10730,7 +10789,9 @@
             "example": "The brochure includes maps and hotel prices.",
             "exampleHighlight": ["brochure"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "El folleto incluye mapas y precios de hoteles.",
+            "exampleHighlightEs": ["folleto"]
         },
         {
             "id": 948,
@@ -10745,7 +10806,9 @@
             "example": "We used car hire to get around the city.",
             "exampleHighlight": ["car hire"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Usamos un alquiler de auto para movernos por la ciudad.",
+            "exampleHighlightEs": ["alquiler de auto"]
         },
         {
             "id": 949,
@@ -10760,7 +10823,9 @@
             "example": "The hotel is downtown, close to the station.",
             "exampleHighlight": ["downtown"],
             "category": "travel",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "exampleEs": "El hotel está en el centro, cerca de la estación.",
+            "exampleHighlightEs": ["centro"]
         },
         {
             "id": 950,
@@ -10778,7 +10843,9 @@
             "example": "A group of sightseers took photos near the monument.",
             "exampleHighlight": ["sightseers"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "Un grupo de turistas tomó fotos cerca del monumento.",
+            "exampleHighlightEs": ["turistas"]
         },
         {
             "id": 951,
@@ -10804,7 +10871,9 @@
             "example": "The voyage across the ocean took two weeks.",
             "exampleHighlight": ["voyage"],
             "category": "travel",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "exampleEs": "El viaje a través del océano tomó dos semanas.",
+            "exampleHighlightEs": ["viaje"]
         },
         {
             "id": 953,

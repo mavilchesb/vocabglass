@@ -1,7 +1,13 @@
 import QuizSettings from '../components/QuizSettings';
 import { motion } from 'framer-motion';
 
-function Home({ quizSettings, setQuizSettings, onStart, onAudit }) {
+function Home({
+    quizSettings,
+    setQuizSettings,
+    onStart,
+    onAudit,
+    onDashboard,
+}) {
     return (
         <main className='flex min-h-screen items-center justify-center px-6 py-10'>
             <div className='grid w-full max-w-7xl gap-12 lg:grid-cols-2'>
@@ -112,6 +118,13 @@ function Home({ quizSettings, setQuizSettings, onStart, onAudit }) {
                         className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-3 text-sm text-slate-400 transition-colors hover:bg-white/[0.05] hover:text-white'
                     >
                         Dataset Audit
+                    </button>
+
+                    <button
+                        onClick={onDashboard}
+                        className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-3 text-sm text-slate-400 transition-colors hover:bg-white/[0.05] hover:text-white'
+                    >
+                        My Progress
                     </button>
                 </motion.div>
             </div>

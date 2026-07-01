@@ -69,6 +69,7 @@ function QuizSettings({ quizSettings, setQuizSettings }) {
                         </div>
                     </div>
 
+                    {/*
                     <div>
                         <label className={labelStyle}>
                             Answer Questions In
@@ -96,6 +97,7 @@ function QuizSettings({ quizSettings, setQuizSettings }) {
                             ))}
                         </div>
                     </div>
+                    */}
                 </div>
 
                 <div className='flex flex-col gap-6'>

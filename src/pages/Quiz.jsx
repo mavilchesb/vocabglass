@@ -13,6 +13,9 @@ import {
     recordResult,
     sortByPriority,
 } from '../utils/progressManager';
+import getAcceptedEnglishVariants from '../utils/spellingVariants';
+import FeedbackBar from '../components/FeedbackBar';
+import { useHighlightedExamples } from '../hooks/useHighlightedExamples';
 
 function Quiz({ quizSettings, onFinish, onExit }) {
     const vocabulary = vocabularyData.vocabulary;
@@ -46,6 +49,10 @@ function Quiz({ quizSettings, onFinish, onExit }) {
     const currentWord =
         quizWords[currentQuestionIndex] || quizWords[QUIZ_SIZE - 1];
 
+    const { highlightedExample, highlightedExampleEs } = useHighlightedExamples(
+        currentWord || {},
+    );
+
     const multipleChoiceOptions = useMemo(() => {
         if (!currentWord) return [];
         return getRandomOptions(
@@ -58,6 +65,8 @@ function Quiz({ quizSettings, onFinish, onExit }) {
     const [userAnswer, setUserAnswer] = useState('');
 
     const [feedback, setFeedback] = useState('');
+
+    const [isCorrect, setIsCorrect] = useState(false);
 
     const [showAnswer, setShowAnswer] = useState(false);
 
@@ -138,18 +147,22 @@ function Quiz({ quizSettings, onFinish, onExit }) {
         }
 
         if (quizSettings.answerLanguage === 'en') {
-            const correctWord = normalizeText(currentWord.word);
+            const validEnglishAnswers = getAcceptedEnglishVariants(
+                currentWord.word,
+            ).map(normalizeText);
 
-            if (normalizedAnswer === correctWord) {
+            if (validEnglishAnswers.includes(normalizedAnswer)) {
                 setFeedback('✅ Correct!');
                 setCorrectAnswers((prev) => prev + 1);
                 increaseStreak();
                 recordResult(currentWord.id, true);
+                setIsCorrect(true);
             } else {
                 setFeedback(`❌ Correct answer: ${currentWord.word}`);
                 setWrongAnswers((prev) => prev + 1);
                 resetStreak();
                 recordResult(currentWord.id, false);
+                setIsCorrect(false);
             }
         } else {
             const validAnswers = currentWord.acceptedAnswers.map((answer) =>
@@ -161,11 +174,13 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                 setCorrectAnswers((prev) => prev + 1);
                 increaseStreak();
                 recordResult(currentWord.id, true);
+                setIsCorrect(true);
             } else {
                 setFeedback(`❌ Correct answer: ${currentWord.displayMeaning}`);
                 setWrongAnswers((prev) => prev + 1);
                 resetStreak();
                 recordResult(currentWord.id, false);
+                setIsCorrect(false);
             }
         }
 
@@ -188,11 +203,13 @@ function Quiz({ quizSettings, onFinish, onExit }) {
             setCorrectAnswers((prev) => prev + 1);
             increaseStreak();
             recordResult(currentWord.id, true);
+            setIsCorrect(true);
         } else {
             setFeedback(`❌ Correct answer: ${correctOption}`);
             setWrongAnswers((prev) => prev + 1);
             resetStreak();
             recordResult(currentWord.id, false);
+            setIsCorrect(false);
         }
 
         setShowAnswer(true);
@@ -211,6 +228,7 @@ function Quiz({ quizSettings, onFinish, onExit }) {
         setShowAnswer(true);
         setAnswerSubmitted(true);
         recordResult(currentWord.id, false);
+        setIsCorrect(false);
     };
 
     useEffect(() => {
@@ -367,7 +385,6 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                     <QuizCard
                         wordData={currentWord}
                         showAnswer={showAnswer}
-                        quizMode={quizSettings.mode}
                         answerLanguage={quizSettings.answerLanguage}
                     />
 
@@ -414,27 +431,20 @@ function Quiz({ quizSettings, onFinish, onExit }) {
                             )}
                         </>
                     )}
-
-                    {answerSubmitted && (
-                        <motion.button
-                            initial={{
-                                opacity: 0,
-                                scale: 0.98,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                scale: 1,
-                            }}
-                            transition={{
-                                duration: 0.2,
-                            }}
-                            onClick={handleNextWord}
-                            className='w-full rounded-2xl border border-white/[0.08] bg-white/[0.05] py-4 font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors duration-200 hover:bg-white/[0.08]'
-                        >
-                            Next Word →
-                        </motion.button>
-                    )}
                 </div>
+
+                <AnimatePresence>
+                    {answerSubmitted && (
+                        <FeedbackBar
+                            isCorrect={isCorrect}
+                            wordData={currentWord}
+                            answerLanguage={quizSettings.answerLanguage}
+                            highlightedExample={highlightedExample}
+                            highlightedExampleEs={highlightedExampleEs}
+                            onContinue={handleNextWord}
+                        />
+                    )}
+                </AnimatePresence>
             </div>
         </main>
     );
