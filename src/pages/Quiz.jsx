@@ -43,7 +43,6 @@ function Quiz({ quizSettings, onFinish, onExit, spacedRepetition }) {
     }, [vocabulary, quizSettings, spacedRepetition]);
 
     const QUIZ_SIZE = quizWords.length;
-
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const currentWord =
@@ -63,27 +62,18 @@ function Quiz({ quizSettings, onFinish, onExit, spacedRepetition }) {
     }, [currentWord, vocabulary, quizSettings.answerLanguage]);
 
     const [userAnswer, setUserAnswer] = useState('');
-
     const [feedback, setFeedback] = useState('');
-
     const [isCorrect, setIsCorrect] = useState(false);
-
     const [showAnswer, setShowAnswer] = useState(false);
-
     const [answerSubmitted, setAnswerSubmitted] = useState(false);
-
     const [correctAnswers, setCorrectAnswers] = useState(0);
-
     const [wrongAnswers, setWrongAnswers] = useState(0);
-
     const [selectedOption, setSelectedOption] = useState('');
-
+    const [hintUsed, setHintUsed] = useState(false);
+    const [showHint, setShowHint] = useState(false);
     const [currentStreak, setCurrentStreak] = useState(0);
-
     const [bestStreak, setBestStreak] = useState(0);
-
     const [showStreakPopup, setShowStreakPopup] = useState(false);
-
     const [streakMessage, setStreakMessage] = useState('');
 
     const increaseStreak = () => {
@@ -124,16 +114,13 @@ function Quiz({ quizSettings, onFinish, onExit, spacedRepetition }) {
 
     const handleNextWord = () => {
         setSelectedOption('');
-
         setCurrentQuestionIndex((prev) => prev + 1);
-
         setUserAnswer('');
-
         setFeedback('');
-
         setShowAnswer(false);
-
         setAnswerSubmitted(false);
+        setHintUsed(false);
+        setShowHint(false);
     };
 
     const handleCheckAnswer = () => {
@@ -395,6 +382,13 @@ function Quiz({ quizSettings, onFinish, onExit, spacedRepetition }) {
                             handleCheckAnswer={handleCheckAnswer}
                             answerSubmitted={answerSubmitted}
                             feedback={feedback}
+                            hintUsed={hintUsed}
+                            showHint={showHint}
+                            onHint={() => {
+                                setShowHint(true);
+                                setHintUsed(true);
+                            }}
+                            displayMeaning={currentWord.displayMeaning}
                         />
                     ) : (
                         <MultipleChoice

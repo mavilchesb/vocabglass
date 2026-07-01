@@ -625,7 +625,7 @@
             "word": "belong",
             "displayMeaning": "pertenecer",
             "wordType": "verb",
-            "acceptedAnswers": ["pertenecer"],
+            "acceptedAnswers": ["pertenecer", "pertenecen"],
             "example": "These keys belong to the manager.",
             "exampleHighlight": ["belong"],
             "category": "everyday-english",
