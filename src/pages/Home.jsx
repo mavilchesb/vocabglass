@@ -7,6 +7,7 @@ function Home({
     onStart,
     onAudit,
     onDashboard,
+    onSettings,
 }) {
     return (
         <main className='flex min-h-screen items-center justify-center px-6 py-10'>
@@ -125,6 +126,13 @@ function Home({
                         className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-3 text-sm text-slate-400 transition-colors hover:bg-white/[0.05] hover:text-white'
                     >
                         My Progress
+                    </button>
+
+                    <button
+                        onClick={onSettings}
+                        className='rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-3 text-sm text-slate-400 transition-colors hover:bg-white/[0.05] hover:text-white'
+                    >
+                        Settings
                     </button>
                 </motion.div>
             </div>

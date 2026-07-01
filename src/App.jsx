@@ -5,6 +5,7 @@ import Results from './pages/Results';
 import { CATEGORIES } from './constants/quizOptions';
 import DatasetAudit from './pages/DatasetAudit';
 import Dashboard from './pages/Dashboard';
+import Settings from './pages/Settings';
 
 function App() {
     const [screen, setScreen] = useState('home');
@@ -17,6 +18,10 @@ function App() {
         difficulty: 'medium',
         questionCount: 20,
         answerLanguage: 'es',
+    });
+
+    const [appSettings, setAppSettings] = useState({
+        spacedRepetition: true,
     });
 
     const handleGoHome = () => {
@@ -38,6 +43,7 @@ function App() {
                     onStart={() => setScreen('quiz')}
                     onAudit={() => setScreen('audit')}
                     onDashboard={() => setScreen('dashboard')}
+                    onSettings={() => setScreen('settings')}
                 />
             )}
 
@@ -46,10 +52,10 @@ function App() {
                     quizSettings={quizSettings}
                     onFinish={(data) => {
                         setResultsData(data);
-
                         setScreen('results');
                     }}
                     onExit={() => setScreen('home')}
+                    spacedRepetition={appSettings.spacedRepetition}
                 />
             )}
 
@@ -70,6 +76,14 @@ function App() {
 
             {screen === 'dashboard' && (
                 <Dashboard onBack={() => setScreen('home')} />
+            )}
+
+            {screen === 'settings' && (
+                <Settings
+                    onBack={() => setScreen('home')}
+                    appSettings={appSettings}
+                    setAppSettings={setAppSettings}
+                />
             )}
         </>
     );

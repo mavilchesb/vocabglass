@@ -8,39 +8,39 @@ import shuffleArray from '../utils/shuffleArray';
 import MultipleChoice from '../components/MultipleChoice';
 import getRandomOptions from '../utils/getRandomOptions';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-    getWordProgress,
-    recordResult,
-    sortByPriority,
-} from '../utils/progressManager';
+import { getWordProgress, recordResult } from '../utils/progressManager';
 import getAcceptedEnglishVariants from '../utils/spellingVariants';
 import FeedbackBar from '../components/FeedbackBar';
 import { useHighlightedExamples } from '../hooks/useHighlightedExamples';
 
-function Quiz({ quizSettings, onFinish, onExit }) {
+function Quiz({ quizSettings, onFinish, onExit, spacedRepetition }) {
     const vocabulary = vocabularyData.vocabulary;
 
     const quizWords = useMemo(() => {
         const filteredWords = filterWords(vocabulary, quizSettings);
-        const prioritized = sortByPriority(filteredWords);
 
-        const difficult = prioritized.filter((w) => {
+        if (!spacedRepetition) {
+            return shuffleArray(filteredWords).slice(
+                0,
+                quizSettings.questionCount,
+            );
+        }
+
+        const difficult = filteredWords.filter((w) => {
             const p = getWordProgress(w.id);
             return p.score <= -1 && p.wrong >= 3;
         });
 
-        const rest = prioritized.filter((w) => {
+        const rest = filteredWords.filter((w) => {
             const p = getWordProgress(w.id);
             return !(p.score <= -1 && p.wrong >= 3);
         });
 
-        const selected = [
-            ...shuffleArray(difficult),
-            ...shuffleArray(rest),
-        ].slice(0, quizSettings.questionCount);
-
-        return selected;
-    }, [vocabulary, quizSettings]);
+        return [...shuffleArray(difficult), ...shuffleArray(rest)].slice(
+            0,
+            quizSettings.questionCount,
+        );
+    }, [vocabulary, quizSettings, spacedRepetition]);
 
     const QUIZ_SIZE = quizWords.length;
 
