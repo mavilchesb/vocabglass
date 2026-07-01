@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import capitalizeText from '../utils/capitalizeText';
 
@@ -9,6 +10,8 @@ function FeedbackBar({
     highlightedExampleEs,
     onContinue,
 }) {
+    const [showAllMeanings, setShowAllMeanings] = useState(false);
+
     const meaningLabel = answerLanguage === 'en' ? 'Word' : 'Meaning';
     const meaningValue =
         answerLanguage === 'en'
@@ -42,7 +45,7 @@ function FeedbackBar({
                         {isCorrect ? '✓' : '✕'}
                     </div>
 
-                    <div>
+                    <div className='flex-1'>
                         <p
                             className={`text-lg font-bold ${
                                 isCorrect ? 'text-emerald-300' : 'text-rose-300'
@@ -63,6 +66,30 @@ function FeedbackBar({
                                 }}
                             />
                         )}
+
+                        {showAllMeanings &&
+                            wordData.acceptedAnswers?.length > 0 && (
+                                <div className='mt-3 flex flex-wrap gap-2'>
+                                    {wordData.acceptedAnswers.map((answer) => (
+                                        <span
+                                            key={answer}
+                                            className='rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-xs text-slate-300'
+                                        >
+                                            {answer}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+
+                        {!showAllMeanings &&
+                            wordData.acceptedAnswers?.length > 1 && (
+                                <button
+                                    onClick={() => setShowAllMeanings(true)}
+                                    className='mt-2 text-xs text-slate-500 underline underline-offset-2 transition-colors hover:text-slate-300'
+                                >
+                                    See all meanings
+                                </button>
+                            )}
                     </div>
                 </div>
 

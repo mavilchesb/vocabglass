@@ -7370,7 +7370,7 @@
             "displayMeaning": "para ser honesto",
             "wordType": "expression",
             "acceptedAnswers": ["para ser honesto"],
-            "example": "to be honest, I am tired.",
+            "example": "To be honest, I am tired.",
             "exampleHighlight": ["to be honest"],
             "category": "everyday-english",
             "difficulty": "medium"
@@ -11181,7 +11181,12 @@
             "word": "inwards",
             "displayMeaning": "hacia adentro",
             "wordType": "adverb",
-            "acceptedAnswers": ["hacia adentro", "al interior", "internamente"],
+            "acceptedAnswers": [
+                "hacia adentro",
+                "para adentro",
+                "al interior",
+                "internamente"
+            ],
             "example": "Push the door inwards to open it.",
             "exampleHighlight": ["inwards"],
             "category": "everyday-english",

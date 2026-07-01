@@ -9,7 +9,8 @@ function getRandomOptions(currentWord, vocabulary, answerLanguage = 'es') {
     const pool = vocabulary.filter(
         (word) =>
             word.id !== currentWord.id &&
-            word.displayMeaning !== currentWord.displayMeaning,
+            word.displayMeaning !== currentWord.displayMeaning &&
+            !currentWord.acceptedAnswers.includes(word.displayMeaning),
     );
 
     const sameCategoryAndDifficulty = shuffleArray(
